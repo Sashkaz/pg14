@@ -1,0 +1,36 @@
+.form-wrapper{
+    width: 100%;
+    margin-top: 0.5%;
+}
+.form-layout, .table-layout{
+    margin: auto;
+    padding: 5px;
+    min-width: 300px;
+}
+.form-layout{
+    width: 35% !important;
+    background: rgba(0, 0, 0, 0.02);    
+    border-radius: 5px;
+    max-width: 400px;
+    margin-bottom: 8%;
+}
+.table-layout {
+    width: 100%;
+}
+.table-layout th h3{
+    margin: 0px;
+    margin-bottom: 10px;
+}
+.table-layout td h4{
+    margin: 0px;
+    margin-bottom: 10px;
+}
+.table-layout label{
+    float: left;
+}
+.table-layout tr td {
+    padding: 5px;
+}
+.text-align-r{
+    text-align: right;
+}
