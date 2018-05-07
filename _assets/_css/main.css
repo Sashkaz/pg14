@@ -1,3 +1,17 @@
+.comment-section .comment{
+    border-bottom: 1px;
+    border-bottom-style: groove;
+    border-bottom-color: rgba(0, 0, 0, 0.15);
+    min-width: 300px;
+    max-width: 800px;
+}
+.comment h3, .comment p {
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+.comment p {
+    text-align: justify;
+}
 .form-wrapper{
     width: 100%;
     margin-top: 0.5%;
@@ -30,6 +44,11 @@
 }
 .table-layout tr td {
     padding: 5px;
+}
+.content-center{
+    margin: auto;
+    width: 50%;
+    padding: 10px;
 }
 .text-align-r{
     text-align: right;
