@@ -67,10 +67,10 @@
 			</div>
 			<div class="nav-status-wrapper">
 				<h3>Now training</h3>
-				<ul class="nav-status-check">
+				<ul class="nav-user-status-check">
 					<li>
-						<input type="checkbox" name="nav-status" value="true">
-						<label for="nav-status">Now training</label>
+						<input type="checkbox" name="nav-user-status" value="true">
+						<label for="nav-user-status">Now training</label>
 					</li>
 				</ul>
 			</div>
