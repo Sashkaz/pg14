@@ -48,28 +48,33 @@ body {
     text-align: left;
     margin-top: 25px;
     width: 75%;
-    min-width: 500px;
-    max-width: 1200px;
+    min-width: 850px;
+    max-width: 1920px;
     height: 600px;
 }
 
 #left-bar {
     float: left;
     display: inline-block;
-    width: 15%;
+    width: 11%;
+    min-width: 130px;
     height: 100%;
 }
 
 #center-bar {
+    float: left;
     display: inline-block;
     width: 50%;
+    min-width: 550px;
     height: 100%;
+    margin: 0% 2%;
 }
 
 #right-bar {
-    float: right;
+    float: left;
     display: inline-block;
-    width: 15%;
+    width: 11%;
+    min-width: 130px;
     height: 100%;
 }
 
@@ -84,16 +89,13 @@ body {
     border-top-left-radius: 10px;
     border-bottom-left-radius: 10px;
     background-color: var(--container-primary-color);
-    border-right: 3px solid var(--container-secondary-color);
     height: 100%;
     width: 100%;
 }
 
 #center-content {
-    padding: 10px 20px 0px 20px;
+    padding-top: 10px;
     background-color: var(--container-primary-color);
-    border-right: 3px solid var(--container-secondary-color);
-    border-left: 3px solid var(--container-secondary-color);
     height: 100%;
     width: 100%;
 }
@@ -103,16 +105,17 @@ body {
     border-top-right-radius: 10px;
     border-bottom-right-radius: 10px;
     background-color: var(--container-primary-color);
-    border-left: 3px solid var(--container-secondary-color);
     height: 100%;
     width: 100%;
 }
 
 #left-content:hover, #center-content:hover, #right-content:hover {
-    background-color: var(--container-secondary-color);
-    width: 105%;
-    margin-left: -2%;
-    margin-right: -2%;
+    /*background-color: var(--container-secondary-color);*/
+}
+
+#left-content ul {
+    list-style: none;
+    text-indent: -30px;
 }
 
 .empty-bar {
