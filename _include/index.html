@@ -1,1 +1,109 @@
-{\rtf1}
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>TrainingBuddies</title>
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <link rel="stylesheet" type="text/css" href="top-nav.css">
+    </head>
+    <body>
+        <div class="user-header">
+            <div class="profile-navigation-grid">
+                <div class="profile-col">
+                    <img src="_assets/_img/150x150.jpeg" />
+                </div>
+                <div class="profile-col">
+                    <a href="#goToProfile" id="my-profile" class="custom-button1">My Profile</a>
+                </div>
+                <div class="profile-col">
+                    <a href="#showMessages" id="buddy-list" class="custom-button1">Messages</a>
+                </div>
+                <div class="profile-col">
+                        <a href="#showBuddyList" id="buddy-list" class="custom-button1">Buddy list</a>
+                    </div>
+            </div>
+            <div class="form-wrapper">
+                <form method="POST" target="_self">
+                    <table>
+                        <tr>
+                            <td><input type="submit" name="login" class="custom-button1" /></td>
+                            <td><input type="password" name="password" placeholder="Password" ></td>
+                            <td><input type="text" name="email" placeholder="E-mail"></td>
+                        </tr>
+                        <!--<tr>
+                            <td><a href="?create-account=true" class="custom-button1">Skappa Konto</a></td>
+                                
+                            <td><input type="submit" name="login" class="custom-button1" /></td>
+                        </tr>-->
+                    </table>
+                </form>
+            </div>
+            
+        </div>
+        <div id="master-container">
+            <div id="title"><a href="index.html">Training Buddies</a></div>
+            <div id="left-bar">
+                <div class="bar-header"></div>
+                <div id="left-content">
+                    <ul>
+                        <a href="index.html"><li><i class="fa fa-search"></i> Find Trainer</li></a>
+                        <a href="index.html"><li><i class="fa fa-envelope"></i> My Messages</li></a>
+                        <a href="index.html"><li><i class="fa fa-address-book"></i> Buddy List</li></a>
+                        <a href="index.html"><li><i class="fa fa-user"></i> My Profile</li></a>
+                        <a href="index.html"><li><i class="fa fa-times"></i> Log Out</li></a>
+                    </ul>
+                </div>
+            </div>
+            <div id="center-bar">
+                <div class="bar-header"></div>
+                <div id="center-content">
+                    <div class="profile-container">
+                        <div class="profile-header">
+                            <span class="profile-name">Nelson</span>
+                            <i class="fa fa-user-check"></i> <i class="fa fa-user-check"></i> <i class="fa fa-circle" style="color:rgba(0, 128, 0, 0.400)"></i>
+                        </div>
+                        <div class="profile-content">
+                            <span class="activity-tag">#Core</span>, 
+                            <span class="activity-tag">#StrengthTraining</span>, 
+                            <span class="activity-tag">#Basketball</span>
+                        </div>
+                    </div>
+                    <div class="profile-container">
+                        <div class="profile-header">
+                            <span class="profile-name">John</span>
+                            <i class="fa fa-circle" style="color:rgba(0, 128, 0, 0.400)"></i>
+                        </div>
+                        <div class="profile-content">
+                            <span class="activity-tag">#Core</span>
+                        </div>
+                    </div>
+                    <div class="profile-container">
+                        <div class="profile-header">
+                            <span class="profile-name">Doe</span>
+                            <i class="fa fa-user-check"></i> <i class="fa fa-circle" style="color:rgba(255, 0, 0, 0.400)"></i>
+                        </div>
+                        <div class="profile-content">
+                            <span class="activity-tag">#Core</span>
+                            <span class="activity-tag">#StrengthTraining</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="right-bar">
+                <div class="bar-header"></div>
+                <div id="right-content">
+                    <div class="go-active-link">Fitness 24/7,<div class="go-active-subtext">Kvarntorget 9</div></div>
+                    <div class="go-active-link">Fitness 24/7,<div class="go-active-subtext">Påvel Snickares gränd 1</div></div>
+                    <div class="go-active-link">Fitness 24/7,<div class="go-active-subtext">Bangårdsgatan 9</div></div>
+                    <div class="go-active-link">Friskis och Svettis,<div class="go-active-subtext">Väderkvarnsgatan 16</div></div>
+                    <div class="go-active-link">Fyrisskolan,<div class="go-active-subtext">Götgatan 17</div></div>
+                    <div class="go-active-link">Nordic Wellness,<div class="go-active-subtext">Kungsgatan 71</div></div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

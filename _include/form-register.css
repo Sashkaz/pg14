@@ -1,0 +1,41 @@
+.login-option:not(:last-child){
+    text-align: center !important;
+}
+.login-option img{
+    width: 20px;
+}
+.text-center{
+    text-align: center;
+}
+.text-justify{
+    text-align: justify;
+}
+.custom-button2{
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    display: inline-block;
+    font-weight: normal;
+    text-decoration: none;
+    background-color: #ff8800a9;
+    color: white;
+    padding: 5px 6px;
+    border: solid 2px #ff8800a9;
+    border-radius: 5px;
+    height: 45px;
+    font-family: Arial,Helvetica,sans-serif;
+    font-size: 25px;
+}
+.custom-button2:link{
+    color: white;
+}
+.custom-button2:visited{
+    color: white;
+}
+.custom-button2:hover{
+    background-color: #ff9914;;
+    cursor: pointer
+}
+.custom-button2:active{
+    color: white;
+}

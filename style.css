@@ -1,6 +1,7 @@
 :root {
     /* COLOR SCHEME */
-    --bg-primary-color: #f0f0f0;
+    /*--bg-primary-color: #f0f0f0;*/
+    --bg-primary-color: white;
     --bg-secondary-color: #555;
     --container-primary-color: #ffba60;
     --container-secondary-color: #ff9914;
@@ -181,7 +182,9 @@ body {
 #left-content ul li:hover {
     background-color: var(--container-secondary-color);
 }
-
+.nav-divider{
+    padding: 0px 15px;
+}
 .profile-container {
     margin: 10px 0px;
     padding: 10px;
