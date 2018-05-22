@@ -1,6 +1,7 @@
 :root {
     /* COLOR SCHEME */
-    --bg-primary-color: #f0f0f0;
+    /*--bg-primary-color: #f0f0f0;*/
+    --bg-primary-color: white;
     --bg-secondary-color: #555;
     --container-primary-color: #ff8800a9;
     --container-secondary-color: #f03232ab;
