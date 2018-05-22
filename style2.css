@@ -13,30 +13,57 @@
     --subtitle-color: #ffba60;
 
 
-/*     --container-primary-color: #ff8800a9;
-    --container-secondary-color: #f03232ab; */
+    --container-primary-color: #ff8800a9;
+    --container-secondary-color: #f03232ab;
 
 
-/*     --container-primary-color: #ff8800ad;
-    --container-secondary-color: #ffa600ad; */
+    --container-primary-color: #ff8800ad;
+    --container-secondary-color: #ffa600ad;
 
 
-/*     --container-primary-color: #7464ccb2;
-    --container-secondary-color: #9564ccb2; */
+    --container-primary-color: #7464ccb2;
+    --container-secondary-color: #9564ccb2;
 
 
-/*     --bg-primary-color: #e9ebee;
+    --bg-primary-color: #e9ebee;
     --container-primary-color: #3b5998;
     --container-secondary-color: #516ead;
     --text-primary-color: #d3dff0;
-    --text-secondary-color: #9cb4d8; */
+    --text-secondary-color: #9cb4d8;
 
-/*     --bg-primary-color: #eeede9;
+
+    --bg-primary-color: #eeede9;
     --container-primary-color: #ffa844;
     --container-secondary-color: #ffb765;
     --text-primary-color: #3d3b38;
-    --text-secondary-color: #635f5b;  */
-   
+    --text-secondary-color: #635f5b;
+
+
+    --bg-primary-color: #ff9f31;
+    --container-primary-color: #ffebc6;
+    --container-secondary-color: #ffd68a;
+    --title-color: #ffcb6b;
+
+
+    --bg-primary-color: #3b5998;
+    --container-primary-color: #e9ebee;
+    --container-secondary-color: #516ead;
+    --title-color: #d3dff0;
+
+
+    --bg-primary-color: #3f3e3c;
+    --container-primary-color: #ff8800;
+    --container-secondary-color: #ff9f32;
+    --text-primary-color: #f3eee9;
+    --text-secondary-color: #333230;
+    --title-color: #ffcb6b;
+
+/*     --bg-primary-color: #e7e3dc;
+    --container-primary-color: #ff8800;
+    --container-secondary-color: #ff9f32;
+    --text-primary-color: #353331;
+    --text-secondary-color: #6d6b66;
+    --title-color: #ff8800; */
 }
 
 body {
@@ -143,6 +170,7 @@ body {
 #left-content ul li {
     display: block;
     padding: 10px 5px;
+    font-size: 1.15em;
 }
 
 #left-content a {
@@ -181,4 +209,12 @@ body {
 .go-active-subtext {
     font-size: 0.8em;
     color: var(--text-secondary-color)
+}
+
+.fa fa-smile {
+    color: green;
+}
+
+.fa fa-frown {
+    color: red;
 }
