@@ -8,8 +8,8 @@
 <hr>
 <div class="login-option">
     <h2 class="text-center">Eller</h2>
-    <form name="register" class="form-layout text-justify"> 
-        <table class="table-layout">
+    <form name="register" action="_process/process-register.php" target="_self" method="POST">
+        <table class="table-layout text-justify">
             <tbody>
                 <tr>
                     <td><label for="uname">Förnamn:</label></td>
@@ -19,24 +19,24 @@
                 </tr>
                 <tr>
                     <td><label for="email">E-post:</label></td>
-                    <td><input type="text" name="email" /></td>
-                    <td><label for="pwd">Kön:</label></td>
-                    <td>
-                        <select id="gender">
-                            <option value="none">Välj</option>
-                            <option value="m">Kille</option>
-                            <option value="f">Tjej</option>
-                            <option value="o">Annat</option>
-                        </select> 
-                    </td>
+                    <td colspan="3"><input type="text" name="email" /></td>
                 </tr>
                 <tr>
                     <td><label for="pwd">Lösenord:</label></td>
                     <td><input type="password" name="pwd" /></td>
-                    <td><label for="re-pwd">Lösenord:</label></td>
+                    <td><label for="re-pwd">Skriv om Lösenord:</label></td>
                     <td><input type="password" name="re-pwd" /></td>
                 </tr>
                 <tr>
+                    <td><label for="pwd">Kön:</label></td>
+                        <td>
+                            <select id="gender">
+                                <option value="none">Välj</option>
+                                <option value="m">Kille</option>
+                                <option value="f">Tjej</option>
+                                <option value="o">Annat</option>
+                            </select> 
+                    </td>
                     <td><label for="pwd">Födelsedatum:</label></td>
                     <td>
                         <select id="year">
@@ -67,11 +67,12 @@
                             ?>
                         </select> 
                     </td>
-                
                 </tr>
                 <tr>
+                    <td></td>
+                    <td></td>
                     <td><a href="index.php" class="custom-button1">Tillbaka till login</a></td>
-                    <td class="text-align-r"><input class="custom-button1" type="button" value="Skappa konto" id="create-account" /></td>
+                    <td class="text-align-r"><input class="custom-button1" type="submit" id="create-account" /></td>
                 </tr>
             </tbody>
         </table>

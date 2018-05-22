@@ -4,6 +4,13 @@
 .login-option img{
     width: 20px;
 }
+.table-layout input{
+    width: 99%;
+}
+.table-layout{
+    width: 60%;
+    margin: auto;
+}
 .text-center{
     text-align: center;
 }
