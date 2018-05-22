@@ -1,23 +1,70 @@
 :root {
     /* COLOR SCHEME */
-    /*--bg-primary-color: #f0f0f0;*/
-    --bg-primary-color: white;
+    --bg-primary-color: #f0f0f0;
     --bg-secondary-color: #555;
-    --container-primary-color: #ff8800a9;
-    --container-secondary-color: #f03232ab;
-    --container-tertiary-color: #ca9d628a;
+    --container-primary-color: #ffba60;
+    --container-secondary-color: #ff9914;
+    --container-tertiary-color: #ca9d62;
     --container-quaternary-color: #777;
     --text-primary-color: #333;
-    --text-secondary-color: #777;
+    --text-secondary-color: #555;
     --text-tertiary-color: lightgray;
     --title-color: #ff9914;
     --subtitle-color: #ffba60;
-    /*
-    --container-primary-color: #ff8800a9;
-    --container-secondary-color: #ffd000a9;
-    */
-}
 
+
+    --container-primary-color: #ff8800a9;
+    --container-secondary-color: #f03232ab;
+
+
+    --container-primary-color: #ff8800ad;
+    --container-secondary-color: #ffa600ad;
+
+
+    --container-primary-color: #7464ccb2;
+    --container-secondary-color: #9564ccb2;
+
+
+    --bg-primary-color: #e9ebee;
+    --container-primary-color: #3b5998;
+    --container-secondary-color: #516ead;
+    --text-primary-color: #d3dff0;
+    --text-secondary-color: #9cb4d8;
+
+
+    --bg-primary-color: #eeede9;
+    --container-primary-color: #ffa844;
+    --container-secondary-color: #ffb765;
+    --text-primary-color: #3d3b38;
+    --text-secondary-color: #635f5b;
+
+
+    --bg-primary-color: #ff9f31;
+    --container-primary-color: #ffebc6;
+    --container-secondary-color: #ffd68a;
+    --title-color: #ffcb6b;
+
+
+    --bg-primary-color: #3b5998;
+    --container-primary-color: #e9ebee;
+    --container-secondary-color: #516ead;
+    --title-color: #d3dff0;
+
+
+    --bg-primary-color: #3f3e3c;
+    --container-primary-color: #ff8800;
+    --container-secondary-color: #ff9f32;
+    --text-primary-color: #f3eee9;
+    --text-secondary-color: #333230;
+    --title-color: #ffcb6b;
+
+/*     --bg-primary-color: #e7e3dc;
+    --container-primary-color: #ff8800;
+    --container-secondary-color: #ff9f32;
+    --text-primary-color: #353331;
+    --text-secondary-color: #6d6b66;
+    --title-color: #ff8800; */
+}
 
 body {
     padding: 0px;
@@ -29,6 +76,7 @@ body {
 
 #title {
     text-align: center;
+    margin-bottom: 15px;
 }
 #title a {
     text-align: center;
@@ -48,8 +96,8 @@ body {
     text-align: left;
     margin-top: 25px;
     width: 75%;
-    min-width: 870px;
-    max-width: 1920px;
+    min-width: 780px;
+    max-width: 1200px;
     height: 600px;
 }
 
@@ -57,7 +105,7 @@ body {
     float: left;
     display: inline-block;
     width: 15%;
-    min-width: 150px;
+    min-width: 140px;
     height: 100%;
 }
 
@@ -65,7 +113,7 @@ body {
     float: left;
     display: inline-block;
     width: 60%;
-    min-width: 500px;
+    min-width: 410px;
     height: 100%;
     margin: 0px 2%;
 }
@@ -74,7 +122,7 @@ body {
     float: left;
     display: inline-block;
     width: 15%;
-    min-width: 150px;
+    min-width: 140px;
     height: 100%;
 }
 
@@ -115,13 +163,34 @@ body {
 
 #left-content ul {
     list-style: none;
-    text-indent: -30px;
+    /*text-indent: -20px;*/
+    padding: 0;
+}
+
+#left-content ul li {
+    display: block;
+    padding: 10px 5px;
+    font-size: 1.15em;
+}
+
+#left-content a {
+    color: var(--text-primary-color);
+    text-decoration: none;
+}
+
+#left-content ul li:hover {
+    background-color: var(--container-secondary-color);
 }
 
 .profile-container {
     margin: 10px 0px;
     padding: 10px;
-    border-bottom: 3px solid var(--container-secondary-color);
+    border-bottom: 3px solid var(--container-primary-color);
+    cursor: pointer;
+}
+
+.profile-container:hover {
+    background-color: var(--container-primary-color);
 }
 
 .profile-name {
@@ -134,10 +203,18 @@ body {
 }
 
 .go-active-link:hover {
-    background-color: var(--container-primary-color);
+    background-color: var(--container-secondary-color);
 }
 
 .go-active-subtext {
     font-size: 0.8em;
     color: var(--text-secondary-color)
+}
+
+.fa fa-smile {
+    color: green;
+}
+
+.fa fa-frown {
+    color: red;
 }
