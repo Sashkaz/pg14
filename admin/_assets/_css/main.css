@@ -1,3 +1,80 @@
+body{
+    padding: 0;
+    margin: 0;
+    min-width: 800px !important;
+}
+.admin-top-nav{
+    width: 100%;
+    margin: 0;
+    padding: 5px 0px;
+    display: inline-flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    list-style-type: none;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: bold;
+    box-shadow: 0 0 10px rgba(128, 128, 128, 0.39);
+}
+.admin-top-nav button{
+    flex: 1;
+}
+.container{
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -moz-flex;
+    display: -webkit-flex;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin: 1% 0%;
+    box-shadow: 0px 0px 9px -2px gray;
+}
+.table {
+    display: flex;
+    flex-flow: column nowrap;
+    font-size: .8rem;
+    margin: 0.5rem;
+    line-height: 1.5;
+    /* border-bottom: 1px solid #d0d0d0; */
+    flex: 1 1 auto;
+}
+.th {
+    display: none;
+    font-weight: 700;
+    background-color: #f2f2f2;
+}
+.th > .td {
+    white-space: normal;
+    justify-content: center;
+}
+.tr {
+    width: 100%;
+    display: flex;
+    flex-flow: row nowrap;
+}
+.tr:nth-of-type(even) {
+    background-color: #f2f2f2;
+}
+.tr:nth-of-type(odd) {
+    background-color: #ffffff;
+}
+.td {
+    display: flex;
+    flex-flow: row nowrap;
+    flex-grow: 1;
+    flex-basis: 0;
+    padding: 0.5em;
+    word-break: break-word;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    justify-content: center;
+    min-width: 0px;
+    white-space: nowrap;
+    /* border-bottom: 1px solid #d0d0d0; */
+}
+
 .form-wrapper{
     width: 25%;
     margin: 10% auto;
@@ -10,13 +87,12 @@
     list-style-type: none;
     margin: 10px;
 }
-
 .form-wrapper ul li{
     width: 100%;
     margin: auto;;
     display: block;
 }
-.form-wrapper [type=text], .form-wrapper [type=password]{
+.input-style1{
     width: 100%;
     margin: 10px 0;
     padding: 10px 10px; 
@@ -31,10 +107,10 @@
     border:none;
     border-bottom: 1px solid #88D5E9;
 }
-.form-wrapper [type=text]:focus, .form-wrapper [type=password]:focus{
-    -moz-box-shadow: 0 2px 1px #88D5E9;
-    -webkit-box-shadow: 0 2px 1px #88D5E9;
-    box-shadow: 0 2px 1px #88D5E9;
+.input-style1:focus, .input-style1:focus{
+    -moz-box-shadow: 0px 5px 2px -3px #88D5E9;
+    -webkit-box-shadow: 0px 5px 2px -3px #88D5E9;
+    box-shadow: 0px 5px 2px -3px #88D5E9;
 }
 .custom-button1{
     background: #4B99AD;
@@ -45,9 +121,6 @@
 }
 .custom-button1:hover{
     background: #4691A4;
-    box-shadow:none;
-    -moz-box-shadow:none;
-    -webkit-box-shadow:none;
     cursor: pointer;
 }
 .text-center{
