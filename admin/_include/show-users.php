@@ -1,5 +1,5 @@
 <?php include("_models/db.php"); ?>
-<div><input type="text" name="search" placeholder="search" autocomplete="off" class="input-style1"></div>
+<div><input type="text" name="search" placeholder="search" class="input-style1"></div>
 <div class="table" id="user-table">
     <div class="tr th">
         <div class="td">User ID</div>

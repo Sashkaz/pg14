@@ -2,4 +2,4 @@
 <button class="custom-button1" id="show-users">Users</button>
 <button class="custom-button1" id="show-hashtags">Hashtags</button>
 <button class="custom-button1" id="show-admins">Admins</button>
-<button class="custom-button1" id="logout">Logout</button>
+<a class="custom-button1" href="_process/process-logout.php">Logout</a>
