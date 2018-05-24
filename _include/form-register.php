@@ -28,18 +28,18 @@
                     <td><input type="password" name="re-pwd" /></td>
                 </tr>
                 <tr>
-                    <td><label for="pwd">Kön:</label></td>
+                    <td><label for="gender">Kön:</label></td>
                         <td>
-                            <select id="gender">
+                            <select name="gender">
                                 <option value="none">Välj</option>
                                 <option value="m">Kille</option>
                                 <option value="f">Tjej</option>
                                 <option value="o">Annat</option>
                             </select> 
                     </td>
-                    <td><label for="pwd">Födelsedatum:</label></td>
+                    <td><label for="year">Födelsedatum:</label></td>
                     <td>
-                        <select id="year">
+                        <select name="year">
                             <?php   
                                 $x = 2018;
                                 while($x > 1950){
@@ -48,7 +48,7 @@
                                 }
                             ?>
                         </select> 
-                        <select id="month">
+                        <select name="month">
                             <?php   
                                 $x = 1;
                                 while($x <= 12){
@@ -57,7 +57,7 @@
                                 }
                             ?>
                         </select> 
-                        <select id="day">
+                        <select name="day">
                             <?php   
                                 $x = 1;
                                 while($x <= 31){
