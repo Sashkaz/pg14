@@ -104,5 +104,4 @@
 </div>
 <ul>
     <li><a href="?show-register-form=true" class="custom-button1" />Test Register Form</a></li>
-    <li><a href="?show-user-profile=true" class="custom-button1" />Test User Profile</a></li>
 </ul>
