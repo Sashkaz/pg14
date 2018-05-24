@@ -1,3 +1,34 @@
+.main-form form {
+    width: 80%;
+
+}
+
+.main-form input[type=text], .main-form input[type=password], .main-form input[type=email], .main-form select{
+    border: 1px var(--container-tertiary-color) solid;
+    background-color: var(--container-primary-color);
+    color: var(--text-primary-color);
+    font-size: 1.2em;
+    padding: 5px;
+    margin-top: 2px;
+}
+
+/* .main-form input[type=submit] {
+    border: 1px var(--container-tertiary-color) solid;
+    background-color: var(--container-primary-color);
+    color: var(--text-primary-color);
+    font-size: 1.2em;
+    padding: 5px;
+    margin-top: 2px;
+} */
+
+.main-form tbody {
+    width: 80%;
+}
+
+.main-form td {
+    margin: 0px 20px;
+}
+
 .login-option:not(:last-child){
     text-align: center !important;
 }
@@ -24,25 +55,25 @@
     display: inline-block;
     font-weight: normal;
     text-decoration: none;
-    background-color: #ff8800a9;
-    color: white;
-    padding: 5px 6px;
-    border: solid 2px #ff8800a9;
+    border: 1px var(--container-tertiary-color) solid;
+    background-color: var(--container-primary-color);
+    color: var(--text-primary-color);
+    font-size: 1.2em;
+    padding: 5px;
+    margin-top: 2px;
     border-radius: 5px;
-    height: 45px;
     font-family: Arial,Helvetica,sans-serif;
-    font-size: 25px;
 }
 .custom-button2:link{
-    color: white;
+    color: var(--text-primary-color);
 }
 .custom-button2:visited{
-    color: white;
+    color: var(--text-primary-color);
 }
 .custom-button2:hover{
-    background-color: #ff9914;;
-    cursor: pointer
+    background-color: var(--container-secondary-color);
+    cursor: pointer;
 }
 .custom-button2:active{
-    color: white;
+    color: var(--text-primary-color);
 }
