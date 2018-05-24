@@ -12,10 +12,10 @@
         <table class="table-layout text-justify">
             <tbody>
                 <tr>
-                    <td><label for="uname">Förnamn:</label></td>
-                    <td><input type="text" name="uname" /></td>
-                    <td><label for="uname">Efternamn:</label></td>
-                    <td><input type="text" name="uname" /></td>
+                    <td><label for="first-name">Förnamn:</label></td>
+                    <td><input type="text" name="first-name" /></td>
+                    <td><label for="last-name">Efternamn:</label></td>
+                    <td><input type="text" name="last-name" /></td>
                 </tr>
                 <tr>
                     <td><label for="email">E-post:</label></td>
