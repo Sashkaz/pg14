@@ -4,7 +4,7 @@
     --bg-secondary-color: rgba(85, 85, 85, 1.0);
     --container-primary-color: rgba(204, 204, 204,0.5);
     --container-secondary-color: rgba(219, 219, 219,0.5);
-    --container-tertiary-color: rgba(93, 122, 179, 0.5);
+    --container-tertiary-color: rgba(147, 176, 235, 0.5);
     --container-quaternary-color: rgba(119, 119, 119, 1.0);
     --text-primary-color: rgba(51, 51, 51, 1.0);;
     --text-secondary-color: rgba(63,63,63,0.85);
@@ -289,7 +289,7 @@ body {
     color: var(--text-primary-color);
 }
 .custom-button2:hover{
-    background-color: var(--container-secondary-color);
+    background-color: var(--container-tertiary-color);
     cursor: pointer;
 }
 .custom-button2:active{
