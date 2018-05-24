@@ -1,0 +1,55 @@
+.form-wrapper{
+    width: 25%;
+    margin: 10% auto;
+    max-width: 450px;
+    box-shadow: 0 0 10px rgba(128, 128, 128, 0.39);
+    border-radius: 10px;
+}
+.form-wrapper ul{
+    padding: 0;
+    list-style-type: none;
+    margin: 10px;
+}
+
+.form-wrapper ul li{
+    width: 100%;
+    margin: auto;;
+    display: block;
+}
+.form-wrapper [type=text], .form-wrapper [type=password]{
+    width: 100%;
+    margin: 10px 0;
+    padding: 10px 10px; 
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-transition: all 0.30s ease-in-out;
+    -moz-transition: all 0.30s ease-in-out;
+    -ms-transition: all 0.30s ease-in-out;
+    -o-transition: all 0.30s ease-in-out;
+    outline: none; 
+    border:none;
+    border-bottom: 1px solid #88D5E9;
+}
+.form-wrapper [type=text]:focus, .form-wrapper [type=password]:focus{
+    -moz-box-shadow: 0 2px 1px #88D5E9;
+    -webkit-box-shadow: 0 2px 1px #88D5E9;
+    box-shadow: 0 2px 1px #88D5E9;
+}
+.custom-button1{
+    background: #4B99AD;
+    padding: 8px 15px 8px 15px;
+    border: none;
+    color: #fff;
+    margin: 10px;
+}
+.custom-button1:hover{
+    background: #4691A4;
+    box-shadow:none;
+    -moz-box-shadow:none;
+    -webkit-box-shadow:none;
+    cursor: pointer;
+}
+.text-center{
+    text-align: center;
+}
