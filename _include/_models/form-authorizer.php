@@ -14,9 +14,11 @@
                 return "Var god och fyll i lösenordet."; 
             }elseif (strlen($input[4]) < 6) {//password validity
                 return "Löserordet måste bestå av minst 6 tecken.";
-            }elseif (time() < strtotime('+16 years', strtotime($input[5]))) {//age validity - should be working
+            }elseif ($input[4] !== $input[5]) {//password validity
+                return "Lösenord måste vara likadana.";
+            }elseif (time() < strtotime('+16 years', strtotime($input[6]))) {//age validity - should be working
                 return "Du måste vara minst 18 år gammal för att registrera dig själv eller minst 16 och ha målsmans godkännande ";
-            }elseif ($input[6] <= 2 && $input[6] >= 0) {//gender validity, correct values 0, 1, 2
+            }elseif ($input[7] == "none") {//gender validity, correct values 0, 1, 2
                 return "Ogiltig kön.";
             }else{
                 return 1;//if all ok then return 1
