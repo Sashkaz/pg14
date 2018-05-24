@@ -16,22 +16,20 @@
                     <td><input type="text" name="last-name" placeholder="Efternamn"/></td>
                 </tr>
                 <tr>
-                    <td colspan="2"><input type="text" name="email" placeholder="E-post"/></td>
-                </tr>
-                <tr>
                     <td><input type="password" name="pwd" placeholder="Lösenord"/></td>
                     <td><input type="password" name="re-pwd" placeholder="Upprepa Lösenord"/></td>
                 </tr>
                 <tr>
-                    <td>
-                        <select name="gender">
+                    <td colspan="2"><input type="text" name="email" placeholder="E-post"/></td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                    <select name="gender">
                             <option value="none" disabled selected>Kön</option>
-                            <option value=1>>Kille</option>
-                            <option value=2>Tjej</option>
+                            <option value=1>Man</option>
+                            <option value=2>Kvinna</option>
                             <option value=0>Annat</option>
-                        </select> 
-                    </td>
-                    <td>
+                        </select><span style=" float:right;">
                         <select name="year">
                         <option value="none" disabled selected>År</option>
                             <?php   
@@ -44,11 +42,11 @@
                         </select> 
                         <select name="month">
                         <option value="none" disabled selected>Månad</option>
-                            <?php
-                                 
+                            <?php                                
                                 $x = 1;
                                 while($x <= 12){
-                                    $monthName = date('F', mktime(0, 0, 0, $x, 10));  
+                                    $monthName = strftime('%B', mktime(0, 0, 0, $x));
+                                    $monthNames = strftime("%B");
                                     echo "<option value=$x>$monthName</option>";
                                     $x++;
                                 }
@@ -63,12 +61,13 @@
                                     $x++;
                                 }
                             ?>
-                        </select> 
+                        </select>
+                            </span>
                     </td>
                 </tr>
                 <tr>
                     <td><a href="index.php" class="custom-button2">Tillbaka till login</a></td>
-                    <td class="text-align-r"><input class="custom-button2" type="submit" id="create-account" /></td>
+                    <td><input class="custom-button2" type="submit" id="create-account" /></td>
                 </tr>
             </tbody>
         </table>

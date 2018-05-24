@@ -3,13 +3,22 @@
 
 }
 
-.main-form input[type=text], .main-form input[type=password], .main-form input[type=email], .main-form select{
+.center-form input[type=email] {
+    width: 100%;
+}
+
+.main-form input, .main-form select{
     border: 1px var(--container-tertiary-color) solid;
     background-color: var(--container-primary-color);
     color: var(--text-primary-color);
     font-size: 1.2em;
     padding: 5px;
     margin-top: 2px;
+}
+
+.main-form input:focus, .main-form select:focus, .custom-button2:focus {
+    background-color: var(--container-tertiary-color);
+    border-color: var(--container-primary-color);
 }
 
 /* .main-form input[type=submit] {
@@ -21,10 +30,6 @@
     margin-top: 2px;
 } */
 
-.main-form tbody {
-    width: 80%;
-}
-
 .main-form td {
     margin: 0px 20px;
 }
@@ -35,11 +40,8 @@
 .login-option img{
     width: 20px;
 }
-.table-layout input{
-    width: 99%;
-}
 .table-layout{
-    width: 60%;
+    width: 80%;
     margin: auto;
 }
 .text-center{
@@ -47,6 +49,10 @@
 }
 .text-justify{
     text-align: justify;
+}
+
+.text-right{
+    text-align: right;
 }
 .custom-button2{
     -moz-box-sizing: border-box;
