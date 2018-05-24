@@ -1,4 +1,5 @@
 
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -20,11 +21,11 @@
             <div id="center-bar">
                 <div id="center-content">
                     <?php 
-                        if(isset($_GET["show-register-form"]) && !empty($_GET["show-register-form"])){
-                            include("_include/form-register.php");
-                        }elseif(isset($_GET["show-user-profile"]) && !empty($_GET["show-user-profile"])){
+                        if(isset($_SESSION["uid"]) && !empty($_SESSION["uid"])){
                             include("_include/show-users.php");
-                        } ?> 
+                        }else{
+                            include("_include/form-register.php");
+                        }?> 
                 </div>
             </div>
             <div id="right-bar">
