@@ -1,4 +1,3 @@
-<link rel="stylesheet" type="text/css" href="_include/form-register.css">
 <div class="login-option">
     <h2><a href="#fb-login" class="custom-button2">Registrera dig genom Facebook <img src="_assets/_img/fb.png"/></a></h2>
 </div>
