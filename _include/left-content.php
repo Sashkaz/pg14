@@ -11,20 +11,32 @@
         </li>
         <li>
             <input type="checkbox" name="nav-city" value="3">
-            <label for="nav-city">Uppsala</label>	
+            <label for="nav-city">Uppsala</label>
         </li>
         <li>
             <input type="checkbox" name="nav-city" value="4">
-            <label for="nav-city">Stockholm</label>		
+            <label for="nav-city">Stockholm</label>
+        </li>
+        <li>
+            <input type="checkbox" name="nav-city" value="4">
+            <label for="nav-city">Göteborg</label>
+        </li>
+        <li>
+            <input type="checkbox" name="nav-city" value="5">
+            <label for="nav-city">Kalmar</label>
+        </li>
+        <li>
+            <input type="checkbox" name="nav-city" value="6">
+            <label for="nav-city">Karlstad</label>
         </li>
     </ul>
 </div>
 <div class="nav-divider">
-    <h3>Stad</h3>
+    <h3>Gym</h3>
     <ul class="nav-location-dropdown">
         <li>
             <input type="checkbox" name="nav-location" value="1">
-            <label for="nav-location">24/7</label>
+            <label for="nav-location">Fitness 24/7</label>
         </li>
         <li>
             <input type="checkbox" name="nav-location" value="2">
@@ -32,11 +44,15 @@
         </li>
         <li>
             <input type="checkbox" name="nav-location" value="3">
-            <label for="nav-location">Friskis&Svettis</label>	
+            <label for="nav-location">Friskis&Svettis</label>
         </li>
         <li>
             <input type="checkbox" name="nav-location" value="4">
-            <label for="nav-location">SATS</label>		
+            <label for="nav-location">SATS</label>
+        </li>
+        <li>
+            <input type="checkbox" name="nav-location" value="5">
+            <label for="nav-location">Actic</label>
         </li>
     </ul>
 </div>
@@ -45,19 +61,35 @@
     <ul class="nav-tag-dropdown">
         <li>
             <input type="checkbox" name="nav-tag" value="1">
-            <label for="nav-tag">Crossfit</label>
+            <label for="nav-tag">#Crossfit</label>
         </li>
         <li>
             <input type="checkbox" name="nav-tag" value="2">
-            <label for="nav-tag">Styrketräning</label>
+            <label for="nav-tag">#Styrketräning</label>
         </li>
         <li>
             <input type="checkbox" name="nav-tag" value="3">
-            <label for="nav-tag">Cardio</label>	
+            <label for="nav-tag">#Cardio</label>
         </li>
         <li>
             <input type="checkbox" name="nav-tag" value="4">
-            <label for="nav-tag">Zumba</label>		
+            <label for="nav-tag">#Zumba</label>
+        </li>
+        <li>
+            <input type="checkbox" name="nav-tag" value="5">
+            <label for="nav-tag">#Löpträning</label>
+        </li>
+        <li>
+            <input type="checkbox" name="nav-tag" value="6">
+            <label for="nav-tag">#Boxning</label>
+        </li>
+        <li>
+            <input type="checkbox" name="nav-tag" value="7">
+            <label for="nav-tag">#Cykling</label>
+        </li>
+        <li>
+            <input type="checkbox" name="nav-tag" value="8">
+            <label for="nav-tag">#Styrkelyft</label>
         </li>
     </ul>
 </div>
@@ -72,5 +104,5 @@
 </div>
 <ul>
     <li><a href="?show-register-form=true" class="custom-button1" />Test Register Form</a></li>
-    <li><a href="?show-user-profile=true" class="custom-button1" />Test User Profile</a></li>                
+    <li><a href="?show-user-profile=true" class="custom-button1" />Test User Profile</a></li>
 </ul>
