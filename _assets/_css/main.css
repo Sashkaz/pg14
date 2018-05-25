@@ -21,8 +21,6 @@
     --header-primary-color: rgba(219, 219, 219, 0.8);
     --btn-shadow-color: rgba(219, 219, 219, 1.0);
 }
-
-
 body {
     padding: 0px;
     margin: 0px;
@@ -30,7 +28,6 @@ body {
     background-color: var(--bg-primary-color);
     color: var(--text-primary-color);
 }
-
 #title {
     text-align: center;
     margin-bottom: 20px;
@@ -42,12 +39,10 @@ body {
     font-size: 2em;
     font-weight: bold;
 }
-
 #title a:hover {
     font-size: 2.05em;
     color: var(--subtitle-color);
 }
-
 #master-container {
     margin: 0px auto;
     text-align: left;
@@ -57,7 +52,6 @@ body {
     max-width: 1920px;
     height: 600px;
 }
-
 #left-bar {
     float: left;
     display: inline-block;
@@ -66,7 +60,6 @@ body {
     height: 100%;
     box-shadow: 5px 3px 5px grey;
 }
-
 #center-bar {
     float: left;
     display: inline-block;
@@ -75,7 +68,6 @@ body {
     height: 100%;
     margin: 0px 2%;
 }
-
 #right-bar {
     float: left;
     display: inline-block;
@@ -83,13 +75,11 @@ body {
     min-width: 150px;
     height: 100%;
 }
-
 .bar-header {
     color: var(--text-secondary-color);
     text-align: center;
     font-size: 1.2em;
 }
-
 #left-content {
     padding-top: 10px;
     border-top-left-radius: 10px;
@@ -98,7 +88,6 @@ body {
     height: 100%;
     width: 100%;
 }
-
 #center-content {
     padding-top: 10px;
     background-color: var(--container-secondary-color);
@@ -106,7 +95,6 @@ body {
     width: 100%;
     box-shadow: 5px 3px 5px grey;
 }
-
 #right-content {
     padding-top: 10px;
     border-top-right-radius: 10px;
@@ -116,7 +104,6 @@ body {
     width: 100%;
     box-shadow: 5px 3px 5px grey;
 }
-
 #left-content:hover, #center-content:hover, #right-content:hover {
     /*background-color: var(--container-secondary-color);*/
 }
@@ -133,7 +120,6 @@ body {
     padding: 10px;
     border-bottom: 3px solid var(--container-secondary-color);
 }
-
 .profile-name {
     font-weight: bold;
 }
@@ -151,14 +137,11 @@ body {
     font-size: 0.8em;
     color: var(--text-secondary-color)
 }
-
-
 .user-header{
     overflow: hidden;
     background-color: var(--header-primary-color);
     min-width: 870px;
     display: flex;
-    /*margin-right: 1%;*/
 }
 .profile-navigation-grid{
     display: flex;
@@ -218,15 +201,12 @@ body {
 .custom-button1:active{
     color: var(--btn-active-color);
 }
-
 .main-form form {
     width: 80%;
 }
-
 .center-form input[type=email] {
     width: 100%;
 }
-
 .main-form input, .main-form select{
     border: 1px var(--container-tertiary-color) solid;
     background-color: var(--container-primary-color);
@@ -236,12 +216,10 @@ body {
     margin-top: 2px;
     border-radius: 5px;
 }
-
 .main-form input:focus, .main-form select:focus, .custom-button2:focus {
     background-color: var(--container-tertiary-color);
     border-color: var(--container-primary-color);
 }
-
 .main-form td {
     margin: 0px 20px;
 }
