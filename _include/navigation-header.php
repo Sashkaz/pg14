@@ -3,13 +3,13 @@
         <img src="_assets/_img/150x150.jpeg" />
     </div>
     <div class="profile-col">
-        <a href="#goToProfile" id="my-profile" class="custom-button1">My Profile</a>
+        <a href="?show-profile=true" id="my-profile" class="custom-button1">My Profile</a>
     </div>
     <div class="profile-col">
-        <a href="#showMessages" id="buddy-list" class="custom-button1">Messages</a>
+        <a href="?show-messages=true" id="buddy-list" class="custom-button1">Messages</a>
     </div>
     <div class="profile-col">
-            <a href="#showBuddyList" id="buddy-list" class="custom-button1">Buddy list</a>
+            <a href="?show-buddy-list=true" id="buddy-list" class="custom-button1">Buddy list</a>
         </div>
 </div>
 <div class="form-wrapper">

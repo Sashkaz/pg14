@@ -22,7 +22,15 @@
                 <div id="center-content">
                     <?php 
                         if(isset($_SESSION["uid"]) && !empty($_SESSION["uid"])){
-                            include("_include/show-users.php");
+                            if(isset($_GET["show-profile"]) && !empty($_GET["show-profile"])){
+                                include("_include/show-own-profile.php"); 
+                            }elseif(isset($_GET["show-messages"]) && !empty($_GET["show-messages"])){
+                                include("_include/show-messages.php"); 
+                            }elseif(isset($_GET["show-buddy-list"]) && !empty($_GET["show-buddy-list"])){
+                                include("_include/show-own-buddy-list.php"); 
+                            }else{
+                               include("_include/show-users.php"); 
+                            }                            
                         }else{
                             include("_include/form-register.php");
                         }?> 
