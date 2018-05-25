@@ -1,5 +1,5 @@
-<button class="custom-button1" id="show-locations">Locations</button>
-<button class="custom-button1" id="show-users">Users</button>
-<button class="custom-button1" id="show-hashtags">Hashtags</button>
-<button class="custom-button1" id="show-admins">Admins</button>
+<a class="custom-button1" href="?locations=1">Locations</a>
+<a class="custom-button1" href="?users=1">Users</a>
+<a class="custom-button1" href="?hashtags=1">Hashtags</a>
+<a class="custom-button1" href="?admin=1">Admins</a>
 <a class="custom-button1" href="_process/process-logout.php">Logout</a>
