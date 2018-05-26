@@ -19,7 +19,7 @@
     </div>
     <?php
         $db = new Database("localhost", "root", "", "projekt");
-        $req = $db->q("SELECT * FROM user");
+        $req = $db->q("SELECT * FROM city");
         while ($row = $req->fetch_assoc()) {
             echo"
                 <div class=tr>
