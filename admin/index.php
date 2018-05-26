@@ -19,7 +19,7 @@
                 if(isset($_GET["users"]) && !empty($_GET["users"])){
                     include("_include/show-users.php");
                 }else if(isset($_GET["cities"]) && !empty($_GET["cities"])){
-                    include("_include/show-locations.php");
+                    include("_include/show-cities.php");
                 }else if(isset($_GET["hashtags"]) && !empty($_GET["hashtags"])){
                     include("_include/show-hashtags.php");
                 }else if(isset($_GET["admins"]) && !empty($_GET["admins"])){
