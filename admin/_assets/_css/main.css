@@ -34,6 +34,33 @@ a{
     margin: 1% 0%;
     box-shadow: 0px 0px 9px -2px gray;
 }
+.table-input{
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -moz-flex;
+    display: -webkit-flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: flex-end;
+    align-content: stretch;
+}
+
+
+.table-input div{
+    flex: 1;
+    flex-basis: auto;
+}
+.table-input div select{
+    padding: 8px 15px 8px 15px;
+}
+.table-input .new-input{
+    width: 10%;
+}
+.table-input .search-input{
+    width:90%;
+}
 .table {
     display: flex;
     flex-flow: column nowrap;
@@ -102,6 +129,7 @@ a{
     box-sizing: border-box;
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
+    transition: all 0.30s ease-in-out;
     -webkit-transition: all 0.30s ease-in-out;
     -moz-transition: all 0.30s ease-in-out;
     -ms-transition: all 0.30s ease-in-out;
