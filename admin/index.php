@@ -5,6 +5,7 @@
     <?php include("_include/_html/head.php"); ?>
 </head>
 <body>
+    <div id="dialog"></div>
     <?php
         if(isset($_SESSION["adminID"]) && !empty($_SESSION["adminID"])){
             echo "<div class=admin-top-nav>";
