@@ -26,10 +26,8 @@
                 }else{
                     include("_ajax/show-users.php");
                 }
-
-                echo "<script>";
-                    include("_assets/_js/main.js");
-                echo "</script>";
+                
+                include("_assets/_js/main.js");
             }else{
                 include("_include/login.php");
             }

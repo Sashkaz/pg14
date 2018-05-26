@@ -53,7 +53,7 @@ a{
     flex-basis: auto;
 }
 .table-input div select{
-    padding: 8px 15px 8px 15px;
+    padding: 8px 0px 8px 5px;
 }
 .table-input .new-input{
     width: 10%;
