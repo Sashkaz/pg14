@@ -152,7 +152,7 @@
 .ingoing-message {
     position: relative;
     background-color: var(--message-ingoing-color);
-    margin: 10px 10px 3px 10px;
+    margin: 10px 10px 3px 20px;
     padding: 10px;
     border-radius: 11px;
     max-width: 70%;
