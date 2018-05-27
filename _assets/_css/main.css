@@ -21,10 +21,16 @@
     --header-primary-color: rgba(219, 219, 219, 0.8);
     --btn-shadow-color: rgba(219, 219, 219, 1.0);
 }
+html {
+    overflow: hidden;
+    height: 100%;
+}
 body {
     padding: 0px;
     margin: 0px;
+    height: 100%;
     min-height: 100%;
+    overflow: auto;
     background-color: var(--bg-primary-color);
     color: var(--text-primary-color);
 }
@@ -57,52 +63,40 @@ body {
     display: inline-block;
     width: 15%;
     min-width: 150px;
-    height: 100%;
+    height: auto;
+    min-height: 860px;
     box-shadow: 5px 3px 5px grey;
+    background-color: var(--container-primary-color);
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
 }
 #center-bar {
     float: left;
     display: inline-block;
     width: 60%;
     min-width: 500px;
-    height: 100%;
+    height: auto;
+    min-height: 860px;
     margin: 0px 2%;
+    box-shadow: 5px 3px 5px grey;
+    background-color: var(--container-secondary-color);
 }
 #right-bar {
     float: left;
     display: inline-block;
     width: 15%;
     min-width: 150px;
-    height: 100%;
+    height: auto;
+    min-height: 860px;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    background-color: var(--container-primary-color);
+    box-shadow: 5px 3px 5px grey;
 }
 .bar-header {
     color: var(--text-secondary-color);
     text-align: center;
     font-size: 1.2em;
-}
-#left-content {
-    padding-top: 10px;
-    border-top-left-radius: 10px;
-    border-bottom-left-radius: 10px;
-    background-color: var(--container-primary-color);
-    height: 100%;
-    width: 100%;
-}
-#center-content {
-    padding-top: 10px;
-    background-color: var(--container-secondary-color);
-    height: 100%;
-    width: 100%;
-    box-shadow: 5px 3px 5px grey;
-}
-#right-content {
-    padding-top: 10px;
-    border-top-right-radius: 10px;
-    border-bottom-right-radius: 10px;
-    background-color: var(--container-primary-color);
-    height: 100%;
-    width: 100%;
-    box-shadow: 5px 3px 5px grey;
 }
 #left-content:hover, #center-content:hover, #right-content:hover {
     /*background-color: var(--container-secondary-color);*/
@@ -149,13 +143,15 @@ body {
     flex: 1;
 }
 .profile-col{
-    flex: 1;
+    /* flex: 1; */
     padding: 9px 0px 0px 0px;
     max-width: 100px;
+    margin: 0 1%;
 }
 .profile-col:first-child{
     padding-left: 10px;
     padding-top: 2px;
+    margin-right: 5%;
 }
 .profile-col img{
     width: 20%;

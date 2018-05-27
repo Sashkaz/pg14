@@ -1,0 +1,196 @@
+:root {
+    /* COLOR SCHEME */
+    --bg-primary-color: rgba(255, 255, 255, 1.0);;
+    --bg-secondary-color: rgba(85, 85, 85, 1.0);
+    --container-primary-color: rgba(204, 204, 204,0.5);
+    --container-secondary-color: rgba(219, 219, 219,0.5);
+    --container-tertiary-color: rgba(147, 176, 235, 0.5);
+    --container-quaternary-color: rgba(119, 119, 119, 1.0);
+    --text-primary-color: rgba(51, 51, 51, 1.0);;
+    --text-secondary-color: rgba(63,63,63,0.85);
+    --text-tertiary-color: rgba(255,255,255,1.0);;
+    --title-color: rgba(93, 121, 179, 0.63);
+    --subtitle-color: rgba(93, 121, 179, 0.8);
+    --btn-text-color: rgba(255, 255, 255, 1.0);
+    --btn-primary-color: rgba(93, 121, 179, 0.63);
+    --btn-border-color: rgba(219, 219, 219, 0.4);
+    --btn-visited-color: rgba(255, 255, 255, 1.0);
+    --btn-link-color: rgba(255, 255, 255, 1.0);
+    --btn-hover-color: rgba(93, 121, 179, 0.8);
+    --btn-active-color: rgba(255, 255, 255, 1.0);
+    --header-primary-color: rgba(219, 219, 219, 0.8);
+    --btn-shadow-color: rgba(219, 219, 219, 1.0);
+
+
+    --message-ingoing-color: rgba(147, 176, 235, 0.5);
+    --message-outgoing-color: rgba(93, 121, 179, 0.8);
+}
+
+#message-header {
+    height: 5%;
+    background-color: var(--container-primary-color);
+    text-align: center;
+    border: 1px solid var(--container-primary-color);
+    border-bottom-width: 3px;
+    box-sizing: border-box;
+}
+
+#message-header a {
+    font-weight: bold;
+    text-decoration: none;
+    font-size: 1.2em;
+    color: var(--text-primary-color);
+}
+
+#message-header a:hover {
+    color: var(--text-secondary-color);
+}
+
+#message-footer {
+    border: 1px solid var(--container-primary-color);
+    border-top-width: 3px;
+    background-color: var(--bg-primary-color);
+    height: 8%;
+    box-sizing: border-box;
+}
+
+#message-footer form {
+    height: 100%;
+    background-color: var(--bg-primary-color);
+    color: var(--text-primary-color);
+}
+
+#message-footer textarea {
+    resize: none;
+    padding: 10px;
+    border: none;
+    width: 80%;
+    height: 100%;
+    box-sizing: border-box;
+}
+
+#message-footer input[type=submit] {
+    float: right;
+    font-weight: bold;
+    font-size: 1.2em;
+    background-color: var(--bg-primary-color);
+    color: var(--btn-primary-color);
+    border: none;
+    padding: 10px;
+    width: 20%;
+    height: 100%;
+    cursor: pointer;
+    box-sizing: border-box;
+}
+
+#message-footer input[type="submit"]:hover {
+    color: var(--btn-hover-color);
+}
+
+/* .message-form textarea {
+    resize: none;
+    padding: 10px;
+    height: 100%;
+}
+ */
+#message-container {
+    /* background-color: var(--container-tertiary-color); */
+    overflow-y: scroll;
+    height: 87%;
+}
+
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #888; 
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #555; 
+}
+
+.clear-line {
+    clear: both;
+}
+
+.outgoing-message {
+    position: relative;
+    background-color: var(--message-outgoing-color);
+    margin: 10px 30px 3px 10px;
+    padding: 10px;
+    text-align: right;
+    border-radius: 11px;
+    float: right;
+    max-width: 70%;
+}
+
+.outgoing-message:after {
+	content: '';
+	position: absolute;
+	right: 0;
+	top: 50%;
+	width: 0;
+	height: 0;
+	border: 20px solid transparent;
+	border-left-color: var(--message-outgoing-color);
+	border-right: 0;
+	border-top: 0;
+	margin-top: -10px;
+	margin-right: -20px;
+}
+
+.ingoing-message {
+    position: relative;
+    background-color: var(--message-ingoing-color);
+    margin: 10px 10px 3px 20px;
+    padding: 10px;
+    border-radius: 11px;
+    max-width: 70%;
+    float: left;
+}
+
+.ingoing-message:after {
+	content: '';
+	position: absolute;
+	left: 0;
+	top: 50%;
+	width: 0;
+	height: 0;
+	border: 20px solid transparent;
+	border-right-color: var(--message-ingoing-color);
+	border-left: 0;
+	border-top: 0;
+	margin-top: -10px;
+	margin-left: -20px;
+}
+
+.sender-profile {
+    margin: 10px 0px 10px 10px;
+    float: left;
+}
+
+.sender-profile img {
+    max-width: 35px;
+    max-height: 35px;
+    border-radius: 30px;
+}
+
+.message-time {
+    font-size: 0.7em;
+    color: var(--text-secondary-color);
+    margin: 10px;
+    margin-top: -10px;
+    clear: both;
+    text-align: center;
+}
+
