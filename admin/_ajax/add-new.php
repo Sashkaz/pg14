@@ -12,7 +12,6 @@ $db = new Database("localhost", "root", "", "projekt");
         }elseif($_POST["inputType"] == "locations"){
             $sql = "insert into location (name, description, address, isGym, cityID) values ";
         }
-
         if($_POST["columns"] != 1){
             $basePos = 0;
             for($rows = 0; $rows < $_POST["rows"]; $rows++){
@@ -21,7 +20,14 @@ $db = new Database("localhost", "root", "", "projekt");
                         if($cols < ($_POST["columns"]-1))
                             $sql = $sql."'".$flattenedInput[$cols+$basePos]."',";
                         else 
-                            $sql = $sql."'".$flattenedInput[$cols+$basePos]."'";//admin priveliege
+                            $sql = $sql."'".$flattenedInput[$cols+$basePos]."', 1";// 1 is the pre-defiened value of admin priveliege
+
+                        if($cols == 3){//hash password, every 4th element is the password, pos 3 in array
+                            $flattenedInput[$cols+$basePos] = 
+                            $pwd = $flattenedInput[$cols+$basePos];
+                            $salt = md5($pwd);
+                            $flattenedInput[$cols+$basePos] = hash("sha256", $salt.$pwd.$salt);
+                        }
                     }
                     $basePos = $cols+$basePos;
                 if($rows < ($_POST["rows"]-1)){
@@ -39,12 +45,12 @@ $db = new Database("localhost", "root", "", "projekt");
                     $sql = $sql."('".$flattenedInput[$rows]."')";
             }
         }
+        
         if($db->q($sql))
             echo 1;
         else
             echo mysqli_error($db->db)." ".$sql;
         
-        //echo $sql;
         // var_dump($flattenedInput);
     }else{
         echo "Error";
