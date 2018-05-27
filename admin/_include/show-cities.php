@@ -18,7 +18,7 @@
     <div class="tr th">
         <div class="td">City ID</div>
         <div class="td important">Name</div>
-        <div class="td important">Action</div>
+        <div class="td">Action</div>
     </div>
     <?php
         $db = new Database("localhost", "root", "", "projekt");

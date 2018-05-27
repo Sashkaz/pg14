@@ -22,7 +22,7 @@
         <div class="td important">Address</div>
         <div class="td important">Indoor Gym</div>
         <div class="td important">City</div>
-        <div class="td important">Action</div>
+        <div class="td">Action</div>
     </div>
     <?php
         $db = new Database("localhost", "root", "", "projekt");

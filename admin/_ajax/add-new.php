@@ -20,10 +20,16 @@ $db = new Database("localhost", "root", "", "projekt");
                         if($cols < ($_POST["columns"]-1)){
                             $sql = $sql."'".$flattenedInput[$cols+$basePos]."',";
                         }else {
-                            $pwd = $flattenedInput[$cols+$basePos];
-                            $salt = md5($pwd);
-                            $hashedPwd = hash("sha256", $salt.$pwd.$salt);
-                            $sql = $sql."'".$hashedPwd."', 1";// 1 is the pre-defiened value of admin priveliege
+                            if(($_POST["inputType"] == "admins") && ($cols == 3)){
+                                $pwd = $flattenedInput[$cols+$basePos];
+                                $salt = md5($pwd);
+                                $checkForPWD = hash("sha256", $salt.$pwd.$salt);
+                                $sql = $sql."'".$checkForPWD."', 1";// 1 is the pre-defiened value of admin priveliege
+                            }else{
+                                $sql = $sql."'".$flattenedInput[$cols+$basePos]."'";//this is for locations
+                            }
+                            
+                            
                         }
                     }
                     $basePos = $cols+$basePos;
