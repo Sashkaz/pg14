@@ -81,7 +81,6 @@ body {
     font-size: 1.2em;
 }
 #left-content {
-    padding-top: 10px;
     border-top-left-radius: 10px;
     border-bottom-left-radius: 10px;
     background-color: var(--container-primary-color);
@@ -89,14 +88,12 @@ body {
     width: 100%;
 }
 #center-content {
-    padding-top: 10px;
     background-color: var(--container-secondary-color);
     height: 100%;
     width: 100%;
     box-shadow: 5px 3px 5px grey;
 }
 #right-content {
-    padding-top: 10px;
     border-top-right-radius: 10px;
     border-bottom-right-radius: 10px;
     background-color: var(--container-primary-color);
