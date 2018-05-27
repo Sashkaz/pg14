@@ -17,11 +17,11 @@
 <div class="table">
     <div class="tr th">
         <div class="td">Location ID</div>
-        <div class="td">Name</div>
-        <div class="td">Description</div>
-        <div class="td">Address</div>
-        <div class="td">Indoor Gym</div>
-        <div class="td">City</div>
+        <div class="td important">Name</div>
+        <div class="td important">Description</div>
+        <div class="td important">Address</div>
+        <div class="td important">Indoor Gym</div>
+        <div class="td important">City</div>
     </div>
     <?php
         $db = new Database("localhost", "root", "", "projekt");

@@ -9,19 +9,43 @@ $db = new Database("localhost", "root", "", "projekt");
             $sql = "insert into hashtaglist (name) values ";
         }elseif($_POST["inputType"] == "admins"){
             $sql = "insert into admin (firstName, lastName, email, password, adminPrivilege) values ";
+        }elseif($_POST["inputType"] == "locations"){
+            $sql = "insert into location (name, description, address, isGym, cityID) values ";
         }
-        for($i = 1; $i <= $_POST["inputAmmount"]; $i++){
-            if($i < $_POST["inputAmmount"])
-                $sql = $sql."('".$flattenedInput[$i-1]."'),";
-            else
-                $sql = $sql."('".$flattenedInput[$i-1]."')";
-            
+
+        if($_POST["columns"] != 1){
+            $basePos = 0;
+            for($rows = 0; $rows < $_POST["rows"]; $rows++){
+                $sql = $sql."(";
+                    for($cols = 0; $cols < ($_POST["columns"]); $cols++){
+                        if($cols < ($_POST["columns"]-1))
+                            $sql = $sql."'".$flattenedInput[$cols+$basePos]."',";
+                        else 
+                            $sql = $sql."'".$flattenedInput[$cols+$basePos]."'";//admin priveliege
+                    }
+                    $basePos = $cols+$basePos;
+                if($rows < ($_POST["rows"]-1)){
+                    $sql = $sql."),";
+                }
+                else {
+                    $sql = $sql.")";
+                }
+            }
+        }else {
+            for($rows = 0; $rows < $_POST["rows"]; $rows++){
+                if($rows < ($_POST["rows"]-1))
+                    $sql = $sql."('".$flattenedInput[$rows]."'),";
+                else
+                    $sql = $sql."('".$flattenedInput[$rows]."')";
+            }
         }
-        if($db->q($sql))
+        /*if($db->q($sql))
             echo 1;
         else
             echo mysqli_error($db->db)." ".$sql;
-        
+        */
+        echo $sql;
+        // var_dump($flattenedInput);
     }else{
         echo "Error";
     }

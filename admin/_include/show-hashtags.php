@@ -17,7 +17,7 @@
 <div class="table" id="user-table">
     <div class="tr th">
         <div class="td">Hashtag ID</div>
-        <div class="td">Name</div>
+        <div class="td important">Name</div>
     </div>
     <?php
         $db = new Database("localhost", "root", "", "projekt");
