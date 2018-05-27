@@ -1,3 +1,24 @@
+<?php
+include("_models/db.php");
+$db = new Database("localhost", "root", "", "projekt");
+if(isset($_SESSION["uid"]) && !empty($_SESSION["uid"]))
+{
+    $curUser = $_SESSION["uid"];
+}
+else
+{
+    echo "You need to log in!";
+}
+if (isset($_GET['u']) )
+{
+    $targetUser = $_GET["u"];
+}
+else
+{
+    echo "You need to select a conversation";
+}
+$sql = "SELECT * FROM messages WHERE relatingUser = ".$curUser." AND relatedUser = ".$targetUser." ";
+?>
 <link rel="stylesheet" type="text/css" href="_include/messages-css.css">
 <div id="message-header">
 <a href="?show-profile=true">Tom Cruise</a>
