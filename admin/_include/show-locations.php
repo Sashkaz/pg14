@@ -22,6 +22,7 @@
         <div class="td important">Address</div>
         <div class="td important">Indoor Gym</div>
         <div class="td important">City</div>
+        <div class="td important">Action</div>
     </div>
     <?php
         $db = new Database("localhost", "root", "", "projekt");
@@ -35,6 +36,7 @@
                     <div class=td>$row[address]</div>
                     <div class=td>".(($row["isGym"] == 1)? "True": "False")."</div>
                     <div class=td>".$row["cityName"]."</div>
+                    <div class=td><button id='$row[activityID]_delete_locations'> Delete</button></div>
                 </div>
             ";
         }

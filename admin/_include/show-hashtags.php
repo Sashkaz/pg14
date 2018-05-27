@@ -18,6 +18,7 @@
     <div class="tr th">
         <div class="td">Hashtag ID</div>
         <div class="td important">Name</div>
+        <div class="td important">Action</div>
     </div>
     <?php
         $db = new Database("localhost", "root", "", "projekt");
@@ -27,6 +28,7 @@
                 <div class=tr>
                     <div class=td>$row[hashtagListID]</div>
                     <div class=td>$row[name]</div>
+                    <div class=td><button id='$row[hashtagListID]_delete_hashtags'> Delete</button></div>
                 </div>
             ";
         }

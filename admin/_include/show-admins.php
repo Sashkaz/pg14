@@ -36,14 +36,7 @@
                     <div class=td>$row[email]</div>
                     <div class=td>$row[adminPrivilege]</div>
                     <div class=td>$row[lastLogin]</div>
-                    <div class=td>
-                        <select name=admin_action id=admin_action>
-                            <option value=1_$row[adminID]>Active</option>
-                            <option value=2_$row[adminID]>Inactive</option>
-                            <option value=3_$row[adminID]>Block</option>
-                            <option value=4_$row[adminID]>Delete</option>
-                        </select>
-                    </div>
+                    <div class=td><button id='$row[adminID]_delete_admins'> Delete</button></div>
                 </div>
             ";
         }

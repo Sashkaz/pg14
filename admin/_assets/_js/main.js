@@ -5,7 +5,6 @@
         var columns = $('.important').length;
         $("#dialog").load("_include/_pop-input/_add.php", { type: type[2], ammount: rows, columns: columns}, function() {}).fadeIn();
     });
-
     $(document).on("click", "[id^='request_add_']", function(){
         var type = $(this).attr('id').split('_');
         var columns = $('.important').length;
@@ -41,6 +40,7 @@
                 }
         );
     });
+    
     $(document).on("click", '#cancel', function(){
         $("#dialog").val("").fadeOut();
     });
