@@ -1,7 +1,7 @@
 <link rel="stylesheet" type="text/css" href="_include/show-users.css">
 <link rel="stylesheet" type="text/css" href="_include/show-own-buddy-list.css">
 <div class="filter-buddy">
-    <input name=""class="custom-input1">
+    <input id="search-buddy" class="custom-input1" placeholder="Skriv namnet på din buddy/trainer">
 </div>
 <div class="friend-container">
     <div class="prof-container">
