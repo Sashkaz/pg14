@@ -139,6 +139,7 @@ body {
     background-color: var(--header-primary-color);
     min-width: 870px;
     display: flex;
+    height: 41px;
 }
 .profile-navigation-grid{
     display: flex;
@@ -161,6 +162,7 @@ body {
 }
 .form-wrapper {
     padding: 5px 5px 5px 0px;
+    margin-left: auto;
 }
 .form-wrapper table{
     text-align: right;
