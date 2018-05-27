@@ -1,0 +1,47 @@
+html {
+    overflow: hidden;
+    height: 100%;
+}
+body {
+    height: 100%;
+    overflow: auto;
+}
+#left-bar{
+    height: auto !important;
+    min-height: 860px;
+    background-color: var(--container-primary-color);
+}
+#center-bar{
+    height: auto !important;
+    min-height: 860px;
+}
+#right-bar{
+    height: auto !important;
+    min-height: 860px;
+}
+#center-content{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-content: flex-start;
+    flex-wrap: wrap;
+}
+.prof-container{
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    width: 25%;
+    margin: 10px 10px;
+    max-width: 150px;
+    background-color: white; 
+}
+.prof-container .user-pic img{
+    width: 30%;
+    border-radius: 10px;
+}
+.prof-container .user-pic{
+    align-content: space-around;
+}
+.prof-container div{
+    flex: 1;
+}

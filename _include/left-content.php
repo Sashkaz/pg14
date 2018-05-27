@@ -103,5 +103,5 @@
     </ul>
 </div>
 <ul>
-    <li><a href="?show-register-form=true" class="custom-button1" />Test Register Form</a></li>
+    <li><a href="?show-register-form=true" class="custom-button1" >Test Register Form</a></li>
 </ul>
