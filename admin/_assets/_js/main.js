@@ -31,7 +31,7 @@
                 rows: rows,
                 columns: columns}, 
                 function(data){
-                    if(!isNaN(data)){
+                   if(!isNaN(data)){
                         $("#dialog").val("").fadeOut();
                         $(".container").load("_include/show-"+type[2]+".php").fadeIn();
                     }else{

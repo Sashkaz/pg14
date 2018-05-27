@@ -17,16 +17,13 @@ $db = new Database("localhost", "root", "", "projekt");
             for($rows = 0; $rows < $_POST["rows"]; $rows++){
                 $sql = $sql."(";
                     for($cols = 0; $cols < ($_POST["columns"]); $cols++){
-                        if($cols < ($_POST["columns"]-1))
+                        if($cols < ($_POST["columns"]-1)){
                             $sql = $sql."'".$flattenedInput[$cols+$basePos]."',";
-                        else 
-                            $sql = $sql."'".$flattenedInput[$cols+$basePos]."', 1";// 1 is the pre-defiened value of admin priveliege
-
-                        if($cols == 3){//hash password, every 4th element is the password, pos 3 in array
-                            $flattenedInput[$cols+$basePos] = 
+                        }else {
                             $pwd = $flattenedInput[$cols+$basePos];
                             $salt = md5($pwd);
-                            $flattenedInput[$cols+$basePos] = hash("sha256", $salt.$pwd.$salt);
+                            $hashedPwd = hash("sha256", $salt.$pwd.$salt);
+                            $sql = $sql."'".$hashedPwd."', 1";// 1 is the pre-defiened value of admin priveliege
                         }
                     }
                     $basePos = $cols+$basePos;
@@ -51,7 +48,8 @@ $db = new Database("localhost", "root", "", "projekt");
         else
             echo mysqli_error($db->db)." ".$sql;
         
-        // var_dump($flattenedInput);
+        // echo $sql;
+        // var_dump($sql);
     }else{
         echo "Error";
     }
