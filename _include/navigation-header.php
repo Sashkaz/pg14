@@ -1,3 +1,4 @@
+<?php if(isset($_SESSION["uid"]) && !empty($_SESSION["uid"])){?>
 <div class="profile-navigation-grid">
     <div class="profile-col">
         <img src="_assets/_img/150x150.jpeg" />
@@ -10,8 +11,16 @@
     </div>
     <div class="profile-col">
             <a href="?show-buddy-list=true" id="buddy-list" class="custom-button1">Buddy list</a>
-        </div>
+    </div>
 </div>
+<div class="form-wrapper">
+    <table>
+        <tr>
+            <td><a href="_process/process-logout.php" class="custom-button1" >Logout</a></td>
+        </tr>
+    </table>
+</div>
+<?php }else{ ?>
 <div class="form-wrapper">
     <form method="POST" action="_process/process-login.php" target="_self">
         <table>
@@ -28,3 +37,4 @@
         </table>
     </form>
 </div>
+<?php }?>
