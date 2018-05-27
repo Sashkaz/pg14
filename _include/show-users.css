@@ -1,24 +1,3 @@
-html {
-    overflow: hidden;
-    height: 100%;
-}
-body {
-    height: 100%;
-    overflow: auto;
-}
-#left-bar{
-    height: auto !important;
-    min-height: 860px;
-    background-color: var(--container-primary-color);
-}
-#center-bar{
-    height: auto !important;
-    min-height: 860px;
-}
-#right-bar{
-    height: auto !important;
-    min-height: 860px;
-}
 #center-content{
     display: flex;
     flex-direction: row;
