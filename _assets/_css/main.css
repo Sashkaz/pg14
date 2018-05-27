@@ -165,7 +165,7 @@ body {
 }
 .form-wrapper {
     padding: 5px 5px 5px 0px;
-    margin: 0px 0px 0 77%;
+    margin-left: auto;
 }
 .form-wrapper table{
     text-align: right;
