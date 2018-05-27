@@ -39,12 +39,12 @@ $db = new Database("localhost", "root", "", "projekt");
                     $sql = $sql."('".$flattenedInput[$rows]."')";
             }
         }
-        /*if($db->q($sql))
+        if($db->q($sql))
             echo 1;
         else
             echo mysqli_error($db->db)." ".$sql;
-        */
-        echo $sql;
+        
+        //echo $sql;
         // var_dump($flattenedInput);
     }else{
         echo "Error";
