@@ -28,7 +28,7 @@
                 <div class=tr>
                     <div class=td>$row[hashtagListID]</div>
                     <div class=td>$row[name]</div>
-                    <div class=td><button id='$row[hashtagListID]_delete_hashtags'> Delete</button></div>
+                    <div class=td><button id='delete_hashtags_$row[hashtagListID]'> Delete</button></div>
                 </div>
             ";
         }

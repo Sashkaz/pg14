@@ -28,7 +28,7 @@
                 <div class=tr>
                     <div class=td>$row[cityID]</div>
                     <div class=td>$row[name]</div>
-                    <div class=td><button id='$row[cityID]_delete_cities'> Delete</button></div>
+                    <div class=td><button id='delete_cities_$row[cityID]'> Delete</button></div>
                 </div>
             ";
         }

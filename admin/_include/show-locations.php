@@ -36,7 +36,7 @@
                     <div class=td>$row[address]</div>
                     <div class=td>".(($row["isGym"] == 1)? "True": "False")."</div>
                     <div class=td>".$row["cityName"]."</div>
-                    <div class=td><button id='$row[activityID]_delete_locations'> Delete</button></div>
+                    <div class=td><button id='delete_locations_$row[activityID]'> Delete</button></div>
                 </div>
             ";
         }

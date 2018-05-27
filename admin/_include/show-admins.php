@@ -36,7 +36,7 @@
                     <div class=td>$row[email]</div>
                     <div class=td>$row[adminPrivilege]</div>
                     <div class=td>$row[lastLogin]</div>
-                    <div class=td><button id='$row[adminID]_delete_admins'> Delete</button></div>
+                    <div class=td><button id='delete_admins_$row[adminID]'> Delete</button></div>
                 </div>
             ";
         }
