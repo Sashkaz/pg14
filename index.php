@@ -28,6 +28,8 @@
                                 include("_include/show-messages.php"); 
                             }elseif(isset($_GET["show-buddy-list"]) && !empty($_GET["show-buddy-list"])){
                                 include("_include/show-own-buddy-list.php"); 
+                            }elseif(isset($_GET["show-users"]) && !empty($_GET["show-users"])){
+                                include("_include/show-users.php"); 
                             }else{
                                include("_include/show-users.php"); 
                             }                            
