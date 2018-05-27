@@ -3,7 +3,7 @@
     <div class="user-pic"><img src="_assets/_img/150x150.jpeg" ></div>
     <div class="user-info">
         <div class="profile-name">
-            <div class="profile-name">Nelson</div>
+            <div class="profile-name">Alexandru Cheltuitor</div>
             <div class="profile-verified">(v1) (v2) (a)</div>
             <div class="profile-tag">
                 <span class="activity-tag">#Core</span>, 
@@ -17,7 +17,7 @@
     <div class="user-pic"><img src="_assets/_img/150x150.jpeg" ></div>
     <div class="user-info">
         <div class="profile-name">
-            <div class="profile-name">Nelson</div>
+            <div class="profile-name">Nelson Christensen</div>
             <div class="profile-verified">(v1) (v2) (a)</div>
             <div class="profile-tag">
                 <span class="activity-tag">#Core</span>, 
@@ -31,7 +31,7 @@
     <div class="user-pic"><img src="_assets/_img/150x150.jpeg" ></div>
     <div class="user-info">
         <div class="profile-name">
-            <div class="profile-name">Nelson</div>
+            <div class="profile-name">Jesper Danielsson</div>
             <div class="profile-verified">(v1) (v2) (a)</div>
             <div class="profile-tag">
                 <span class="activity-tag">#Core</span>, 
