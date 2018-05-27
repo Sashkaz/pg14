@@ -185,11 +185,20 @@
     border-radius: 30px;
 }
 
-.message-time {
+.outgoing-message-time {
+    float: right;
     font-size: 0.7em;
     color: var(--text-secondary-color);
-    margin: 10px;
-    margin-top: -10px;
+    margin: 0px 30px 10px 10px;
+    clear: both;
+    text-align: center;
+}
+
+.ingoing-message-time {
+    float: left;
+    font-size: 0.7em;
+    color: var(--text-secondary-color);
+    margin: -5px 10px 10px 65px;
     clear: both;
     text-align: center;
 }
