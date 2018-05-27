@@ -143,13 +143,15 @@ body {
     flex: 1;
 }
 .profile-col{
-    flex: 1;
+    /* flex: 1; */
     padding: 9px 0px 0px 0px;
     max-width: 100px;
+    margin: 0 1%;
 }
 .profile-col:first-child{
     padding-left: 10px;
     padding-top: 2px;
+    margin-right: 5%;
 }
 .profile-col img{
     width: 20%;
