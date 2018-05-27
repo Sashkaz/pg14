@@ -1,7 +1,7 @@
 <?php include("../_include/_models/db.php"); ?>
 <div class="table-input">
     <div class="new-input">
-        <button id="add_new_city" class="custom-button1">Add New</button> 
+        <button id="add_new_cities" class="custom-button1">Add New</button> 
         <select id="ammount_insert">
             <?php
                 for($i = 1; $i <=10; $i++){
@@ -18,21 +18,7 @@
     <div class="tr th">
         <div class="td">City ID</div>
         <div class="td">Name</div>
-        <!--<div class="td">Ammount of Gym/Locations</div>
-        <div class="td">Ammount of Users</div>-->
     </div>
-    <!--<div class=tr>
-        <div class=td>1</div>
-        <div class=td>Uppsala</div>
-    </div>
-    <div class=tr>
-        <div class=td>2</div>
-        <div class=td>Stockholm</div>
-    </div>
-    <div class=tr>
-        <div class=td>3</div>
-        <div class=td>Linköping</div>
-    </div>-->
     <?php
         $db = new Database("localhost", "root", "", "projekt");
         $req = $db->q("SELECT * FROM city order by name");

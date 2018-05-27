@@ -19,7 +19,7 @@
                 function(data){
                     if(!isNaN(data)){
                         $("#dialog").val("").fadeOut();
-                        $(".container").load("_include/show-cities.php").fadeIn();
+                        $(".container").load("_include/show-"+type[2]+".php").fadeIn();
                     }else{
                         alert(data);
                     }

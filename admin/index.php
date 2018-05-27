@@ -24,6 +24,8 @@
                     include("_include/show-hashtags.php");
                 }else if(isset($_GET["admins"]) && !empty($_GET["admins"])){
                     include("_include/show-admins.php");
+                }else if(isset($_GET["locations"]) && !empty($_GET["locations"])){
+                    include("_include/show-locations.php");
                 }else{
                     include("_include/show-users.php");
                 }

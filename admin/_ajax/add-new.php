@@ -3,7 +3,7 @@ include("../_include/_models/db.php");
 $db = new Database("localhost", "root", "", "projekt");
     if(isset($_POST) && !empty($_POST)){
         $flattenedInput = flattenArray($_POST["input"]);
-        if($_POST["inputType"] == "city"){
+        if($_POST["inputType"] == "cities"){
             $sql = "insert into city (name) values ";
         }elseif($_POST["inputType"] == "hashtags"){
             $sql = "insert into hashtaglist (name) values ";
