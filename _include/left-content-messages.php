@@ -9,7 +9,6 @@ if(isset($_SESSION["uid"]) && !empty($_SESSION["uid"]))
     SELECT DISTINCT relatedUser as targetUser FROM messages WHERE relatingUser = ".$curUser."";
     $conversationResults = $db->q($conversationQuery);
 ?>
-<link rel="stylesheet" type="text/css" href="_include/left-messages-css.css">
 <div id="conversation-container">
     <?php
     while ( $row = $conversationResults -> fetch_assoc ())
