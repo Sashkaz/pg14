@@ -1,5 +1,5 @@
 <?php
-include("_models/db.php");
+/* include("_models/db.php"); */
 if(isset($_SESSION["uid"]) && !empty($_SESSION["uid"]))
 {
     $curUser = $_SESSION["uid"];
@@ -16,11 +16,11 @@ else
 {
     die("You need to select a conversation.");
 }
-$userdb = new Database("localhost", "root", "", "projekt");
+$db = new Database("localhost", "root", "", "projekt");
 $targetUserQuery = "SELECT userID, firstName, lastName, profilePicURL
 FROM User
 WHERE publicID = ".$targetUser." limit 1";
-$targetUserResult = $userdb->q($targetUserQuery);
+$targetUserResult = $db->q($targetUserQuery);
 if($targetUserResult->num_rows == 0)
 {
     die("Could not find target user");
@@ -29,7 +29,6 @@ $targetUserRow = $targetUserResult->fetch_assoc();
 $targetUserID = $targetUserRow["userID"];
 $targetUserFname = $targetUserRow["firstName"];
 $targetUserPic = $targetUserRow["profilePicURL"];
-$db = new Database("localhost", "root", "", "projekt");
 $messageQuery = "SELECT * FROM messages WHERE (relatingUser = ".$curUser." AND relatedUser = ".$targetUserID.") OR (relatingUser =".$targetUserID." AND relatedUser = ".$curUser.")";
 $messageResults = $db->q($messageQuery);
 ?>
