@@ -1,5 +1,5 @@
 <?php
-/* include("_models/db.php"); */
+//include("_models/db.php");
 if(isset($_SESSION["uid"]) && !empty($_SESSION["uid"]))
 {
     $curUser = $_SESSION["uid"];
