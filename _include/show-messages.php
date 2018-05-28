@@ -1,13 +1,8 @@
-<div class="messages-wrap">
-    <?php
-    if(isset($_SESSION["uid"]) && !empty($_SESSION["uid"]))
-    {
-        $curUser = $_SESSION["uid"];
-    }
-    else
-    {
-        die("You need to log in to see messages.");
-    }
+<?php
+//include("_models/db.php");
+if(isset($_SESSION["uid"]) && !empty($_SESSION["uid"]))
+{
+    $curUser = $_SESSION["uid"];
     if (isset($_GET['u']) )
     {
         $targetUser = $_GET["u"];
