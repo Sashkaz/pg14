@@ -115,7 +115,7 @@ body {
     flex-direction: row;
     justify-content: space-evenly;
     flex-wrap: wrap;
-    margin-top: 2%;
+    margin-top: 0%;
     margin-bottom: 2%;
 }
 .filter-buddy{
@@ -294,7 +294,10 @@ body {
 .custom-input1:focus{
     box-shadow: 0px 10px 15px -15px var(--btn-primary-color);
 }
-/* SHOW MESSAGES */'
+/* SHOW MESSAGES */
+.messages-wrap{
+    width: 100%;
+}
 #message-header {
     height: 5%;
     background-color: var(--container-primary-color);
@@ -404,18 +407,18 @@ body {
 }
 
 .outgoing-message:after {
-	content: '';
-	position: absolute;
-	right: 0;
-	top: 50%;
-	width: 0;
-	height: 0;
-	border: 20px solid transparent;
-	border-left-color: var(--message-outgoing-color);
-	border-right: 0;
-	border-top: 0;
-	margin-top: -10px;
-	margin-right: -20px;
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 50%;
+    width: 0;
+    height: 0;
+    border: 20px solid transparent;
+    border-left-color: var(--message-outgoing-color);
+    border-right: 0;
+    border-top: 0;
+    margin-top: -10px;
+    margin-right: -20px;
 }
 
 .ingoing-message {
@@ -429,18 +432,18 @@ body {
 }
 
 .ingoing-message:after {
-	content: '';
-	position: absolute;
-	left: 0;
-	top: 50%;
-	width: 0;
-	height: 0;
-	border: 20px solid transparent;
-	border-right-color: var(--message-ingoing-color);
-	border-left: 0;
-	border-top: 0;
-	margin-top: -10px;
-	margin-left: -20px;
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    width: 0;
+    height: 0;
+    border: 20px solid transparent;
+    border-right-color: var(--message-ingoing-color);
+    border-left: 0;
+    border-top: 0;
+    margin-top: -10px;
+    margin-left: -20px;
 }
 
 .sender-profile {
@@ -455,7 +458,7 @@ body {
 }
 
 .message-time {
-    font-size: 0.7em;
+    font-size: 0.7em;1
     color: var(--text-secondary-color);
     margin: 10px;
     margin-top: -10px;
