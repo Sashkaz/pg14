@@ -10,8 +10,8 @@
                 while ($row = $req->fetch_assoc()) {
                     echo "
                         <li>
-                            <input type=checkbox name=nav-city value=$row[cityID]>
-                            <label for=nav-city>$row[name]</label>
+                            <input type=checkbox name=nav_city value=$row[cityID]>
+                            <label for=nav_city>$row[name]</label>
                         </li>";
                 }
             }else{
@@ -28,8 +28,8 @@
                 while ($row = $req->fetch_assoc()) {
                     echo "
                         <li>
-                            <input type=checkbox name=nav-location value=$row[activityID]>
-                            <label for=nav-location>$row[name]</label>
+                            <input type=checkbox name=nav_location value=$row[activityID]>
+                            <label for=nav_location>$row[name]</label>
                         </li>";
                 }
             }else{
@@ -46,8 +46,8 @@
                 while ($row = $req->fetch_assoc()) {
                     echo "
                         <li>
-                            <input type=checkbox name=nav-tag value=$row[hashtagListID]>
-                            <label for=nav-tag>$row[name]</label>
+                            <input type=checkbox name=nav_tag value=$row[hashtagListID]>
+                            <label for=nav_tag>$row[name]</label>
                         </li>";
                 }
             }else{
