@@ -41,5 +41,5 @@ if(!$db->q($sendMessageQuery))
 {
     die("Could not send message");
 }
-header("Location: ../index.php?show-messages=true&u=".$targetUser."#message-footer");
+header("Location: ../index.php?show-messages=true&u=".$targetUser."");
 ?>
