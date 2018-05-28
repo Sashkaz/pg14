@@ -213,7 +213,7 @@ body {
     min-width: 870px;
     display: flex;
     height: 41px;
-    box-shadow: 0px 0px 5px 6px var(--container-secondary-color);
+    box-shadow: 0px 0px 10px 0px gray;
 }
 .profile-navigation-grid{
     flex: 1;
