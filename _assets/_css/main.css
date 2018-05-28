@@ -58,7 +58,7 @@ body {
     min-width: 870px;
     max-width: 1920px;
     height: 600px;
-    margin-bottom: 100px;
+    margin-bottom: 20%;
 }
 #left-bar {
     float: left;
@@ -67,7 +67,7 @@ body {
     min-width: 150px;
     height: auto;
     min-height: 860px;
-    box-shadow: 5px 3px 5px grey;
+    box-shadow: 5px 0px 20px 12px grey;
     background-color: var(--container-primary-color);
     border-top-left-radius: 10px;
     border-bottom-left-radius: 10px;
@@ -80,7 +80,7 @@ body {
     height: auto;
     min-height: 860px;
     margin: 0px 2%;
-    box-shadow: 5px 3px 5px grey;
+    box-shadow: 0px 0px 20px 10px grey;
     background-color: var(--container-secondary-color);
 }
 #right-bar {
@@ -93,7 +93,7 @@ body {
     border-top-right-radius: 10px;
     border-bottom-right-radius: 10px;
     background-color: var(--container-primary-color);
-    box-shadow: 5px 3px 5px grey;
+    box-shadow: -5px 0px 20px 12px grey;
 }
 .bar-header {
     color: var(--text-secondary-color);
@@ -213,6 +213,7 @@ body {
     min-width: 870px;
     display: flex;
     height: 41px;
+    box-shadow: 0px 0px 5px 6px var(--container-secondary-color);
 }
 .profile-navigation-grid{
     flex: 1;
