@@ -59,7 +59,7 @@ body {
     min-width: 870px;
     max-width: 1920px;
     height: 600px;
-    margin-bottom: 25%;
+    margin-bottom: 100px;
 }
 #left-bar {
     float: left;
@@ -118,6 +118,41 @@ body {
     margin-top: 0%;
     margin-bottom: 2%;
 }
+.prof-container{
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    /* justify-content: center; */
+    text-align: center;
+    /* flex: 1; */
+    width: 25%;
+    margin: 10px 10px;
+    padding: 0px 0px;
+    max-width: 150px;
+    background-color: white;
+    border-top-left-radius: 50px;
+    border-top-right-radius: 50px;
+}
+.prof-container .user-pic{
+    display: flex;
+    align-items: stretch;
+    justify-content: center;
+    padding: 5px 0;
+    background-color: var(--btn-primary-color);
+    border-top-left-radius: 45px;
+    border-top-right-radius: 45px;
+}
+.prof-container .user-pic img{
+    width: 50%;
+    border-radius: 35px;
+}
+.prof-container .user-info{
+    flex: 1;
+    display: flex;
+    align-items: stretch;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
 .filter-buddy{
     width: 95%;
     margin: 1% auto;
@@ -135,17 +170,10 @@ body {
 }
 .profile-name {
     font-weight: bold;
+    font-size: medium;
 }
-.go-active-link {
-    padding: 5px 5px;
-    cursor: pointer;
-}
-.go-active-link:hover {
-    background-color: var(--container-primary-color);
-}
-.go-active-subtext {
-    font-size: 0.8em;
-    color: var(--text-secondary-color)
+.profile-verified, .profile-tag{
+    font-size: small;
 }
 .user-header{
     overflow: hidden;
@@ -214,6 +242,17 @@ body {
 .table-layout{
     width: 80%;
     margin: auto;
+}
+.go-active-link {
+padding: 5px 5px;
+cursor: pointer;
+}
+.go-active-link:hover {
+background-color: var(--container-primary-color);
+}
+.go-active-subtext {
+font-size: 0.8em;
+color: var(--text-secondary-color)
 }
 .custom-button1{
     -moz-box-sizing: border-box;
