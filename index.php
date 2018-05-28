@@ -15,7 +15,13 @@
             </div>
             <div id="left-bar">
                 <div id="left-content">
-                    <?php include("_include/left-content.php"); ?>
+                    <?php if(isset($_GET["show-messages"]) && !empty($_GET["show-messages"])){
+                                include("_include/left-content-messages.php"); 
+                            }
+                            else
+                            {
+                                include("_include/left-content.php"); 
+                            }?>
                 </div>
             </div>
             <div id="center-bar">
