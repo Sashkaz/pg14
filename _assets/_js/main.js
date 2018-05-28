@@ -27,4 +27,13 @@ $(document).on("click", "[name^='nav_']", function(){
                 }
     );
 });
+$(document).on("keyup", "[id='search-buddy']", function(){
+    var input = $(this).val();
+    $.post("_ajax/filter-users.php",
+                {buddySearch: input}, 
+                function(data){
+                    $(".friend-container").load("_include/buddy-list.php", {search: data}, function() {}).fadeIn();
+                }
+    );
+});
 </script>
