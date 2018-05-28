@@ -38,7 +38,8 @@
                                 include("_include/show-users.php"); 
                             }else{
                                include("_include/show-users.php"); 
-                            }                            
+                            }          
+                            include("_assets/_js/main.js");
                         }else{
                             include("_include/form-register.php");
                         }?> 
