@@ -1,0 +1,29 @@
+.right-content
+{
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: stretch;
+}
+.right-bar-list
+{
+  flex: 1;
+  list-style-type: none;
+  margin: 2px 0px 2px -34px;
+}
+.right-bar-item
+{
+  flex: 1;
+  margin-bottom: 3px;
+}
+.right-bar-link
+{
+  text-decoration: none;
+  color: black;
+  font-size: 17px;
+  flex: 1;
+}
+.right-bar-item:hover
+{
+  background-color: pink;
+}
