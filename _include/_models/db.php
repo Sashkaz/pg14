@@ -10,5 +10,8 @@
         public function q($sql){
             return $this->db->query($sql);
         }
+        public function lastError(){
+            return $this->db->error;
+        }
     }
 ?>
