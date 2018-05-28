@@ -4,6 +4,9 @@
         <img src="_assets/_img/150x150.jpeg" />
     </div>
     <div class="profile-col">
+        <a href="?show-users=true" id="my-profile" class="custom-button1">Show Users</a>
+    </div>
+    <div class="profile-col">
         <a href="?show-profile=true" id="my-profile" class="custom-button1">My Profile</a>
     </div>
     <div class="profile-col">

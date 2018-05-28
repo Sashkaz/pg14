@@ -15,7 +15,13 @@
             </div>
             <div id="left-bar">
                 <div id="left-content">
-                    <?php include("_include/left-content.php"); ?>
+                    <?php if(isset($_GET["show-messages"]) && !empty($_GET["show-messages"])){
+                                include("_include/left-content-messages.php"); 
+                            }
+                            else
+                            {
+                                include("_include/left-content.php"); 
+                            }?>
                 </div>
             </div>
             <div id="center-bar">
@@ -28,6 +34,8 @@
                                 include("_include/show-messages.php"); 
                             }elseif(isset($_GET["show-buddy-list"]) && !empty($_GET["show-buddy-list"])){
                                 include("_include/show-own-buddy-list.php"); 
+                            }elseif(isset($_GET["show-users"]) && !empty($_GET["show-users"])){
+                                include("_include/show-users.php"); 
                             }else{
                                include("_include/show-users.php"); 
                             }                            
