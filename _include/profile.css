@@ -46,11 +46,15 @@
 .left-side {
     float: left;
     width: 50%;
+    padding: 0px 10px;
+    box-sizing: border-box;
 }
 
 .right-side {
     float: right;
     width: 50%;
+    padding: 0px 10px;
+    box-sizing: border-box;
 }
 
 .profile-picture img {
@@ -79,10 +83,80 @@
     cursor: default;
 }
 
-#profile-page-container input[type="text"], #profile-page-container select {
+/* #profile-page-container input[type="text"], #profile-page-container select {
     margin: 3px 0px;
     width: 60%;
     box-sizing: border-box;
+} */
+
+.profile-added-items {
+    display: inline-block;
+    width: 100%;
+    margin: 3px 0px;
+    padding: 5px;
+    height: 30px;
+    box-sizing: border-box;
+    background-color: var(--container-tertiary-color);
+    border: 1px solid var(--title-color);
+
+    font-family: sans-serif;
+    font-weight: 600;
+    text-align: center;
+/*     font: 600 1.5em/1 'Raleway', sans-serif;
+    color: rgba(0,0,0,.5);
+    text-transform: uppercase; */
+
+/*     letter-spacing: .1em; */
+}
+
+.profile-added-items select {
+    margin: -5px;
+    background-color: transparent;
+    border: none;
+    height: 30px;
+    width: 90%;
+    box-sizing: border-box;
+    cursor: pointer;
+
+    text-align-last: center;
+
+    font-family: 'Raleway', sans-serif;
+    font-weight: 600;
+    text-align: center;
+}
+
+.profile-added-items select:hover {
+    background-color: var(--container-tertiary-color);
+}
+
+.profile-added-items select option {
+    font-family: 'Raleway', sans-serif;
+    font-weight: 600;
+    text-align: center;
+    cursor: pointer;
+}
+
+.profile-gender-btn {
+    position: relative;
+    top: -5px;
+    left: -5px;
+    padding-right: -10px;
+    background-color: transparent;
+    border: none;
+    height: 30px;
+    width: 100%;
+    box-sizing: border-box;
+    cursor: pointer;
+
+    text-align-last: center;
+
+    font-family: 'Raleway', sans-serif;
+    font-weight: 600;
+    text-align: center;
+}
+
+.profile-added-items .full-scale-btn {
+    margin: -5px;
 }
 
 #profile-page-container button {

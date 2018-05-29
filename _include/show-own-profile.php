@@ -135,9 +135,10 @@ if ($validProfile)
                             $hashtagNameRow = $hashtagNameResult->fetch_assoc();
                             $hashtagName = $hashtagNameRow["name"];
                             ?>
-                            <input type="text"  value="<?php echo $hashtagName; ?>" class="readonly" readonly>
+                            <div class="profile-added-items"><?php echo $hashtagName; ?>
                             <input type="hidden" name="removeHashtag" value="<?php echo $hashtagID; ?>">
-                            <button type="submit"><i class="fa fa-minus-circle"></i></button>
+                            <button type="submit" style="float: right;"><i class="fa fa-minus-circle"></i></button>
+                            </div>
                             <?php
                         }
                         ?>
@@ -148,60 +149,31 @@ if ($validProfile)
                     {
                         ?>
                         <form method="POST" action="_process/process-edit-profile.php" enctype="multipart/form-data">
-                            <select name="addHashtag">
-                            <option value="none" disabled selected>Add Hashtag</option>
-                                <?php
-                                $allHashtagsQuery = "SELECT h.name, h.hashtagListID FROM hashtaglist h
-                                LEFT JOIN (SELECT userID, hasthagListID FROM userhashtag WHERE userID='$userID') uh ON uh.hasthagListID = h.hashtagListID
-                                WHERE uh.hasthagListID IS NULL";
-                                $allHashtagsResults = $db->q($allHashtagsQuery);
-                                while ( $row = $allHashtagsResults -> fetch_assoc ())
-                                {
-                                    $curHashtagID = $row["hashtagListID"];
-                                    $curHashtagName = $row["name"];
-                                    ?>
-                                    <option value="<?php echo $curHashtagID; ?>"><?php echo $curHashtagName; ?></option>
+                            <div class="profile-added-items">
+                                <select name="addHashtag" style="float: left;">
+                                <option value="none" disabled selected>Select Hashtag</option>
                                     <?php
-                                }
-                                ?>
-                            </select>
-                            <button type="submit"><i class="fa fa-plus-circle"></i></button>
+                                    $allHashtagsQuery = "SELECT h.name, h.hashtagListID FROM hashtaglist h
+                                    LEFT JOIN (SELECT userID, hasthagListID FROM userhashtag WHERE userID='$userID') uh ON uh.hasthagListID = h.hashtagListID
+                                    WHERE uh.hasthagListID IS NULL";
+                                    $allHashtagsResults = $db->q($allHashtagsQuery);
+                                    while ( $row = $allHashtagsResults -> fetch_assoc ())
+                                    {
+                                        $curHashtagID = $row["hashtagListID"];
+                                        $curHashtagName = $row["name"];
+                                        ?>
+                                        <option value="<?php echo $curHashtagID; ?>"><?php echo $curHashtagName; ?></option>
+                                        <?php
+                                    }
+                                    ?>
+                                </select>
+                                <button type="submit" style="float: right;"><i class="fa fa-plus-circle"></i></button>
+                            </div>
                         </form>
                         <?php
                     }
 
                     ?>
-                    <div class="settings-title">Gender Preference</div>
-                    <form method="POST" action="_process/process-edit-profile.php" enctype="multipart/form-data">
-                    <input type="hidden" name="changeGenderPref" value="0">
-                    <div class="input-describer">Any Gender</div><button type="submit"><i class="
-                    <?php 
-                    if($anyGender)
-                    {
-                        echo "fa fa-dot-circle";
-                    }
-                    else
-                    {
-                        echo "fa fa-circle";
-                    }
-                    ?>
-                    "></i></button>
-                    </form>
-                    <form method="POST" action="_process/process-edit-profile.php" enctype="multipart/form-data">
-                    <input type="hidden" name="changeGenderPref" value="1">
-                    <div class="input-describer">Same Gender Only</div><button type="submit"><i class="
-                    <?php 
-                    if(!$anyGender)
-                    {
-                        echo "fa fa-dot-circle";
-                    }
-                    else
-                    {
-                        echo "fa fa-circle";
-                    }
-                    ?>
-                    "></i></button>
-                    </form>
                 </span>
                 <span class="right-side">
                     <div class="settings-title">Locations</div>
@@ -227,9 +199,11 @@ if ($validProfile)
                                 $locationInfoRow = $locationResult->fetch_assoc();
                                 $locationName = $locationInfoRow["name"];
                                 ?>
-                                <button type="submit"><i class="fa fa-minus-circle"></i></button>
-                                <input type="text"  value="<?php echo $locationName; ?>" class="readonly" readonly>
+                                <div class="profile-added-items">
+                                <button type="submit" style="float: left;"><i class="fa fa-minus-circle"></i></button>
+                                <?php echo $locationName; ?>
                                 <input type="hidden" name="removeLocation" value="<?php echo $locationID; ?>">
+                                </div>
                                 <?php
                             }
                             ?>
@@ -240,8 +214,9 @@ if ($validProfile)
                     {
                         ?>
                         <form method="POST" action="_process/process-edit-profile.php" enctype="multipart/form-data">
-                        <button type="submit"><i class="fa fa-plus-circle"></i></button>
-                            <select name="addLocation">
+                        <div class="profile-added-items">
+                        <button type="submit" style="float: left;"><i class="fa fa-plus-circle"></i></button>
+                            <select name="addLocation" style="float: right;">
                                 <option value="none" disabled selected>Add Location</option>
                                 <?php
                                 $allLocationsQuery = "SELECT l.name, l.activityID FROM location l
@@ -259,10 +234,40 @@ if ($validProfile)
                                 }
                                 ?>
                             </select>
+                            </div>
                         </form>
                         <?php
                     }
                     ?>
+                </span>
+                <div class="clear-line"></div>
+                <div class="settings-title">Gender Preference</div>
+                <span class="left-side">
+                    <form method="POST" action="_process/process-edit-profile.php" enctype="multipart/form-data">
+                        <div class="profile-added-items">
+                            <input type="hidden" name="changeGenderPref" value="0">
+                            <div class="input-describer">Any Gender</div><button type="submit"><i class="
+                            <?php 
+                            if($anyGender)
+                            {
+                                echo "fa fa-dot-circle";
+                            }
+                            else
+                            {
+                                echo "fa fa-circle";
+                            }
+                            ?>
+                            "></i></button>
+                        </div>
+                    </form>
+                </span>
+                <span class="right-side">
+                    <form method="POST" action="_process/process-edit-profile.php" enctype="multipart/form-data">
+                        <div class="profile-added-items">
+                        <input type="hidden" name="changeGenderPref" value="1">
+                        <button type="submit" class="profile-gender-btn <?php if(!$anyGender){echo "selected";}?>">Same Gender Only</button>
+                        </div>
+                    </form>
                 </span>
                 <div class="clear-line"></div>
             </div>
