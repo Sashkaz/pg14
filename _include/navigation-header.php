@@ -1,4 +1,9 @@
 <?php if(isset($_SESSION["uid"]) && !empty($_SESSION["uid"])){
+    if(!isset($db) && empty($db)){
+        include("_models/db.php");
+        $db = new Database("localhost", "root", "", "projekt");
+    }
+    $curUser = $_SESSION["uid"];
     $page = "default";
     if(isset($_GET["show-users"]))
     {
@@ -19,7 +24,20 @@
     ?>
 <div class="profile-navigation-grid">
     <div class="profile-col">
-        <img src="_assets/_img/150x150.jpeg" />
+        <?php
+        $userInfo = $db->q("SELECT * FROM user WHERE userID = '$curUser'");;
+        $row = $userInfo->fetch_assoc();
+
+        if ($row["profilePicURL"] != "null")
+        {
+            $userPictureSrc= "data:image/jpeg;base64,".base64_encode($row["profilePicURL"]);
+        }
+        else
+        {
+            $userPictureSrc= "_assets/_img/150x150.jpeg";
+        }
+        ?>
+        <img src="<?php echo $userPictureSrc; ?>" />
     </div>
     <div class="profile-col">
         <a href="?show-users=true" id="show-users" class="custom-button1 <?php if($page=="show-users"){ echo 'current';}?>"><i class="fas fa-search"></i> Show Users</a>
