@@ -1,19 +1,37 @@
-<?php if(isset($_SESSION["uid"]) && !empty($_SESSION["uid"])){?>
+<?php if(isset($_SESSION["uid"]) && !empty($_SESSION["uid"])){
+    $page = "default";
+    if(isset($_GET["show-users"]))
+    {
+        $page = "show-users";
+    }
+    else if(isset($_GET["show-profile"]))
+    {
+        $page = "show-profile";
+    }
+    else if(isset($_GET["show-messages"]))
+    {
+        $page = "show-messages";
+    }
+    else if(isset($_GET["show-buddy-list"]))
+    {
+        $page = "show-buddy-list";
+    }
+    ?>
 <div class="profile-navigation-grid">
     <div class="profile-col">
         <img src="_assets/_img/150x150.jpeg" />
     </div>
     <div class="profile-col">
-        <a href="?show-users=true" id="my-profile" class="custom-button1"><i class="fas fa-search"></i> Show Users</a>
+        <a href="?show-users=true" id="show-users" class="custom-button1 <?php if($page=="show-users"){ echo 'current';}?>"><i class="fas fa-search"></i> Show Users</a>
     </div>
     <div class="profile-col">
-        <a href="?show-profile=true" id="my-profile" class="custom-button1"><i class="fas fa-user-cog"></i> My Profile</a>
+        <a href="?show-profile=true" id="my-profile" class="custom-button1 <?php if($page=="show-profile"){ echo 'current';}?>"><i class="fas fa-user-cog"></i> My Profile</a>
     </div>
     <div class="profile-col">
-        <a href="?show-messages=true" id="buddy-list" class="custom-button1"><i class="fas fa-envelope"></i> Messages</a>
+        <a href="?show-messages=true" id="my-messages" class="custom-button1 <?php if($page=="show-messages"){ echo 'current';}?>"><i class="fas fa-envelope"></i> Messages</a>
     </div>
     <div class="profile-col">
-            <a href="?show-buddy-list=true" id="buddy-list" class="custom-button1"><i class="fas fa-address-book"></i> Buddy list</a>
+            <a href="?show-buddy-list=true" id="buddy-list" class="custom-button1 <?php if($page=="show-buddy-list"){ echo 'current';}?>"><i class="fas fa-address-book"></i> Buddy List</a>
     </div>
 </div>
 <div class="profile-col">
