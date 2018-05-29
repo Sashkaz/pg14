@@ -12,7 +12,7 @@
         while ($row = $req->fetch_assoc()) {
             if($row["userID"] != null){
                 echo "
-                    <a class=prof-container href=?u=$row[publicID]>
+                    <a class=prof-container href=?show-profile=true&u=$row[publicID]>
                         <div class=user-pic><img src=_assets/_img/150x150.jpeg ></div>
                         <div class=user-info>
                             <div class=profile-name>$row[firstName] $row[lastName]</div>
