@@ -28,12 +28,13 @@ if(isset($_POST["addHashtag"]))
     {
         $duplicateHashtagQuery = "SELECT *
         FROM userhashtag
-        WHERE hashtagListID = ".$hashtagID."
+        WHERE hasthagListID = ".$hashtagID."
         AND userID = ".$curUser." limit 1";
         $duplicateHashtagResult = $db->q($duplicateHashtagQuery);
         if($duplicateHashtagResult->num_rows != 0)
         {
-            echo "User and hashtag relation already exists.";
+            echo "User and hashtag relation already exists.<br>Returning to previous page.";
+            header("Refresh:2; URL=../index.php?show-profile=true");
         }
         else
         {
@@ -144,7 +145,6 @@ if(isset($_POST["removeLocation"]))
 // Change Profile Picture
 if(isset($_POST["uploadImage"]) || isset($_FILES["uploadImage"]))
 {
-    echo "Attempting to update profile picture.";
     $imageName = $_FILES["uploadImage"]["name"]; 
 
     //Get the content of the image and then add slashes to it 
@@ -153,31 +153,175 @@ if(isset($_POST["uploadImage"]) || isset($_FILES["uploadImage"]))
 
     if (substr($imageType,0,5) == "image")
     {
-        echo "image type is: ".$imageType;
-        echo '<img src="data:image/jpeg;base64,'.base64_encode($imagetmp).'"/>';
-        //Insert the image name and image content in image_table
-        // Run this SQL Query to update DB to contain blobs
-        // ALTER TABLE `user` CHANGE `profilePicURL` `profilePicURL` BLOB NULL DEFAULT NULL;
-        $updateImageQuery = "UPDATE user SET profilePicURL = ".$imagetmp." WHERE userID=4";
+        $updateImageQuery = "UPDATE user SET profilePicURL = '$imagetmp' WHERE userID='$curUser'";
         if($db->q($updateImageQuery))
         {
-            echo "Uploaded: ".$imageName;
-            echo "<br>";
-            /* header("Location: ../index.php?show-profile=true"); */
+            header("Location: ../index.php?show-profile=true");
         }
         else
         {
-            echo "<br>";
-            printf("Errormessage: %s\n", $db->lastError());
-            echo "<br>";
-            echo "Could not upload: ".$imageName;
-            /* echo $updateImageQuery; */
-            echo "Unexpected error. Could not update profile picture.";
+            echo "Unexpected error. Could not update profile picture.<br>Returning to previous page.";
+            header("Refresh:2; URL=../index.php?show-profile=true");
         }
     }
     else
     {
-        echo "Selected file is not an image.";
+        echo "Selected file is not an image.<br>Returning to previous page.";
+        header("Refresh:2; URL=../index.php?show-profile=true");
     }
 }
+
+// Change Account Information
+if(isset($_POST["updateSettings"]))
+{
+    $userQuery = "SELECT *
+    FROM User
+    WHERE userID = ".$curUser." limit 1";
+    $userResult = $db->q($userQuery);
+    if($userResult->num_rows == 0)
+    {
+        echo "Could not find profile.<br>Returning to previous page.";
+        header("Refresh:2; URL=../index.php?show-profile=true");
+    }
+    else
+    {
+        $userRow = $userResult->fetch_assoc();
+        $userFirstName = $userRow["firstName"];
+        $userLastName = $userRow["lastName"];
+        $userEmail = $userRow["email"];
+        $userPassword = $userRow["password"];
+        $userBirthday = $userRow["dob"];
+        $userGender = $userRow["gender"];
+        
+        function newHash($pwd){
+            $salt = md5($pwd);
+            $pwd = hash("sha256", $salt.$pwd.$salt);
+            return $pwd;
+        }
+        //Initialize variables to prevent isset from causing errors later
+        if(isset($_POST["firstName"]) && !empty($_POST["firstName"]))
+        {
+            $newFirstName = mysqli_real_escape_string($db->db, $_POST["firstName"]);
+        }
+        if(isset($_POST["lastName"]) && !empty($_POST["lastName"]))
+        {
+            $newLastName = mysqli_real_escape_string($db->db, $_POST["lastName"]);
+        }
+        if(isset($_POST["email"]) && !empty($_POST["email"]))
+        {
+            $newEmail = mysqli_real_escape_string($db->db, $_POST["email"]);
+        }
+        if(isset($_POST["newPassword"]) && !empty($_POST["newPassword"]))
+        {
+            $newPassword = mysqli_real_escape_string($db->db, $_POST["newPassword"]);
+            $newPassword = newHash($newPassword);
+        }
+        if(isset($_POST["birthday"]) && !empty($_POST["birthday"]))
+        {
+            $newBirthday = mysqli_real_escape_string($db->db, $_POST["birthday"]);
+            $newBirthday = date_format(date_create($newBirthday),"j-n-Y");
+        }
+        if(isset($_POST["gender"]) && !empty($_POST["gender"]))
+        {
+            $newGender = mysqli_real_escape_string($db->db, $_POST["gender"]);
+        }
+        if(isset($_POST["password"]) && !empty($_POST["password"]))
+        {
+            $oldPassword = mysqli_real_escape_string($db->db, $_POST["password"]);
+            $oldPassword = newHash($oldPassword);
+        }
+        if(isset($_POST["confirmPassword"]) && !empty($_POST["confirmPassword"]))
+        {
+            $confirmOldPassword = mysqli_real_escape_string($db->db, $_POST["confirmPassword"]);
+            $confirmOldPassword = newHash($confirmOldPassword);
+        }
+        if ($oldPassword != $confirmOldPassword)
+        {
+            echo "Old passwords do not match each other.<br>Returning to previous page.";
+            header("Refresh:2; URL=../index.php?show-profile=true");
+        }
+        else if ($oldPassword == $userPassword)
+        {
+            //Compare input with current db entry
+            if (isset($newFirstName) && $userFirstName != $newFirstName)
+            {
+                $firstNameChangeQuery = "UPDATE user SET firstName = '$newFirstName' WHERE userID='$curUser'";
+                $firstNameChangeResult = $db->q($firstNameChangeQuery);
+                if($db->q($firstNameChangeResult))
+                {
+                    echo "Unexpected error. Could not update Firstname.<br>Returning to previous page.";
+                    header("Refresh:2; URL=../index.php?show-profile=true");
+                }
+                else
+                {
+                    echo "Updated firstname.<br>";
+                }
+            }
+            if (isset($newLastName) && $userLastName != $newLastName)
+            {
+                $lastNameChangeQuery = "UPDATE user SET lastName = '$newLastName' WHERE userID='$curUser'";
+                $lastNameChangeResult = $db->q($lastNameChangeQuery);
+                if($db->q($lastNameChangeResult))
+                {
+                    echo "Unexpected error. Could not update lastName.<br>Returning to previous page.";
+                    header("Refresh:2; URL=../index.php?show-profile=true");
+                }
+                else
+                {
+                    echo "Updated lastname.<br>";
+                }
+            }
+            if (isset($newEmail) && $userEmail != $newEmail)
+            {
+                $emailChangeQuery = "UPDATE user SET email = '$newEmail' WHERE userID='$curUser'";
+                $emailChangeResult = $db->q($emailChangeQuery);
+                if($db->q($emailChangeResult))
+                {
+                    echo "Unexpected error. Could not update Email.<br>Returning to previous page.";
+                    header("Refresh:2; URL=../index.php?show-profile=true");
+                }
+                else
+                {
+                    echo "Updated email.<br>";
+                }
+            }
+            if (isset($newPassword) && $userPassword != $newPassword)
+            {
+                $passwordChangeQuery = "UPDATE user SET password = '$newPassword' WHERE userID='$curUser'";
+                $passwordChangeResult = $db->q($passwordChangeQuery);
+                if($db->q($passwordChangeResult))
+                {
+                    echo "Unexpected error. Could not update Password.<br>Returning to previous page.";
+                    header("Refresh:2; URL=../index.php?show-profile=true");
+                }
+                else
+                {
+                    echo "Updated password<br>";
+                }
+            }
+            if (isset($newBirthday) && $userBirthday != $newBirthday)
+            {
+                $birthdayChangeQuery = "UPDATE user SET dob = '$newBirthday' WHERE userID='$curUser'";
+                $birthdayChangeResult = $db->q($birthdayChangeQuery);
+                if($db->q($birthdayChangeResult))
+                {
+                    echo "Unexpected error. Could not update Birthday.<br>Returning to previous page.";
+                    header("Refresh:2; URL=../index.php?show-profile=true");
+                }
+                else
+                {
+                    echo "Updated birthday<br>";
+                }
+            }
+            echo "Updated successfully.<br>Returning to previous page.";
+            header("Refresh:2; URL=../index.php?show-profile=true");
+        }
+        else
+        {
+            echo "Invalid Password.<br>Returning to previous page.";
+            header("Refresh:2; URL=../index.php?show-profile=true");
+        }
+    }
+}
+
 ?>

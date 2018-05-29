@@ -1,5 +1,6 @@
 <link rel="stylesheet" type="text/css" href="_include/profile.css">
 <?php
+$validProfile = false;
 if (isset($_GET['u']) )
 {
     $targetUser = $_GET["u"];
@@ -44,6 +45,22 @@ if ($validProfile)
     $userPassword = $userRow["password"];
     $userPicture = $userRow["profilePicURL"];
     $userGender = $userRow["gender"];
+    
+    $userBirthday = $userRow["dob"];
+    $userBirthdaySplit = explode("-", $userBirthday);
+    $userBirthdayDay = $userBirthdaySplit[0];
+    if ($userBirthdayDay < 10)
+    {
+        $userBirthdayDay = "0".$userBirthdayDay;
+    }
+    $userBirthdayMonth = $userBirthdaySplit[1];
+    if ($userBirthdayMonth < 10)
+    {
+        $userBirthdayMonth = "0".$userBirthdayMonth;
+    }
+    $userBirthdayYear = $userBirthdaySplit[2];
+    $userBirthdayFormat = date_format(date_create($userBirthdayYear."-".$userBirthdayMonth."-".$userBirthdayDay),"Y-m-d");
+
     $userPubID = $userRow["publicID"];
     $userAccountStatus = $userRow["accountStatusID"];
     $userGenderPref = $userRow["genderPreference"];
@@ -92,7 +109,7 @@ if ($validProfile)
                     <input type="submit" value="Upload">
                 </form>
             </div>
-            <div class="profile-content-divider">
+            <div class="profile-content-divider" id="filter">
                 <h3>Filter Options</h3>
                 <span class="left-side">
                     <div class="settings-title">Hashtags</div>
@@ -246,13 +263,29 @@ if ($validProfile)
                 </span>
                 <div class="clear-line"></div>
             </div>
-            <div class="profile-content-divider">
+            <div class="profile-content-divider" id="account">
             <h3>Account Information</h3>
-            firstName
-            lastName
-            Age
-            Gender
-            Password
+            <form method="POST" action="_process/process-edit-profile.php" enctype="multipart/form-data">
+                <span class="left-side">
+                    <div class="field-container">Firstname:<br><input type="text" name="firstName" value="<?php echo $userFirstName; ?>"></div>
+                    <div class="field-container">Email:<br><input type="email" name="email" value="<?php echo $userEmail; ?>"></div>
+                    <div class="field-container">Age:<br><input type="date" name="birthday" max="2002-01-01" value="<?php echo $userBirthdayFormat; ?>"></div>
+                    <p>
+                    <div class="field-container">Old Password:<br><input type="password" name="password" ></div>
+                    </p>
+                </span>
+                <span class="right-side">
+                    <div class="field-container">Lastname:<br><input type="text" name="lastName" value="<?php echo $userLastName; ?>"></div>
+                    <div class="field-container">New Password:<br><input type="password" name="newPassword"></div>
+                    <div class="field-container">Gender:<br><input type="radio" name="gender" value="1" <?php if ($userGender == 1) { echo 'checked="checked"'; }?>> Male
+                    <input type="radio" name="gender" value="2" <?php if ($userGender == 2) { echo 'checked="checked"'; }?>> Female
+                    <input type="radio" name="gender" value="0" <?php if ($userGender == 0) { echo 'checked="checked"'; }?>> Other</div>
+                    <p>
+                    <div class="field-container">Confirm Old Password:<br><input type="password" name="confirmPassword" ></div>
+                    </p>
+                </span>
+                <input type="submit" name="updateSettings" value="Update">
+            </form>
             </div>
         </div>
         <?php
