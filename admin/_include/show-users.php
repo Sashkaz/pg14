@@ -6,7 +6,7 @@
         <div class="td">First Name</div>
         <div class="td">Last Name</div>
         <div class="td">Email</div>
-        <div class="td">Profile URL</div>
+        <!--<div class="td">Profile URL</div>-->
         <div class="td">Date of Birth</div>
         <div class="td">Gender</div>
         <div class="td">Public ID</div>
@@ -24,7 +24,6 @@
                     <div class=td>$row[firstName]</div>
                     <div class=td>$row[lastName]</div>
                     <div class=td>$row[email]</div>
-                    <div class=td>$row[profilePicURL]</div>
                     <div class=td>$row[dob]</div>
                     <div class=td>";
                         if($row["gender"] == 1)

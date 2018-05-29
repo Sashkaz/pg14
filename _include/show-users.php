@@ -23,11 +23,8 @@
                     <a class=prof-container href=?show-profile=true&u=$row[publicID]>
                         <div class=user-pic><img src=$userPictureSrc></div>
                         <div class=user-info>
-                            <div class=profile-name>$row[firstName] $row[lastName]</div>
+                            <div class=user-name>$row[firstName] $row[lastName]</div>
                             <div class=profile-verified>(v1) (v2) (a)</div>
-                            <div class=profile-tag>
-                                <span class=activity-tag>#Core</span>
-                            </div>
                         </div>
                     </a>
                 ";
