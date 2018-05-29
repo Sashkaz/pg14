@@ -307,9 +307,6 @@ background-color: var(--container-primary-color);
 font-size: 0.8em;
 color: var(--text-secondary-color)
 }
-
-
-
 .custom-button1{
     cursor: pointer;
     -moz-box-sizing: border-box;
@@ -343,11 +340,9 @@ color: var(--text-secondary-color)
 .custom-button1:active{
     color: var(--btn-active-color);
 }
-
 .current {
     background-color: var(--btn-hover-color);
 }
-
 .form-wrapper form .custom-button1{
     padding: 3% 5px;
 }
@@ -396,6 +391,24 @@ color: var(--text-secondary-color)
     font-weight: bold;
 }
 .custom-input1:focus{
+    box-shadow: 0px 10px 15px -15px var(--btn-primary-color);
+}
+.custom-input2{
+    padding: 2.8% 5px;
+    border: none;
+    background-color: rgba(0,0,0, 0);
+    outline: none;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    transition: all 0.30s ease-in-out;
+    -webkit-transition: all 0.30s ease-in-out;
+    -moz-transition: all 0.30s ease-in-out;
+    -ms-transition: all 0.30s ease-in-out;
+    -o-transition: all 0.30s ease-in-out;
+    font-weight: bold;
+}
+.custom-input2:focus{
     box-shadow: 0px 10px 15px -15px var(--btn-primary-color);
 }
 /* SHOW MESSAGES */
