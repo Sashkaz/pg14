@@ -6,7 +6,7 @@
     $req = $db->q("SELECT * FROM user");
     if(isset($_POST["req"]) && !empty($_POST["req"])){
         $req = $db->q($_POST["req"]);
-        //echo $_POST["req"];
+        // echo $_POST["req"];
     }
     if($req->num_rows > 0){
         while ($row = $req->fetch_assoc()) {
