@@ -168,6 +168,7 @@ body {
     width: 50%;
     border-radius: 35px;
 }
+
 .prof-container .user-info{
     flex: 1;
     display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */
