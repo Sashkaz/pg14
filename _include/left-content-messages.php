@@ -1,5 +1,8 @@
 <?php
-include("_include/_models/db.php");
+if(!isset($db) && empty($db)){
+    include("_models/db.php");
+    $db = new Database("localhost", "root", "", "projekt");
+}
 if(isset($_SESSION["uid"]) && !empty($_SESSION["uid"]))
 {
     $curUser = $_SESSION["uid"];

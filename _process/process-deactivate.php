@@ -5,6 +5,7 @@
 
   unset($_SESSION["active"]);
   $_SESSION["active"] = "";
+  echo $_SESSION["userLocationActivityID"];
   $querydelete = "DELETE FROM `userlocationstatus` WHERE userLocationActivityID = $_SESSION[userLocationActivityID]";
   if ($req = $db->q($querydelete))
   {
