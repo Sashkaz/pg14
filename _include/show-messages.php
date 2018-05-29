@@ -55,16 +55,16 @@
                                     {
                                         ?>
                                         <span class="sender-profile">
-                                            <?php
-                                            if ($targetUserPic != "null")
-                                            {
-                                                echo '<img src="_assets/_img/'.$targetUserPic.'"/>';
-                                            }
-                                            else
-                                            {
-                                                echo '<img src="_assets/_img/150x150.jpeg"/>';
-                                            }
-                                            ?>
+                                        <?php
+                                        if ($targetUserPic != "null")
+                                        {
+                                            echo '<img src="data:image/jpeg;base64,'.base64_encode($targetUserPic).'"/>';
+                                        }
+                                        else
+                                        {
+                                            echo '<img src="_assets/_img/150x150.jpeg"/>';
+                                        }
+                                        ?>
                                         </span>
                                         <span class="ingoing-message">
                                         <?php

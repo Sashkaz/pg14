@@ -317,7 +317,7 @@ if ($validProfile)
             </div>
             <div class="profile-content-divider" id="contact-buddy">
         <a href="?show-messages=true&u=<?php echo $targetUser; ?>"><i class="fa fa-envelope"></i></a>
-        <a href="?addBuddy=true&u=<?php echo $targetUser; ?>"><i class="fa fa-user-plus"></i></i></a>
+        <a href="_process/process-userrelation.php?addFriend=<?php echo $targetUser; ?>"><i class="fa fa-user-plus"></i></i></a>
         <a href="?blockBuddy=true&u=<?php echo $targetUser; ?>"><i class="fa fa-ban"></i></a>
             </div>
             <div class="profile-content-divider">

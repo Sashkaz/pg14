@@ -8,7 +8,8 @@ if(isset($_SESSION["uid"]) && !empty($_SESSION["uid"]))
 }
 else
 {
-    echo "You need to log in to see messages.";
+    echo "You need to log in to edit profile.<br>Returning to previous page.";
+    header("Refresh:2; URL=../index.php?show-profile=true");
 }
 
 // Add Hashtag
