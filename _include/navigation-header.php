@@ -4,40 +4,27 @@
         <img src="_assets/_img/150x150.jpeg" />
     </div>
     <div class="profile-col">
-        <a href="?show-users=true" id="my-profile" class="custom-button1">Show Users</a>
+        <a href="?show-users=true" id="my-profile" class="custom-button1"><i class="fas fa-search"></i> Show Users</a>
     </div>
     <div class="profile-col">
-        <a href="?show-profile=true" id="my-profile" class="custom-button1">My Profile</a>
+        <a href="?show-profile=true" id="my-profile" class="custom-button1"><i class="fas fa-user-cog"></i> My Profile</a>
     </div>
     <div class="profile-col">
-        <a href="?show-messages=true" id="buddy-list" class="custom-button1">Messages</a>
+        <a href="?show-messages=true" id="buddy-list" class="custom-button1"><i class="fas fa-envelope"></i> Messages</a>
     </div>
     <div class="profile-col">
-            <a href="?show-buddy-list=true" id="buddy-list" class="custom-button1">Buddy list</a>
+            <a href="?show-buddy-list=true" id="buddy-list" class="custom-button1"><i class="fas fa-address-book"></i> Buddy list</a>
     </div>
 </div>
-<div class="form-wrapper">
-    <table>
-        <tr>
-            <td><a href="_process/process-logout.php" class="custom-button1" >Logout</a></td>
-        </tr>
-    </table>
+<div class="profile-col">
+    <a href="_process/process-logout.php" class="custom-button1" ><i class="fas fa-sign-out-alt"></i> Logout</a>
 </div>
 <?php }else{ ?>
 <div class="form-wrapper">
     <form method="POST" action="_process/process-login.php" target="_self">
-        <table>
-            <tr>
-                <td><input type="submit" name="login" class="custom-button1" /></td>
-                <td><input type="text" name="email" placeholder="E-mail"></td>
-                <td><input type="password" name="password" placeholder="Password" ></td>
-            </tr>
-            <!--<tr>
-                <td><a href="?create-account=true" class="custom-button1">Skappa Konto</a></td>
-                    
-                <td><input type="submit" name="login" class="custom-button1" /></td>
-            </tr>-->
-        </table>
+        <input type="submit" name="login" class="custom-button1" />
+        <input type="text" name="email" placeholder="E-mail">
+        <input type="password" name="password" placeholder="Password" >
     </form>
 </div>
 <?php }?>

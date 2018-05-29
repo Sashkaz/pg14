@@ -129,6 +129,7 @@ body {
     display: -ms-flexbox;      /* TWEENER - IE 10 */
     display: -webkit-flex;     /* NEW - Chrome */
     display: flex;
+    color: var(--text-primary-color);
     -webkit-flex-direction: column;
     -moz-flex-direction: column;
     -ms-flex-direction: column;	
@@ -140,9 +141,13 @@ body {
     margin: 10px 10px;
     padding: 0px 0px;
     max-width: 150px;
-    background-color: white;
+    background-color: var(--bg-primary-color);
     border-top-left-radius: 50px;
     border-top-right-radius: 50px;
+}
+
+.prof-container:hover {
+    background-color: var(--container-secondary-color);
 }
 .prof-container .user-pic{
     display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */
@@ -225,9 +230,9 @@ body {
 }
 .profile-col{
     /* flex: 1; */
-    padding: 9px 0px 0px 0px;
+    padding: 0px 0px 0px 0px;
     max-width: 100px;
-    margin: 0 1%;
+    margin: 0 0 0 2%;
 }
 .profile-col:first-child{
     padding-left: 10px;
@@ -241,15 +246,20 @@ body {
     min-width: 35px;
 }
 .form-wrapper {
-    padding: 5px 5px 5px 0px;
+    padding: 0px 5px 5px 0px;
     margin-left: auto;
 }
 .form-wrapper table{
     text-align: right;
     flex: 1;
 }
+
+.form-wrapper table .custom-button1{
+    padding: 3% 5px;
+}
 .main-form form {
     width: 80%;
+    display: inline;
 }
 .center-form input[type=email] {
     width: 100%;
@@ -291,7 +301,11 @@ background-color: var(--container-primary-color);
 font-size: 0.8em;
 color: var(--text-secondary-color)
 }
+
+
+
 .custom-button1{
+    cursor: pointer;
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
@@ -299,11 +313,12 @@ color: var(--text-secondary-color)
     font-weight: normal;
     text-decoration: none;
     background-color: var(--btn-primary-color);
-    padding: 0px 6px;
+    padding: 12% 5px;
     border: solid 2px;
+    border-top: none;
     border-color: var(--btn-border-color);
-    border-radius: 5px;
-    height: 23px;
+    height: 100%;
+    white-space: nowrap;
     font-family: Arial,Helvetica,sans-serif;
     font-size: 14px;
     background-attachment: fixed;
@@ -317,11 +332,13 @@ color: var(--text-secondary-color)
 }
 .custom-button1:hover{
     background-color: var(--btn-hover-color);
-    cursor: pointer;
-    box-shadow: 2px 2px 2px 1px grey;
 }
 .custom-button1:active{
     color: var(--btn-active-color);
+}
+
+.form-wrapper form .custom-button1{
+    padding: 3% 5px;
 }
 .custom-button2{
     -moz-box-sizing: border-box;
