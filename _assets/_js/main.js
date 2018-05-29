@@ -23,6 +23,7 @@ $(document).on("click", "[name^='nav_']", function(){
     $.post("_ajax/filter-users.php",
                 {input: checkedValues}, 
                 function(data){
+                    $("#center-content").load("_include/show-users.php", {req: data, userID: $("[id='uid']").val()}, function() {}).fadeIn();
                     $("#center-content").load("_include/show-users.php", {req: data}, function() {}).fadeIn();
                 }
     );
