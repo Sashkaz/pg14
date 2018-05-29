@@ -20,6 +20,7 @@ if ($req = $db->q($querylocation))
     if ($req = $db->q($supertable))
     { if ($row = $req->fetch_assoc())
       {
+        $_SESSION["userLocationActivityID"] = $row["userLocationActivityID"];
         $queryactivity = "UPDATE userlocationstatus SET userLocationID = $row[userLocationID]";
         if ($row["userID"] = $_SESSION["uid"])
         {
