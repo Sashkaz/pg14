@@ -20,11 +20,11 @@ if (isset($_GET['u']) )
 }
 else if (isset($_SESSION["uid"]) && !empty($_SESSION["uid"]))
 {
-    $targetUser = $_SESSION["uid"];
+    $curUser = $_SESSION["uid"];
     $ownPage = true;
     $userQuery = "SELECT *
     FROM User
-    WHERE userID = ".$targetUser." limit 1";
+    WHERE userID = ".$curUser." limit 1";
     $userResult = $db->q($userQuery);
     if($userResult->num_rows == 0)
     {
@@ -114,7 +114,7 @@ if ($validProfile)
                 <span class="left-side">
                     <div class="settings-title">Hashtags</div>
                     <?php
-                    $hashtagListQuery = "SELECT * FROM userhashtag WHERE userID = ".$targetUser."";
+                    $hashtagListQuery = "SELECT * FROM userhashtag WHERE userID = ".$curUser."";
                     $hashtagResults = $db->q($hashtagListQuery);
                     $hashtagNumber = 0;
                     while ( $row = $hashtagResults -> fetch_assoc ())
@@ -151,7 +151,9 @@ if ($validProfile)
                             <select name="addHashtag">
                             <option value="none" disabled selected>Add Hashtag</option>
                                 <?php
-                                $allHashtagsQuery = "SELECT * FROM hashtaglist";
+                                $allHashtagsQuery = "SELECT h.name, h.hashtagListID FROM hashtaglist h
+                                LEFT JOIN (SELECT userID, hasthagListID FROM userhashtag WHERE userID='$userID') uh ON uh.hasthagListID = h.hashtagListID
+                                WHERE uh.hasthagListID IS NULL";
                                 $allHashtagsResults = $db->q($allHashtagsQuery);
                                 while ( $row = $allHashtagsResults -> fetch_assoc ())
                                 {
@@ -204,7 +206,7 @@ if ($validProfile)
                 <span class="right-side">
                     <div class="settings-title">Locations</div>
                     <?php
-                    $locationListQuery = "SELECT * FROM userlocation WHERE userID = ".$targetUser."";
+                    $locationListQuery = "SELECT * FROM userlocation WHERE userID = ".$curUser."";
                     $locationResults = $db->q($locationListQuery);
                     $locationNumber = 0;
                     while ( $row = $locationResults -> fetch_assoc ())
@@ -242,7 +244,9 @@ if ($validProfile)
                             <select name="addLocation">
                                 <option value="none" disabled selected>Add Location</option>
                                 <?php
-                                $allLocationsQuery = "SELECT * FROM location";
+                                $allLocationsQuery = "SELECT l.name, l.activityID FROM location l
+                                LEFT JOIN (SELECT userID, locationID FROM userlocation WHERE userID='$userID') ul ON ul.locationID = l.activityID
+                                WHERE ul.locationID IS NULL";
                                 $allLocationsResults = $db->q($allLocationsQuery);
                                 while ( $row = $allLocationsResults -> fetch_assoc ())
                                 {
@@ -292,13 +296,93 @@ if ($validProfile)
     else
     {
         ?>
-        Other User Page
-        options
-        Hashtag list
-        Locations
-        Send Message
-        Add to buddy list
-        Block User
+        <div id="profile-page-container">
+            <div class="profile-content-divider">
+                <span class="profile-picture">
+                    <?php
+                    if ($userPicture != "null")
+                    {
+                        echo '<img src="data:image/jpeg;base64,'.base64_encode($userPicture).'"/>';
+                    }
+                    else
+                    {
+                        echo '<img src="_assets/_img/150x150.jpeg"/>';
+                    }
+                    ?>
+                </span>
+                <span class="profile-name">
+                    <?php echo $userFirstName." ".$userLastName."";
+                    ?>
+                </span>
+            </div>
+            <div class="profile-content-divider" id="contact-buddy">
+        <a href="?show-messages=true&u=<?php echo $targetUser; ?>"><i class="fa fa-envelope"></i></a>
+        <a href="?addBuddy=true&u=<?php echo $targetUser; ?>"><i class="fa fa-user-plus"></i></i></a>
+        <a href="?blockBuddy=true&u=<?php echo $targetUser; ?>"><i class="fa fa-ban"></i></a>
+            </div>
+            <div class="profile-content-divider">
+                <h3>Buddy Info</h3>
+                <span class="left-side">
+                    <div class="settings-title">Hashtags</div>
+                    <?php
+                    $hashtagListQuery = "SELECT * FROM userhashtag WHERE userID = ".$userID."";
+                    $hashtagResults = $db->q($hashtagListQuery);
+                    while ( $row = $hashtagResults -> fetch_assoc ())
+                    {
+                        ?>
+                        <?php
+                        $hashtagID = $row["hasthagListID"];
+                        $hashtagNameQuery = "SELECT name FROM hashtaglist WHERE hashtagListID = ".$hashtagID."";
+                        $hashtagNameResult = $db->q($hashtagNameQuery);
+                        if($hashtagNameResult->num_rows == 0)
+                        {
+                            echo "Could not find hashtag.";
+                        }
+                        else
+                        {
+                            $hashtagNameRow = $hashtagNameResult->fetch_assoc();
+                            $hashtagName = $hashtagNameRow["name"];
+                            ?>
+                            <input type="text"  value="<?php echo $hashtagName; ?>" class="readonly" readonly>
+                            <?php
+                        }
+                        ?>
+                        <?php
+                    }
+                    ?>
+                </span>
+                <span class="right-side">
+                    <div class="settings-title">Locations</div>
+                    <?php
+                    $locationListQuery = "SELECT * FROM userlocation WHERE userID = ".$userID."";
+                    $locationResults = $db->q($locationListQuery);
+                    while ( $row = $locationResults -> fetch_assoc ())
+                    {
+                        ?>
+                            <?php
+                            $locationID = $row["locationID"];
+                            $locationInfoQuery = "SELECT * FROM location WHERE activityID = ".$locationID."";
+                            $locationResult = $db->q($locationInfoQuery);
+                            if($locationResult->num_rows == 0)
+                            {
+                                echo "Could not find location.";
+                            }
+                            else
+                            {
+                                $locationInfoRow = $locationResult->fetch_assoc();
+                                $locationName = $locationInfoRow["name"];
+                                ?>
+                                <input type="text"  value="<?php echo $locationName; ?>" class="readonly" readonly>
+                                <?php
+                            }
+                            ?>
+                        <?php
+                    }
+                    ?>
+                </span>
+                <div class="clear-line"></div>
+            </div>
+        </div>
         <?php
     }
 }

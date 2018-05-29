@@ -15,37 +15,44 @@ else
 if(isset($_POST["addHashtag"]))
 {
     $hashtagID = mysqli_real_escape_string($db->db, $_POST["addHashtag"]);
-
-    $checkHashtagQuery = "SELECT hashtagListID
-    FROM hashtaglist
-    WHERE hashtagListID = ".$hashtagID." limit 1";
-    $hashtagResult = $db->q($checkHashtagQuery);
-    if($hashtagResult->num_rows == 0)
+    if ($hashtagID == "none")
     {
-        echo "Could not find hashtag.";
+        echo "You need to select a hashtag to add.<br>Returning to previous page.";
+        header("Refresh:2; URL=../index.php?show-profile=true");
     }
     else
     {
-        $duplicateHashtagQuery = "SELECT *
-        FROM userhashtag
-        WHERE hasthagListID = ".$hashtagID."
-        AND userID = ".$curUser." limit 1";
-        $duplicateHashtagResult = $db->q($duplicateHashtagQuery);
-        if($duplicateHashtagResult->num_rows != 0)
+        $checkHashtagQuery = "SELECT hashtagListID
+        FROM hashtaglist
+        WHERE hashtagListID = ".$hashtagID." limit 1";
+        $hashtagResult = $db->q($checkHashtagQuery);
+        if($hashtagResult->num_rows == 0)
         {
-            echo "User and hashtag relation already exists.<br>Returning to previous page.";
-            header("Refresh:2; URL=../index.php?show-profile=true");
+            echo "Could not find hashtag.";
         }
         else
         {
-            $insertUserHashtagQuery = "INSERT INTO userhashtag (userID, hasthagListID) VALUES  ('$curUser', '$hashtagID')";
-            if($db->q($insertUserHashtagQuery))
+            $duplicateHashtagQuery = "SELECT *
+            FROM userhashtag
+            WHERE hasthagListID = ".$hashtagID."
+            AND userID = ".$curUser." limit 1";
+            $duplicateHashtagResult = $db->q($duplicateHashtagQuery);
+            if($duplicateHashtagResult->num_rows != 0)
             {
-                header("Location: ../index.php?show-profile=true");
+                echo "User and hashtag relation already exists.<br>Returning to previous page.";
+                header("Refresh:2; URL=../index.php?show-profile=true");
             }
             else
             {
-                echo "Unexpected error. Could not insert user hashtag relation to database.";
+                $insertUserHashtagQuery = "INSERT INTO userhashtag (userID, hasthagListID) VALUES  ('$curUser', '$hashtagID')";
+                if($db->q($insertUserHashtagQuery))
+                {
+                    header("Location: ../index.php?show-profile=true");
+                }
+                else
+                {
+                    echo "Unexpected error. Could not insert user hashtag relation to database.";
+                }
             }
         }
     }
@@ -89,36 +96,46 @@ if(isset($_POST["changeGenderPref"]))
 if(isset($_POST["addLocation"]))
 {
     $locationID = mysqli_real_escape_string($db->db, $_POST["addLocation"]);
-
-    $checkLocationQuery = "SELECT activityID
-    FROM location
-    WHERE activityID = ".$locationID." limit 1";
-    $checkLocationResult = $db->q($checkLocationQuery);
-    if($checkLocationResult->num_rows == 0)
+    if ($locationID == "none")
     {
-        echo "Could not find location.";
+        echo "You need to select a location to add.<br>Returning to previous page.";
+        header("Refresh:2; URL=../index.php?show-profile=true");
     }
     else
     {
-        $duplicateUserLocationQuery = "SELECT *
-        FROM userlocation
-        WHERE locationID = ".$locationID."
-        AND userID = ".$curUser." limit 1";
-        $duplicateUserLocationResult = $db->q($duplicateUserLocationQuery);
-        if($duplicateUserLocationResult->num_rows != 0)
+        $checkLocationQuery = "SELECT activityID
+        FROM location
+        WHERE activityID = ".$locationID." limit 1";
+        $checkLocationResult = $db->q($checkLocationQuery);
+        if($checkLocationResult->num_rows == 0)
         {
-            echo "User and location relation already exists.";
+            echo "Could not find location.<br>Returning to previous page.";
+            header("Refresh:2; URL=../index.php?show-profile=true");
         }
         else
         {
-            $insertUserLocationQuery = "INSERT INTO userlocation (userID, locationID) VALUES  ('$curUser', '$locationID')";
-            if($db->q($insertUserLocationQuery))
+            $duplicateUserLocationQuery = "SELECT *
+            FROM userlocation
+            WHERE locationID = ".$locationID."
+            AND userID = ".$curUser." limit 1";
+            $duplicateUserLocationResult = $db->q($duplicateUserLocationQuery);
+            if($duplicateUserLocationResult->num_rows != 0)
             {
-                header("Location: ../index.php?show-profile=true");
+                echo "User and location relation already exists.<br>Returning to previous page.";
+                header("Refresh:2; URL=../index.php?show-profile=true");
             }
             else
             {
-                echo "Unexpected error. Could not insert user location relation to database.";
+                $insertUserLocationQuery = "INSERT INTO userlocation (userID, locationID) VALUES  ('$curUser', '$locationID')";
+                if($db->q($insertUserLocationQuery))
+                {
+                    header("Location: ../index.php?show-profile=true");
+                }
+                else
+                {
+                    echo "Unexpected error. Could not insert user location relation to database.<br>Returning to previous page.";
+                    header("Refresh:2; URL=../index.php?show-profile=true");
+                }
             }
         }
     }
@@ -332,5 +349,6 @@ if(isset($_POST["updateSettings"]))
         }
     }
 }
-
+echo "Unexpected error. Could not update correctly.<br>Returning to previous page.";
+header("Refresh:2; URL=../index.php?show-profile=true");
 ?>

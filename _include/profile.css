@@ -37,14 +37,18 @@
     border-bottom: 2px solid var(--container-primary-color);
 }
 
+.profile-content-divider h3{
+    margin: 0px;
+    padding: 5px 10px;
+    border-left: 2px solid var(--container-primary-color);
+}
+
 .left-side {
-    margin-top: 5px;
     float: left;
     width: 50%;
 }
 
 .right-side {
-    margin-top: 5px;
     float: right;
     width: 50%;
 }
@@ -112,4 +116,9 @@
 .settings-title {
     text-align: center;
     text-decoration: underline;
+}
+
+#contact-buddy .fa {
+    margin: 5px;
+    font-size: 2em;
 }
