@@ -340,6 +340,20 @@ if(isset($_POST["updateSettings"]))
                     echo "Updated birthday<br>";
                 }
             }
+            if (isset($newGender) && $userGender != $newGender)
+            {
+                $genderChangeQuery = "UPDATE user SET dob = '$newGender' WHERE userID='$curUser'";
+                $genderChangeResult = $db->q($genderChangeQuery);
+                if($db->q($genderChangeResult))
+                {
+                    echo "Unexpected error. Could not update gender.<br>Returning to previous page.";
+                    header("Refresh:2; URL=../index.php?show-profile=true");
+                }
+                else
+                {
+                    echo "Updated Gender<br>";
+                }
+            }
             echo "Updated successfully.<br>Returning to previous page.";
             header("Refresh:2; URL=../index.php?show-profile=true");
         }
@@ -350,6 +364,6 @@ if(isset($_POST["updateSettings"]))
         }
     }
 }
-echo "Unexpected error. Could not update correctly.<br>Returning to previous page.";
-header("Refresh:2; URL=../index.php?show-profile=true");
+/* echo "Unexpected error. Could not update correctly.<br>Returning to previous page.";
+header("Refresh:2; URL=../index.php?show-profile=true"); */
 ?>

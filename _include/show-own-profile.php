@@ -272,7 +272,7 @@ if ($validProfile)
                 <span class="left-side">
                     <div class="field-container">Firstname:<br><input type="text" name="firstName" value="<?php echo $userFirstName; ?>"></div>
                     <div class="field-container">Email:<br><input type="email" name="email" value="<?php echo $userEmail; ?>"></div>
-                    <div class="field-container">Age:<br><input type="date" name="birthday" max="2002-01-01" value="<?php echo $userBirthdayFormat; ?>"></div>
+                    <div class="field-container">Age:<br><input type="date" name="birthday" max="2002-01-01" min="1938-01-01"value="<?php echo $userBirthdayFormat; ?>"></div>
                     <p>
                     <div class="field-container">Old Password:<br><input type="password" name="password" ></div>
                     </p>
