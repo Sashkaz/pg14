@@ -150,17 +150,26 @@ if(isset($_POST["uploadImage"]) || isset($_FILES["uploadImage"]))
     //Get the content of the image and then add slashes to it 
     $imagetmp = addslashes (file_get_contents($_FILES['uploadImage']['tmp_name']));
     $imageType = $_FILES["uploadImage"]["type"];
+    $imageSize = $_FILES["uploadImage"]["size"];
 
     if (substr($imageType,0,5) == "image")
     {
-        $updateImageQuery = "UPDATE user SET profilePicURL = '$imagetmp' WHERE userID='$curUser'";
-        if($db->q($updateImageQuery))
+        if ($imageSize <= 1024*1000)
         {
-            header("Location: ../index.php?show-profile=true");
+            $updateImageQuery = "UPDATE user SET profilePicURL = '$imagetmp' WHERE userID='$curUser'";
+            if($db->q($updateImageQuery))
+            {
+                header("Location: ../index.php?show-profile=true");
+            }
+            else
+            {
+                echo "Unexpected error. Could not update profile picture.<br>Returning to previous page.";
+                header("Refresh:2; URL=../index.php?show-profile=true");
+            }
         }
         else
         {
-            echo "Unexpected error. Could not update profile picture.<br>Returning to previous page.";
+            echo "Selected file is too large, please select a smaller file.<br>Returning to previous page.";
             header("Refresh:2; URL=../index.php?show-profile=true");
         }
     }

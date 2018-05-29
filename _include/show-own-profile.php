@@ -103,7 +103,7 @@ if ($validProfile)
                 </span>
             </div>
             <div class="profile-content-divider">
-                Share Profile page
+                <h3>Upload Profile Picture</h3>
                 <form method="POST" action="_process/process-edit-profile.php" enctype="multipart/form-data">
                     <input type="file" name="uploadImage">
                     <input type="submit" value="Upload">
@@ -202,7 +202,6 @@ if ($validProfile)
                     </form>
                 </span>
                 <span class="right-side">
-                    City
                     <div class="settings-title">Locations</div>
                     <?php
                     $locationListQuery = "SELECT * FROM userlocation WHERE userID = ".$targetUser."";
