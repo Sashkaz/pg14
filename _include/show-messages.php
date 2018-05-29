@@ -26,7 +26,6 @@
                 $messageQuery = "SELECT * FROM messages WHERE (relatingUser = ".$curUser." AND relatedUser = ".$targetUserID.") OR (relatingUser =".$targetUserID." AND relatedUser = ".$curUser.")";
                 $messageResults = $db->q($messageQuery);
                 ?>
-                <link rel="stylesheet" type="text/css" href="_include/messages-css.css">
                 <div id="message-header">
                 <a href="?show-profile=true&u=<?php echo $targetUser; ?>"><?php echo $targetUserFname; ?></a>
                 </div>
