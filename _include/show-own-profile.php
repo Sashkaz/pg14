@@ -1,4 +1,3 @@
-<link rel="stylesheet" type="text/css" href="_include/profile.css">
 <?php
 $validProfile = false;
 if (isset($_GET['u']) )
@@ -243,21 +242,10 @@ if ($validProfile)
                 <div class="clear-line"></div>
                 <div class="settings-title">Gender Preference</div>
                 <span class="left-side">
-                    <form method="POST" action="_process/process-edit-profile.php" enctype="multipart/form-data">
+                <form method="POST" action="_process/process-edit-profile.php" enctype="multipart/form-data">
                         <div class="profile-added-items">
-                            <input type="hidden" name="changeGenderPref" value="0">
-                            <div class="input-describer">Any Gender</div><button type="submit"><i class="
-                            <?php 
-                            if($anyGender)
-                            {
-                                echo "fa fa-dot-circle";
-                            }
-                            else
-                            {
-                                echo "fa fa-circle";
-                            }
-                            ?>
-                            "></i></button>
+                        <input type="hidden" name="changeGenderPref" value="0">
+                        <button type="submit" class="profile-gender-btn <?php if($anyGender){echo "current";}?>">Any Gender</button>
                         </div>
                     </form>
                 </span>
@@ -265,7 +253,7 @@ if ($validProfile)
                     <form method="POST" action="_process/process-edit-profile.php" enctype="multipart/form-data">
                         <div class="profile-added-items">
                         <input type="hidden" name="changeGenderPref" value="1">
-                        <button type="submit" class="profile-gender-btn <?php if(!$anyGender){echo "selected";}?>">Same Gender Only</button>
+                        <button type="submit" class="profile-gender-btn <?php if(!$anyGender){echo "current";}?>">Same Gender Only</button>
                         </div>
                     </form>
                 </span>
