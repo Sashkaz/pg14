@@ -231,7 +231,11 @@ body {
     display: flex;
 }
 .profile-col{
-    /* flex: 1; */
+    display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */
+    display: -moz-box;         /* OLD - Firefox 19- (buggy but mostly works) */
+    display: -ms-flexbox;      /* TWEENER - IE 10 */
+    display: -webkit-flex;     /* NEW - Chrome */
+    display: flex;
     padding: 0px 0px 0px 0px;
     max-width: 100px;
     margin: 0 0 0 2%;
@@ -244,8 +248,8 @@ body {
 .profile-col img{
     width: 20%;
     border-radius: 30px;
-    max-width: 35px;
-    min-width: 35px;
+    max-width: 40px;
+    min-width: 40px;
 }
 .form-wrapper {
     padding: 0px 5px 5px 0px;
