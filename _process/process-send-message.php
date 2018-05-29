@@ -8,7 +8,7 @@ if(isset($_SESSION["uid"]) && !empty($_SESSION["uid"]))
 }
 else
 {
-    die("You need to log in to see messages.");
+    die("You need to log in to send messages.");
 }
 if(isset($_POST["targetUser"]) && isset($_POST["message"]))
 {

@@ -26,7 +26,6 @@
                 $messageQuery = "SELECT * FROM messages WHERE (relatingUser = ".$curUser." AND relatedUser = ".$targetUserID.") OR (relatingUser =".$targetUserID." AND relatedUser = ".$curUser.")";
                 $messageResults = $db->q($messageQuery);
                 ?>
-                <link rel="stylesheet" type="text/css" href="_include/messages-css.css">
                 <div id="message-header">
                 <a href="?show-profile=true&u=<?php echo $targetUser; ?>"><?php echo $targetUserFname; ?></a>
                 </div>
@@ -55,16 +54,16 @@
                                     {
                                         ?>
                                         <span class="sender-profile">
-                                            <?php
-                                            if ($targetUserPic != "null")
-                                            {
-                                                echo '<img src="_assets/_img/'.$targetUserPic.'"/>';
-                                            }
-                                            else
-                                            {
-                                                echo '<img src="_assets/_img/150x150.jpeg"/>';
-                                            }
-                                            ?>
+                                        <?php
+                                        if ($targetUserPic != "null")
+                                        {
+                                            echo '<img src="data:image/jpeg;base64,'.base64_encode($targetUserPic).'"/>';
+                                        }
+                                        else
+                                        {
+                                            echo '<img src="_assets/_img/150x150.jpeg"/>';
+                                        }
+                                        ?>
                                         </span>
                                         <span class="ingoing-message">
                                         <?php

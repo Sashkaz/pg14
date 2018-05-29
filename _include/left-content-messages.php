@@ -54,7 +54,7 @@ if(isset($_SESSION["uid"]) && !empty($_SESSION["uid"]))
                             <?php
                             if ($targetUserPic != "null")
                             {
-                                echo '<img src="_assets/_img/'.$targetUserPic.'"/>';
+                                echo '<img src="data:image/jpeg;base64,'.base64_encode($targetUserPic).'"/>';
                             }
                             else
                             {
