@@ -1,9 +1,8 @@
 <?php
+include("../_include//_models/db.php");
+$db = new Database("localhost", "root", "", "projekt");
 if(isset($_POST["input"]) && !empty($_POST["input"])){
-    if(!isset($db) && empty($db)){
-        include("../_include//_models/db.php");
-        $db = new Database("localhost", "root", "", "projekt");
-    }
+
     $location = "";
     $tag = "";
     $restSQL = "";
@@ -26,5 +25,10 @@ if(isset($_POST["input"]) && !empty($_POST["input"])){
         }     
     }
     echo $baseSQL.$restSQL." group by user.userID";
+}elseif(isset($_POST["buddySearch"]) && !empty($_POST["buddySearch"])){
+    echo "select user.userID, firstName, lastName, publicID, profilePicURL from user 
+        left join userrelationship
+        on user.userID = userrelationship.relatedUser
+        where userrelationship.relatingUser = 2 and (user.firstName like '%$_POST[buddySearch]%' or user.lastName like '%$_POST[buddySearch]%')";
 }
 ?>
