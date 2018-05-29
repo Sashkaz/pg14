@@ -59,8 +59,8 @@
 <div class="form-wrapper">
     <form method="POST" action="_process/process-login.php" target="_self">
         <input type="submit" name="login" class="custom-button1" />
-        <input type="text" name="email" placeholder="E-mail">
-        <input type="password" name="password" placeholder="Password" >
+        <input type="text" name="email" class="custom-input2" placeholder="E-mail">
+        <input type="password" name="password" class="custom-input2" placeholder="Password" >
     </form>
 </div>
 <?php }?>
