@@ -112,6 +112,9 @@ body {
 .nav-divider{
     padding: 0px 15px;
 }
+.nav-city-dropdown li{
+    margin: 5px auto;
+}
 #center-content{
     display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */
     display: -moz-box;         /* OLD - Firefox 19- (buggy but mostly works) */
