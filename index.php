@@ -16,38 +16,45 @@
             <div id="left-bar">
                 <div id="left-content">
                     <?php if(isset($_GET["show-messages"]) && !empty($_GET["show-messages"])){
-                                include("_include/left-content-messages.php"); 
+                                include("_include/left-content-messages.php");
                             }
                             else
                             {
-                                include("_include/left-content.php"); 
+                                include("_include/left-content.php");
                             }?>
                 </div>
             </div>
             <div id="center-bar">
                 <div id="center-content">
-                    <?php 
+                    <?php
                         if(isset($_SESSION["uid"]) && !empty($_SESSION["uid"])){
                             if(isset($_GET["show-profile"]) && !empty($_GET["show-profile"])){
-                                include("_include/show-own-profile.php"); 
+                                include("_include/show-own-profile.php");
                             }elseif(isset($_GET["show-messages"]) && !empty($_GET["show-messages"])){
-                                include("_include/show-messages.php"); 
+                                include("_include/show-messages.php");
                             }elseif(isset($_GET["show-buddy-list"]) && !empty($_GET["show-buddy-list"])){
-                                include("_include/show-own-buddy-list.php"); 
+                                include("_include/show-own-buddy-list.php");
                             }elseif(isset($_GET["show-users"]) && !empty($_GET["show-users"])){
-                                include("_include/show-users.php"); 
+                                include("_include/show-users.php");
                             }else{
-                               include("_include/show-users.php"); 
-                            }          
+                               include("_include/show-users.php");
+                            }
                             include("_assets/_js/main.js");
                         }else{
                             include("_include/form-register.php");
-                        }?> 
+                        }?>
                 </div>
             </div>
             <div id="right-bar">
                 <div id="right-content">
-                    <?php include("_include/right-content.php")?>
+                    <?php if (isset($_SESSION["active"])&&!empty($_SESSION["active"]))
+                    {
+                      include("_include/right-content-active.php");
+                    } else
+                    {
+                      include("_include/right-content.php");
+                    }
+                    ?>
                 </div>
             </div>
         </div>

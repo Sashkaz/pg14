@@ -21,6 +21,6 @@
     ?>
   </div>
   <div class="orientation-on-active">
-    <input class="custom-button1" type="submit" action="../index.php" name="drop-session" value="Cancel training">
+    <input class="custom-button1" type="submit" onclick="document.location.href='_process/process-deactivate.php'" name="drop-session" value="Cancel training">
   </div>
 </div>

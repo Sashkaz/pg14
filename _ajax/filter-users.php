@@ -24,6 +24,7 @@ if(isset($_POST["input"]) && !empty($_POST["input"])){
             $restSQL = (($restSQL == "")? $restSQL."hashtaglist.hashtagListID = ".$val[1]: $restSQL." OR hashtaglist.hashtagListID = ".$val[1]);
         }     
     }
+    // echo $baseSQL.$restSQL." and user.userID != $_POST[userID] group by user.userID";
     echo $baseSQL.$restSQL." group by user.userID";
 }elseif(isset($_POST["buddySearch"]) && !empty($_POST["buddySearch"])){
     echo "select user.userID, firstName, lastName, publicID, profilePicURL from user 

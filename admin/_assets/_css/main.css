@@ -29,6 +29,7 @@ a{
     height: 100%;
     z-index: 99999;
     position: fixed;
+    overflow-y: auto;
 }
 .container{
     display: -webkit-box;
