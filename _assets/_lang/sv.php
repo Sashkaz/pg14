@@ -41,7 +41,7 @@
         ],
         "left-bar-filter" => [
             "city" => "Stad",
-            "gym" => "Lokaler",
+            "gym" => "Plats",
             "hashtag" => "Hashtag",
             "activity" => [
                 "header" => "Övrigt",
@@ -57,8 +57,8 @@
                     "default" => "Lägg till Hashtag"
                 ],
                 "add-location" => [
-                    "header" => "Lokaler",
-                    "default" => "Lägg till Location"
+                    "header" => "Plats",
+                    "default" => "Lägg till Plats"
                 ],
                 "gender-preference" =>[
                     "header" => "Kön Preferens",
