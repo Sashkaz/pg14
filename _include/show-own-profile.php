@@ -102,7 +102,7 @@ if ($validProfile)
                 </span>
             </div>
             <div class="profile-content-divider">
-                <h3>Upload Profile Picture</h3>
+                <h3><?php echo $lang["my-profile"]["upload-pic"]; ?></h3>
                 <form method="POST" action="_process/process-edit-profile.php" enctype="multipart/form-data">
                     <input type="file" name="uploadImage">
                     <input type="submit" value="Upload">

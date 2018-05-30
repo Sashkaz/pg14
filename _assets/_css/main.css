@@ -71,7 +71,7 @@ body {
     width: 15%;
     min-width: 150px;
     height: auto;
-    min-height: 860px;
+    min-height: 600px;
     box-shadow: 5px 0px 20px 12px grey;
     background-color: var(--container-primary-color);
     border-top-left-radius: 10px;
@@ -83,7 +83,7 @@ body {
     width: 60%;
     min-width: 500px;
     height: auto;
-    min-height: 860px;
+    min-height: 600px;
     margin: 0px 2%;
     box-shadow: 0px 0px 20px 10px grey;
     background-color: var(--container-secondary-color);
@@ -94,7 +94,7 @@ body {
     width: 15%;
     min-width: 150px;
     height: auto;
-    min-height: 860px;
+    min-height: 600px;
     border-top-right-radius: 10px;
     border-bottom-right-radius: 10px;
     background-color: var(--container-primary-color);
@@ -620,7 +620,7 @@ color: var(--text-secondary-color)
 #message-container {
     /* background-color: var(--container-tertiary-color); */
     overflow-y: scroll;
-    height: 87%;
+    height: 500px;
 }
 /* width */
 #message-container::-webkit-scrollbar {
