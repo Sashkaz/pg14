@@ -1,21 +1,20 @@
 <?php
-include("../_include//_models/db.php");
+include("../_include/_models/db.php");
 $db = new Database("localhost", "root", "", "projekt");
 if(isset($_POST["input"]) && !empty($_POST["input"])){
-
     $location = "";
     $tag = "";
     $restSQL = "";
     $baseSQL =" select user.userID, firstName, lastName, publicID, profilePicURL from user 
-                left join userlocation 
+                right join userlocation 
                     on user.userID = userlocation.userID 
                 left join location 
                     on userlocation.locationID = location.activityID
                 right join userhashtag 
                     on user.userID = userhashtag.userID 
-                right join hashtaglist 
+                left join hashtaglist 
                     on userhashtag.hasthagListID = hashtaglist.hashtagListID 
-                where 
+                where  user.userID != $_POST[userID] and 
     ";
     foreach($_POST["input"] as $key=>$val){
         if($val[0] == "location"){
@@ -24,8 +23,7 @@ if(isset($_POST["input"]) && !empty($_POST["input"])){
             $restSQL = (($restSQL == "")? $restSQL."hashtaglist.hashtagListID = ".$val[1]: $restSQL." OR hashtaglist.hashtagListID = ".$val[1]);
         }     
     }
-    // echo $baseSQL.$restSQL." and user.userID != $_POST[userID] group by user.userID";
-    echo $baseSQL.$restSQL." group by user.userID";
+    echo $baseSQL."(".$restSQL.") group by user.userID";
 }elseif(isset($_POST["buddySearch"]) && !empty($_POST["buddySearch"])){
     echo "select user.userID, firstName, lastName, publicID, profilePicURL from user 
         left join userrelationship

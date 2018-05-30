@@ -1,9 +1,10 @@
 <?php
-    include("_models/db.php");
+    include("../_models/db.php");
+    include("../../_assets/_lang/".$_POST["lang"].".php"); 
     $locationFilter = new Database("localhost", "root", "", "projekt");
 ?>
 <div class="nav-divider">
-    <h3>Gym</h3>
+    <h3><?php echo $lang["left-bar-filter"]["gym"]; ?></h3>
     <ul class="nav-location-dropdown">
         <?php
         $restSQL = "";
@@ -12,7 +13,6 @@
                     left join city 
                         on location.cityID = city.cityID
                     where 
-                       
                 ";
             foreach($_POST["city"] as $key=>$val){
                 $restSQL = (($restSQL == "")? $restSQL."city.cityID = ".$val[1]: $restSQL." OR city.cityID = ".$val[1]); 
@@ -33,7 +33,7 @@
     </ul>
 </div>
 <div class="nav-divider">
-    <h3>Hashtag</h3>
+    <h3><?php echo $lang["left-bar-filter"]["hashtag"]; ?></h3>
     <ul class="nav-tag-dropdown">
         <?php
             if($req = $locationFilter->q("select * from hashtaglist")){
@@ -51,11 +51,11 @@
     </ul>
 </div>
 <div class="nav-divider">
-    <h3>Now training</h3>
+    <h3><?php echo $lang["left-bar-filter"]["activity"]["header"]; ?></h3>
     <ul class="nav-user-status-check">
         <li>
             <input type="checkbox" name="nav-user-status" value="true">
-            <label for="nav-user-status">Now training</label>
+            <label for="nav-user-status"><?php echo $lang["left-bar-filter"]["activity"]["active"]; ?></label>
         </li>
     </ul>
 </div>
