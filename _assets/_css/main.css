@@ -985,11 +985,14 @@ height: 50px;
     margin: 5px;
     font-size: 2em;
 }
+
 /* DROPDOWN */
 .dropdown {
     margin: 15% 5%;
     width: 90%;
     transform: translateY(-50%);
+    position: inherit;
+    margin-top: 20%;
 }
 a {
     color: #fff;
@@ -1015,9 +1018,9 @@ a {
 .dropdown dt a {
     background-color: var(--btn-primary-color);;
     display: block;
-    padding: 8px 20px 5px 10px;
+    /* padding: 8px 20px 5px 10px; */
     min-height: 25px;
-    line-height: 24px;
+    /* line-height: 24px; */
     overflow: hidden;
     border: 0;
     max-width: 200px;
@@ -1028,7 +1031,24 @@ a {
     display: inline-block;
     padding: 0 3px 2px 0;
 }
-
+.multiSel{
+    display: flex;
+    display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */
+    display: -moz-box;         /* OLD - Firefox 19- (buggy but mostly works) */
+    display: -ms-flexbox;      /* TWEENER - IE 10 */
+    display: -webkit-flex;     /* NEW - Chrome */
+    -webkit-flex-direction: row;
+    -moz-flex-direction: row;
+    -ms-flex-direction: row;	
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: flex-start;
+}
+.multiSel span{
+    padding: 0 0 0 0;
+    /* flex: 1; */
+    flex-basis: content;
+}
 .dropdown dd ul {
     background-color:  var(--btn-primary-color);;
     border: 0;
