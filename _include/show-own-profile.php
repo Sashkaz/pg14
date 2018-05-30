@@ -263,24 +263,29 @@ if ($validProfile)
             <h3><?php echo $lang["my-profile"]["account-info"]["header"]; ?></h3>
             <form method="POST" action="_process/process-edit-profile.php" enctype="multipart/form-data">
                 <span class="left-side">
-                    <div class="field-container"><?php echo $lang["my-profile"]["account-info"]["placeholder"]["fname"]; ?><br><input type="text" name="firstName" value="<?php echo $userFirstName; ?>"></div>
-                    <div class="field-container"><?php echo $lang["my-profile"]["account-info"]["placeholder"]["email"]; ?><br><input type="email" name="email" value="<?php echo $userEmail; ?>"></div>
+                    <div class="field-container"><?php echo $lang["my-profile"]["account-info"]["placeholder"]["fname"]; ?><br><input type="text" name="firstName" class="custom-input1 split-input" placeholder='<?php echo $userFirstName; ?>' ></div>
+                    <div class="field-container"><?php echo $lang["my-profile"]["account-info"]["placeholder"]["email"]; ?><br><input type="email" name="email" class="custom-input1 split-input" placeholder='<?php echo $userEmail; ?>' ></div>
                     <div class="field-container"><?php echo $lang["my-profile"]["account-info"]["placeholder"]["dob"]; ?><br><input type="date" name="birthday" max="2002-01-01" min="1938-01-01"value="<?php echo $userBirthdayFormat; ?>"></div>
                     <p>
-                    <div class="field-container"><?php echo $lang["my-profile"]["account-info"]["placeholder"]["old-pwd"]; ?><br><input type="password" name="password" ></div>
+                    <div class="field-container"><?php echo $lang["my-profile"]["account-info"]["placeholder"]["old-pwd"]; ?><br><input type="password" name="password" class="custom-input1 split-input"></div>
                     </p>
                 </span>
                 <span class="right-side">
-                    <div class="field-container"><?php echo $lang["my-profile"]["account-info"]["placeholder"]["lname"]; ?><br><input type="text" name="lastName" value="<?php echo $userLastName; ?>"></div>
-                    <div class="field-container"><?php echo $lang["my-profile"]["account-info"]["placeholder"]["new-pwd"]; ?><br><input type="password" name="newPassword"></div>
-                    <div class="field-container"><?php echo $lang["my-profile"]["account-info"]["placeholder"]["gender"]["header"]; ?><br><input type="radio" name="gender" value="1" <?php if ($userGender == 1) { echo 'checked="checked"'; }?>><?php echo $lang["my-profile"]["account-info"]["placeholder"]["gender"]["m"]; ?>
-                    <input type="radio" name="gender" value="2" <?php if ($userGender == 2) { echo 'checked="checked"'; }?>><?php echo $lang["my-profile"]["account-info"]["placeholder"]["gender"]["f"]; ?>
-                    <input type="radio" name="gender" value="0" <?php if ($userGender == 0) { echo 'checked="checked"'; }?>><?php echo $lang["my-profile"]["account-info"]["placeholder"]["gender"]["o"]; ?></div>
+                    <div class="field-container"><?php echo $lang["my-profile"]["account-info"]["placeholder"]["lname"]; ?><br><input type="text" name="lastName" class="custom-input1 split-input" placeholder='<?php echo $userLastName; ?>' ></div>
+                    <div class="field-container"><?php echo $lang["my-profile"]["account-info"]["placeholder"]["new-pwd"]; ?><br><input type="password" name="newPassword" class="custom-input1 split-input"></div>
+                    <div class="field-container"><?php echo $lang["my-profile"]["account-info"]["placeholder"]["gender"]["header"]; ?><br>
+
+                    <select name="gender" class="custom-input1" >
+                        <option value=1 <?php if ($userGender == 1) { echo 'selected'; }?>><?php echo $lang["my-profile"]["account-info"]["placeholder"]["gender"]["m"]; ?></option>
+                        <option value=2 <?php if ($userGender == 2) { echo 'selected'; }?>><?php echo $lang["my-profile"]["account-info"]["placeholder"]["gender"]["f"]; ?></option>
+                        <option value=0 <?php if ($userGender == 0) { echo 'selected'; }?>><?php echo $lang["my-profile"]["account-info"]["placeholder"]["gender"]["o"]; ?></option>
+                    </select>
+                    </div>
                     <p>
-                    <div class="field-container"><?php echo $lang["my-profile"]["account-info"]["placeholder"]["conf-pwd"]; ?><br><input type="password" name="confirmPassword" ></div>
+                    <div class="field-container"><?php echo $lang["my-profile"]["account-info"]["placeholder"]["conf-pwd"]; ?><br><input type="password" name="confirmPassword" class="custom-input1 split-input"></div>
                     </p>
                 </span>
-                <input type="submit" name="updateSettings" value="Update">
+                <input class="custom-button1 split-buttons" type="submit" style="margin-left: 50%; display: block;" name="updateSettings" value = '<?php echo $lang["my-profile"]["account-info"]["update-button"]; ?>'/>
             </form>
             </div>
         </div>
@@ -309,14 +314,42 @@ if ($validProfile)
                 </span>
             </div>
             <div class="profile-content-divider" id="contact-buddy">
-        <a href="?show-messages=true&u=<?php echo $targetUser; ?>"><i class="fa fa-envelope"></i></a>
-        <a href="_process/process-userrelation.php?addFriend=<?php echo $targetUser; ?>"><i class="fa fa-user-plus"></i></i></a>
-        <a href="?blockBuddy=true&u=<?php echo $targetUser; ?>"><i class="fa fa-ban"></i></a>
+                <a href="?show-messages=true&u=<?php echo $targetUser; ?>"><i class="fa fa-envelope" title="Send Message"></i></a>
+                <?php
+                    $checkrelationshipQuery = "SELECT *
+                    FROM userrelationship
+                    WHERE (relatingUser = '$curUser' AND relatedUser = '$userID')
+                    OR (relatingUser = '$userID' AND relatedUser = '$curUser') limit 1";
+                    $checkrelationshipResult = $db->q($checkrelationshipQuery);
+                    $relationshipType = 0;
+                    if($checkrelationshipResult->num_rows != 0)
+                    {
+                        $relationshipRow = $checkrelationshipResult->fetch_assoc();
+                        $relationshipType = $relationshipRow["relationshipID"];
+                        // RelationshipType:
+                        // 1 = Buddies
+                        // 2 = Sent Buddy Invite
+                        // 3 = Blocked
+                    }
+                    if ($relationshipType == 0)
+                    {
+                        ?>
+                        <a href="_process/process-userrelation.php?addFriend=<?php echo $targetUser; ?>"><i class="fa fa-user-plus" title="Send Buddy Request"></i></i></a>
+                        <?php
+                    }
+                    else if ($relationshipType == 1)
+                    {
+                        ?>
+                        <a href="_process/process-userrelation.php?removeFriend=<?php echo $targetUser; ?>"><i class="fa fa-user-minus" title="Remove From Buddy List"></i></i></a>
+                        <?php
+                    }
+                ?>
+                <a href="?blockBuddy=true&u=<?php echo $targetUser; ?>"><i class="fa fa-ban" title="Block"></i></a>
             </div>
             <div class="profile-content-divider">
                 <h3>Buddy Info</h3>
                 <span class="left-side">
-                    <div class="settings-title">Hashtags</div>
+                    <div class="settings-title"><?php echo $lang["my-profile"]["filter-options"]["add-hashtag"]["header"]; ?></div>
                     <?php
                     $hashtagListQuery = "SELECT * FROM userhashtag WHERE userID = ".$userID."";
                     $hashtagResults = $db->q($hashtagListQuery);
@@ -336,7 +369,7 @@ if ($validProfile)
                             $hashtagNameRow = $hashtagNameResult->fetch_assoc();
                             $hashtagName = $hashtagNameRow["name"];
                             ?>
-                            <input type="text"  value="<?php echo $hashtagName; ?>" class="readonly" readonly>
+                            <div class="profile-added-items"><?php echo $hashtagName; ?></div>
                             <?php
                         }
                         ?>
@@ -345,7 +378,7 @@ if ($validProfile)
                     ?>
                 </span>
                 <span class="right-side">
-                    <div class="settings-title">Locations</div>
+                    <div class="settings-title"><?php echo $lang["my-profile"]["filter-options"]["add-location"]["header"]; ?></div>
                     <?php
                     $locationListQuery = "SELECT * FROM userlocation WHERE userID = ".$userID."";
                     $locationResults = $db->q($locationListQuery);
@@ -365,7 +398,7 @@ if ($validProfile)
                                 $locationInfoRow = $locationResult->fetch_assoc();
                                 $locationName = $locationInfoRow["name"];
                                 ?>
-                                <input type="text"  value="<?php echo $locationName; ?>" class="readonly" readonly>
+                                <div class="profile-added-items"><?php echo $locationName; ?></div>
                                 <?php
                             }
                             ?>

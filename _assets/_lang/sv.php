@@ -33,7 +33,7 @@
             "register-button" => "Skapa konto nu!"
         ],
         "top-nav-buttons" => [
-            "show-users" => "Visa användarna",
+            "show-users" => "Hitta användare",
             "my-profile" => "Min profil",
             "messages" => "Meddelande",
             "buddy-list" => "Buddy List",
@@ -41,7 +41,7 @@
         ],
         "left-bar-filter" => [
             "city" => "Stad",
-            "gym" => "Lokaler",
+            "gym" => "Plats",
             "hashtag" => "Hashtag",
             "activity" => [
                 "header" => "Övrigt",
@@ -57,8 +57,8 @@
                     "default" => "Lägg till Hashtag"
                 ],
                 "add-location" => [
-                    "header" => "Lokaler",
-                    "default" => "Lägg till Location"
+                    "header" => "Platser",
+                    "default" => "Lägg till Plats"
                 ],
                 "gender-preference" =>[
                     "header" => "Kön Preferens",
