@@ -112,10 +112,13 @@ body {
 }
 #left-content ul {
     list-style: none;
-    text-indent: -30px;
+    /* text-indent: -30px; */
 }
 .nav-divider{
-    padding: 0px 15px;
+    padding: 15px 15px;
+}
+.nav-location-dropdown li, .nav-tag-dropdown li{
+    padding: 5px 0 !important;
 }
 .nav-city-dropdown li{
     margin: 5px auto;
@@ -292,15 +295,12 @@ body {
     width: 100%;
 }
 .main-form input, .main-form select{
-    /* border: 1px var(--container-tertiary-color) solid; */
     border: none;
     outline: none;
     background-color: var(--container-primary-color);
     color: var(--text-primary-color);
     font-size: 1.2em;
-    /* padding: 5px; */
     margin-top: 2px;
-    /* border-radius: 5px; */
 
 }
 .main-form input:focus, .main-form select:focus, .custom-button2:focus {
@@ -324,6 +324,9 @@ body {
     -ms-flex-direction: column;	
     flex-direction: column;
 }
+.register-options h2{
+    margin: 10px 0 35px 0;
+}
 .login-option{
     width: 100%;
     flex: 1;
@@ -335,7 +338,7 @@ body {
     align-items: center;
     justify-content: center;
     box-shadow: 0px 6px 15px -15px gray;
-    margin: 5px auto 25px auto;
+    margin: 5px auto 25px auto !important;
 }
 .login-option img{
     vertical-align: middle;
@@ -415,13 +418,9 @@ color: var(--text-secondary-color)
     font-weight: normal;
     text-decoration: none;
     background-color: var(--btn-primary-color);
-    /* padding: 12% 5px; */
     padding: 12px 10px;
-    /* border: solid 2px; */
-    /* border-top: none; */
     border:none;
     outline: none;
-    /* border-color: var(--btn-border-color); */
     height: 100%;
     white-space: nowrap;
     font-family: Arial,Helvetica,sans-serif;
@@ -986,4 +985,113 @@ height: 50px;
 #contact-buddy .fa {
     margin: 5px;
     font-size: 2em;
+}
+
+/* DROPDOWN */
+.dropdown {
+    margin: 0 5%;
+    width: 90%;
+    transform: translateY(-50%);
+    position: inherit;
+    margin-top: 20%;
+}
+a {
+    color: #fff;
+}
+.dropdown dd,
+.dropdown dt {
+    margin: 0px;
+    padding: 0px;
+}
+.dropdown ul {
+    margin: -1px 0 0 0;
+}
+.dropdown dd {
+    position: relative;
+}
+.dropdown a,
+.dropdown a:visited {
+    color: #fff;
+    text-decoration: none;
+    outline: none;
+    font-size: 12px;
+}
+.dropdown dt a {
+    background-color: var(--btn-primary-color);;
+    display: block;
+    /* padding: 8px 20px 5px 10px; */
+    min-height: 25px;
+    /* line-height: 24px; */
+    overflow: hidden;
+    border: 0;
+    max-width: 200px;
+}
+.dropdown dt a span,
+    .multiSel span {
+    cursor: pointer;
+    display: inline-block;
+    padding: 0 3px 2px 0;
+}
+.multiSel{
+    display: flex;
+    display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */
+    display: -moz-box;         /* OLD - Firefox 19- (buggy but mostly works) */
+    display: -ms-flexbox;      /* TWEENER - IE 10 */
+    display: -webkit-flex;     /* NEW - Chrome */
+    -webkit-flex-direction: row;
+    -moz-flex-direction: row;
+    -ms-flex-direction: row;	
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: flex-start;
+}
+.multiSel span{
+    padding: 0 0 0 0;
+    /* flex: 1; */
+    flex-basis: content;
+}
+.dropdown dd ul {
+    background-color:  var(--btn-primary-color);;
+    border: 0;
+    color: #fff;
+    display: none;
+    left: 0px;
+    padding: 2px 5% 2px 5%;
+    position: absolute;
+    top: 2px;
+    max-width: 173px;
+    width: 90%;
+    list-style: none;
+    max-height: 150px;
+    overflow: auto;
+}
+.dropdown span.value {
+    display: none;
+}
+.dropdown dd ul li a {
+    padding: 5px;
+    display: block;
+}
+.dropdown dd ul li a:hover {
+    background-color: #fff;
+}
+.mutliSelect li{
+    transition: all 0.15s ease-in-out;
+    -webkit-transition: all 0.15s ease-in-out;
+    -moz-transition: all 0.15s ease-in-out;
+    -ms-transition: all 0.15s ease-in-out;
+    -o-transition: all 0.15s ease-in-out;
+}
+.mutliSelect li:hover{
+    background-color: var(--btn-hover-color);
+}
+button {
+    background-color: #6BBE92;
+    width: 302px;
+    border: 0;
+    padding: 10px 0;
+    margin: 5px 0;
+    text-align: center;
+    color: #fff;
+    font-weight: bold;
 }

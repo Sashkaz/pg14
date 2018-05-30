@@ -15,7 +15,7 @@
                     where 
                 ";
             foreach($_POST["city"] as $key=>$val){
-                $restSQL = (($restSQL == "")? $restSQL."city.cityID = ".$val[0]: $restSQL." OR city.cityID = ".$val[0]); 
+                $restSQL = (($restSQL == "")? $restSQL."city.cityID = ".$val[1]: $restSQL." OR city.cityID = ".$val[1]); 
             }
             $sql = $baseSQL.$restSQL;
             if($req = $locationFilter->q($sql)){
