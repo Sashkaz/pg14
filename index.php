@@ -1,14 +1,15 @@
-
-
 <?php 
-    session_start(); 
-    $langPref = "en"; 
-    include("_assets/_lang/".$langPref.".php"); 
+    session_start();
+    if(!isset($_COOKIE["lang"]) && empty($_COOKIE["lang"])){
+        setcookie("lang", "en",  time()+60*60*24*30, "/projekt");
+        header("Location: index.php");
+    }
+    include("_assets/_lang/".$_COOKIE["lang"].".php"); 
     include("_include/_models/db.php");
     $db = new Database("localhost", "root", "", "projekt");
 ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="<?php $_COOKIE["lang"]?>">
     <head>
         <?php include("_include/head.php"); ?>
     </head>
