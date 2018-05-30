@@ -51,12 +51,24 @@
 <div class="profile-col">
     <a href="_process/process-logout.php" class="custom-button1" ><i class="fas fa-sign-out-alt"></i> <?php echo $lang["top-nav-buttons"]["logout-button"]; ?></a>
 </div>
+<div class="profile-col">
+    <select class="custom-input1">
+        <option value="en">EN</option>
+        <option value="sv">SV</option>
+    </select>
+</div>
 <?php }else{ ?>
 <div class="form-wrapper">
     <form method="POST" action="_process/process-login.php" target="_self">
-        <input type="submit" name="login" class="custom-button1" value=<?php echo $lang["login-form"]["login-button"]; ?> />
+        <input type="submit" name="login" class="custom-button1" value='<?php echo $lang["login-form"]["login-button"]; ?>' />
         <input type="text" name="email" class="custom-input2" placeholder=<?php echo $lang["login-form"]["placeholder"]["email"]; ?> >
         <input type="password" name="password" class="custom-input2" placeholder=<?php echo $lang["login-form"]["placeholder"]["pwd"]; ?> >
     </form>
+</div>
+<div class="profile-col">
+    <select class="custom-input1">
+        <option value="en">EN</option>
+        <option value="sv">SV</option>
+    </select>
 </div>
 <?php }?>
