@@ -4,18 +4,19 @@
         var checkedValues = new Array();
         var lang = $("input[id='lang']").val();
         $("[name='city']:checked").each(function() {
-            var input = $(this).attr('name').split('_');
-            checkedValues.push([input[1], $(this).val()]);
+            // var input = $(this).attr('name').split('_');
+            var input = $(this).attr('id').val();
+            checkedValues.push([input, $(this).val()]);
         });
         console.log(checkedValues);
-        if(checkedValues.length > 0){
+        /*if(checkedValues.length > 0){
             $.post("_include/_async/location-filter-backup.php",
                     {city: checkedValues, lang: lang}, 
                     function(data){
                         $("#rest-search").html(data);
                     }
             );
-        }
+        }*/
     });
     $(document).on("click", "[name^='nav_']", function(){
         var checkedValues = new Array();

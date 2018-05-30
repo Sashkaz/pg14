@@ -15,7 +15,7 @@
                     while ($row = $req->fetch_assoc()) {
                         echo "
                             <li>
-                                <input type=checkbox name=city value=$row[cityID]>
+                                <input type=checkbox id=$row[cityID] name=city value=$row[name]>
                                 <label for=city>$row[name]</label>
                             </li>";
                     }
