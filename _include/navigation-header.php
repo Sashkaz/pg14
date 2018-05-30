@@ -53,8 +53,8 @@
 </div>
 <div class="profile-col">
     <select class="custom-input1" name="lang_selector">
-        <option value="en" "<?php echo (($_COOKIE["lang"] == "en")? "selected":"")?>">EN</option>
-        <option value="sv" "<?php echo (($_COOKIE["lang"] == "sv")? "selected":"")?>">SV</option>
+        <option value="en" <?php echo (($_COOKIE["lang"] == "en")? "selected":"")?>>EN</option>
+        <option value="sv" <?php echo (($_COOKIE["lang"] == "sv")? "selected":"")?>>SV</option>
     </select>
 </div>
 <?php }else{ ?>
@@ -67,8 +67,8 @@
 </div>
 <div class="profile-col">
     <select class="custom-input1" name="lang_selector">
-        <option value="en" "<?php echo (($_COOKIE["lang"] == "en")? "selected":"")?>">EN</option>
-        <option value="sv" "<?php echo (($_COOKIE["lang"] == "sv")? "selected":"")?>">SV</option>
+        <option value="en" <?php echo (($_COOKIE["lang"] == "en")? "selected":"")?>>EN</option>
+        <option value="sv" <?php echo (($_COOKIE["lang"] == "sv")? "selected":"")?>>SV</option>
     </select>
 </div>
 <?php }?>
