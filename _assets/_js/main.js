@@ -3,20 +3,20 @@
     $(document).on("click", "[name='city']", function(){
         var checkedValues = new Array();
         var lang = $("input[id='lang']").val();
+        // console.log($(this).attr('id'));
         $("[name='city']:checked").each(function() {
-            // var input = $(this).attr('name').split('_');
-            var input = $(this).attr('id').val();
+            var input = $(this).attr('id');
             checkedValues.push([input, $(this).val()]);
         });
         console.log(checkedValues);
-        /*if(checkedValues.length > 0){
-            $.post("_include/_async/location-filter-backup.php",
+        if(checkedValues.length > 0){
+            $.post("_include/_async/location-filter.php",
                     {city: checkedValues, lang: lang}, 
                     function(data){
                         $("#rest-search").html(data);
                     }
             );
-        }*/
+        }
     });
     $(document).on("click", "[name^='nav_']", function(){
         var checkedValues = new Array();
