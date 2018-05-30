@@ -1,8 +1,4 @@
 <?php if(isset($_SESSION["uid"]) && !empty($_SESSION["uid"])){
-    if(!isset($db) && empty($db)){
-        include("_models/db.php");
-        $db = new Database("localhost", "root", "", "projekt");
-    }
     $curUser = $_SESSION["uid"];
     $page = "default";
     if(isset($_GET["show-users"]))

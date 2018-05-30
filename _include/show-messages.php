@@ -1,14 +1,11 @@
 <div class="messages-wrap">
     <?php
-    //include("_models/db.php");
     if(isset($_SESSION["uid"]) && !empty($_SESSION["uid"]))
     {
         $curUser = $_SESSION["uid"];
         if (isset($_GET['u']) )
         {
             $targetUser = $_GET["u"];
-                    
-            $db = new Database("localhost", "root", "", "projekt");
             $targetUserQuery = "SELECT userID, firstName, lastName, profilePicURL
             FROM User
             WHERE publicID = ".$targetUser." limit 1";

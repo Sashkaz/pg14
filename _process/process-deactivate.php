@@ -1,13 +1,13 @@
 <?php
   session_start();
   include("../_include/_models/db.php");
-  $db = new Database("localhost", "root", "", "projekt");
+  $deactivate = new Database("localhost", "root", "", "projekt");
 
   unset($_SESSION["active"]);
   $_SESSION["active"] = "";
   echo $_SESSION["userLocationActivityID"];
   $querydelete = "DELETE FROM `userlocationstatus` WHERE userLocationActivityID = $_SESSION[userLocationActivityID]";
-  if ($req = $db->q($querydelete))
+  if ($req = $deactivate->q($querydelete))
   {
     header("Location: ../index.php");
   }

@@ -1,8 +1,4 @@
 <?php
-    if(!isset($db) && empty($db)){
-        include("_models/db.php");
-        $db = new Database("localhost", "root", "", "projekt");
-    }
     if (session_status() == PHP_SESSION_NONE) {
         session_start();
     }

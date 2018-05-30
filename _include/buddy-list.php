@@ -1,12 +1,7 @@
 <?php 
-    if(!isset($db) && empty($db)){
-        include("_models/db.php");
-        $db = new Database("localhost", "root", "", "projekt");
-    }
     if(!isset($_SESSION["uid"]) && empty($_SESSION["uid"])){
         session_start();
     }
-
     $sql = "select user.userID, firstName, lastName, publicID, profilePicURL from user 
     left join userrelationship
     on user.userID = userrelationship.relatedUser
