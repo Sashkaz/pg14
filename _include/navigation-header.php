@@ -52,9 +52,9 @@
     <a href="_process/process-logout.php" class="custom-button1" ><i class="fas fa-sign-out-alt"></i> <?php echo $lang["top-nav-buttons"]["logout-button"]; ?></a>
 </div>
 <div class="profile-col">
-    <select class="custom-input1">
-        <option value="en">EN</option>
-        <option value="sv">SV</option>
+    <select class="custom-input1" name="lang_selector">
+        <option value="en" "<?php echo (($_COOKIE["lang"] == "en")? "selected":"")?>">EN</option>
+        <option value="sv" "<?php echo (($_COOKIE["lang"] == "sv")? "selected":"")?>">SV</option>
     </select>
 </div>
 <?php }else{ ?>
@@ -66,9 +66,9 @@
     </form>
 </div>
 <div class="profile-col">
-    <select class="custom-input1">
-        <option value="en">EN</option>
-        <option value="sv">SV</option>
+    <select class="custom-input1" name="lang_selector">
+        <option value="en" "<?php echo (($_COOKIE["lang"] == "en")? "selected":"")?>">EN</option>
+        <option value="sv" "<?php echo (($_COOKIE["lang"] == "sv")? "selected":"")?>">SV</option>
     </select>
 </div>
 <?php }?>
