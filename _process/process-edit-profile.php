@@ -248,11 +248,6 @@ if(isset($_POST["updateSettings"]))
             $newBirthday = mysqli_real_escape_string($db->db, $_POST["birthday"]);
             $newBirthday = date_format(date_create($newBirthday),"j-n-Y");
         }
-        // New Birthday Input format
-        $newBirthdayYear = mysqli_real_escape_string($db->db, $_POST["year"]);
-        $newBirthdayMonth = mysqli_real_escape_string($db->db, $_POST["month"]);
-        $newBirthdayDay = mysqli_real_escape_string($db->db, $_POST["day"]);
-        $newBirthday = $newBirthdayDay."-".$newBirthdayMonth."-".$newBirthdayYear;
         if(isset($_POST["gender"]) && !empty($_POST["gender"]))
         {
             $newGender = mysqli_real_escape_string($db->db, $_POST["gender"]);
