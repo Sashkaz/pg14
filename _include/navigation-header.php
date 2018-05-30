@@ -40,27 +40,27 @@
         <img src="<?php echo $userPictureSrc; ?>" />
     </div>
     <div class="profile-col">
-        <a href="?show-users=true" id="show-users" class="custom-button1 <?php if($page=="show-users"){ echo 'current';}?>"><i class="fas fa-search"></i> Show Users</a>
+        <a href="?show-users=true" id="show-users" class="custom-button1 <?php if($page=="show-users"){ echo 'current';}?>"><i class="fas fa-search"></i> <?php echo $lang["top-nav-buttons"]["show-users"]; ?></a>
     </div>
     <div class="profile-col">
-        <a href="?show-profile=true" id="my-profile" class="custom-button1 <?php if($page=="show-profile"){ echo 'current';}?>"><i class="fas fa-user-cog"></i> My Profile</a>
+        <a href="?show-profile=true" id="my-profile" class="custom-button1 <?php if($page=="show-profile"){ echo 'current';}?>"><i class="fas fa-user-cog"></i> <?php echo $lang["top-nav-buttons"]["my-profile"]; ?></a>
     </div>
     <div class="profile-col">
-        <a href="?show-messages=true" id="my-messages" class="custom-button1 <?php if($page=="show-messages"){ echo 'current';}?>"><i class="fas fa-envelope"></i> Messages</a>
+        <a href="?show-messages=true" id="my-messages" class="custom-button1 <?php if($page=="show-messages"){ echo 'current';}?>"><i class="fas fa-envelope"></i> <?php echo $lang["top-nav-buttons"]["messages"]; ?></a>
     </div>
     <div class="profile-col">
-            <a href="?show-buddy-list=true" id="buddy-list" class="custom-button1 <?php if($page=="show-buddy-list"){ echo 'current';}?>"><i class="fas fa-address-book"></i> Buddy List</a>
+            <a href="?show-buddy-list=true" id="buddy-list" class="custom-button1 <?php if($page=="show-buddy-list"){ echo 'current';}?>"><i class="fas fa-address-book"></i> <?php echo $lang["top-nav-buttons"]["buddy-list"]; ?></a>
     </div>
 </div>
 <div class="profile-col">
-    <a href="_process/process-logout.php" class="custom-button1" ><i class="fas fa-sign-out-alt"></i> Logout</a>
+    <a href="_process/process-logout.php" class="custom-button1" ><i class="fas fa-sign-out-alt"></i> <?php echo $lang["top-nav-buttons"]["logout-button"]; ?></a>
 </div>
 <?php }else{ ?>
 <div class="form-wrapper">
     <form method="POST" action="_process/process-login.php" target="_self">
-        <input type="submit" name="login" class="custom-button1" />
-        <input type="text" name="email" class="custom-input2" placeholder="E-mail">
-        <input type="password" name="password" class="custom-input2" placeholder="Password" >
+        <input type="submit" name="login" class="custom-button1" value=<?php echo $lang["login-form"]["login-button"]; ?> />
+        <input type="text" name="email" class="custom-input2" placeholder=<?php echo $lang["login-form"]["placeholder"]["email"]; ?> >
+        <input type="password" name="password" class="custom-input2" placeholder=<?php echo $lang["login-form"]["placeholder"]["pwd"]; ?> >
     </form>
 </div>
 <?php }?>

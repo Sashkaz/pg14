@@ -1,5 +1,5 @@
 
-<?php session_start(); ?>
+<?php session_start(); $langPref = "en"; include("_assets/_lang/".$langPref.".php")?>
 <!DOCTYPE html>
 <html lang="en">
     <head>

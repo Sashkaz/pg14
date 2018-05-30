@@ -96,9 +96,9 @@
                 </div>
                 <div id="message-footer">
                     <form name="message" action="_process/process-send-message.php" method="POST" class="message-form">
-                        <textarea name="message" placeholder="Skriv ett meddelande..."></textarea>
+                        <textarea name="message" placeholder='<?php echo $lang["messages"]["chat"]["message-placeholder"]; ?>'></textarea>
                         <input type="hidden" name="targetUser" value=<?php echo "".$targetUser.""; ?> />
-                        <input type="submit" name="sendMsg" value ="Send"/>
+                        <input type="submit" name="sendMsg" value ='<?php echo $lang["messages"]["chat"]["send-button"]; ?>'/>
                     </form>
                 </div>
                 <?php
@@ -106,7 +106,7 @@
         }
         else
         {
-            echo "You need to select a conversation.";
+            echo $lang["messages"]["select-conversation"];
         }
     }
     else
