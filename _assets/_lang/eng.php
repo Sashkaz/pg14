@@ -19,9 +19,10 @@
                     "repwd" => "Retype password",
                     "email" => "Email",
                     "gender" => [
-                        0 => "Male",
-                        1 => "Female",
-                        2 => "Other"
+                        "default" => "Gender",
+                        "m" => "Male",
+                        "f" => "Female",
+                        "o" => "Other"
                     ],
                     "y" => "Year",
                     "m" => "Month",
@@ -38,9 +39,59 @@
                 "logout-button" => "Logout",
             ],
             "left-bar-filter" => [
-                ""
+                "city" => "City",
+                "gym" => "Gym",
+                "hashtag" => "hashtag",
+                "active" => "Now Active"
+            ],
+            "my-profile" => [
+                "upload-pic" => "Upload Profile Picture",
+                "filter-options" => [
+                    "header" => "Filter Options",
+                    "add-hashtag" =>[
+                        "header" => "Hashtags",
+                        "default" => "Add Hashtag"
+                    ],
+                    "add-location" => [
+                        "header" => "Locations",
+                        "default" => "Add Location"
+                    ],
+                    "gender-preference" =>[
+                        "header" => "Gender Preference",
+                        "any" => "Any Gender",
+                        "same" => "Same Gender Only"
+                    ]
+                ],
+                "account-info" => [
+                    "header" => "Account Information",
+                    "placeholder" => [
+                        "fname" => "First name",
+                        "lname" => "Last name",
+                        "email" => "Email",
+                        "new-pwd" => "New Password",
+                        "dob" => "Date of birth",
+                        "repwd" => "Confirm password",
+                        "gender" => [
+                            "m" => "Male",
+                            "f" => "Female",
+                            "o" => "Other"
+                        ],
+                        "old-pwd" => "Old Password",
+                        "conf-pwd" => "Confirm Password"
+                    ],
+                    "update-button" => "Update"
+                ],
+                "messages" => [
+                    "select-conversation" => "You need to select a conversation.",
+                    "chat" => [
+                        "message-placeholder" => "Type your message here",
+                        "send-button" => "Send"
+                    ]
+                ],
+                "search-buddy" => [
+                    "search-placeholder" => "Type the name of your buddy/trainer..."
+                ] 
             ]
         ]
-
     ]
 ?>
