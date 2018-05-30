@@ -5,9 +5,6 @@
     <div class="login-option">
         <h2><a href="#gmail-login" class="custom-button3"><?php echo $lang["reg-form"]["gmail-login"]; ?>  <img src="_assets/_img/gmail.png"/></a></h2>
     </div>
-    <!--<div class="login-option">
-        <h2 class="text-center">Eller</h2>
-    </div>-->
     <form name="register" action="_process/process-register.php" target="_self" method="POST" class="login-option">
         <div class="form-login-divider">
             <input type="text" name="first-name" class="custom-input1 split-input" placeholder='<?php echo $lang["reg-form"]["placeholder"]["fname"]; ?>' >

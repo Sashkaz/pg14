@@ -1,6 +1,3 @@
-<?php
-    $db = new Database("localhost", "root", "", "projekt");
-?>
 <div class="activity-container">
   <div class="quick-facts">
     <h4>Your are now active at 24/7!</h4>

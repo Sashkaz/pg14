@@ -1,8 +1,4 @@
-<?php
-    $db = new Database("localhost", "root", "", "projekt");
-?>
 <div id="activity-container">
-
     <ul class="right-bar-list">
         <?php
             if($req = $db->q("select * from location")){

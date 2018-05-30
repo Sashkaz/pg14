@@ -1,8 +1,6 @@
 <?php
-    if(!isset($db) && empty($db)){
-        include("_models/db.php");
-        $db = new Database("localhost", "root", "", "projekt");
-    }
+    include("_models/db.php");
+    $locationFilter = new Database("localhost", "root", "", "projekt");
 ?>
 <div class="nav-divider">
     <h3>Gym</h3>
@@ -20,7 +18,7 @@
                 $restSQL = (($restSQL == "")? $restSQL."city.cityID = ".$val[1]: $restSQL." OR city.cityID = ".$val[1]); 
             }
             $sql = $baseSQL.$restSQL;
-            if($req = $db->q($sql)){
+            if($req = $locationFilter->q($sql)){
                 while ($row = $req->fetch_assoc()) {
                     echo "
                         <li>
@@ -38,7 +36,7 @@
     <h3>Hashtag</h3>
     <ul class="nav-tag-dropdown">
         <?php
-            if($req = $db->q("select * from hashtaglist")){
+            if($req = $locationFilter->q("select * from hashtaglist")){
                 while ($row = $req->fetch_assoc()) {
                     echo "
                         <li>
