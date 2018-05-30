@@ -33,7 +33,7 @@
             "register-button" => "Create account now!"
         ],
         "top-nav-buttons" => [
-            "show-users" => "Show Users",
+            "show-users" => "Find Users",
             "my-profile" => "My Profile",
             "messages" => "Messages",
             "buddy-list" => "Buddy List",
