@@ -43,7 +43,10 @@
             "city" => "Stad",
             "gym" => "Lokaler",
             "hashtag" => "Hashtag",
-            "active" => "Nu Aktiv"
+            "activity" => [
+                "header" => "Övrigt",
+                "active" => "Nu Aktiva"
+            ]
         ],
         "my-profile" => [
             "upload-pic" => "Ladda upp Profilbild",

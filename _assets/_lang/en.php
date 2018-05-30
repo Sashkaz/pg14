@@ -43,7 +43,10 @@
             "city" => "City",
             "gym" => "Gym",
             "hashtag" => "Hashtag",
-            "active" => "Now Active"
+            "activity" => [
+                "header" => "Activity",
+                "active" => "Now Active"
+            ]
         ],
         "my-profile" => [
             "upload-pic" => "Upload Profile Picture",

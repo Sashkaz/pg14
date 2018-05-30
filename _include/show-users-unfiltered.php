@@ -1,12 +1,7 @@
 <?php 
-    $req = $db->q("SELECT * FROM user");
-    if(isset($_POST["req"]) && !empty($_POST["req"])){
-        $req = $db->q($_POST["req"]);
-        // echo $_POST["req"];
-    }
+    $req = $db->q("SELECT firstName, lastName, publicID, profilePicURL FROM user where userID != $_SESSION[uid]");
     if($req->num_rows > 0){
         while ($row = $req->fetch_assoc()) {
-            if($row["userID"] != null){
                 if ($row["profilePicURL"] != "null")
                 {
                     $userPictureSrc= "data:image/jpeg;base64,".base64_encode($row["profilePicURL"]);
@@ -24,7 +19,6 @@
                         </div>
                     </a>
                 ";
-            }
         }
     }
 ?>

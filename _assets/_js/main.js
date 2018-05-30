@@ -1,13 +1,14 @@
 <script>
     $(document).on("click", "[id='main_checkbox']", function(){
         var checkedValues = new Array();
+        var lang = $("input[id='lang']").val();
         $("[name='city']:checked").each(function() {
             var input = $(this).attr('name').split('_');
             checkedValues.push([input[1], $(this).val()]);
         });
         if(checkedValues.length > 0){
-            $.post("_include/location-filter.php",
-                    {city: checkedValues}, 
+            $.post("_include/_async/location-filter.php",
+                    {city: checkedValues, lang: lang}, 
                     function(data){
                         $("#rest-search").html(data);
                     }
@@ -21,9 +22,10 @@
             checkedValues.push([input[1], $(this).val()]);
         });
         $.post("_ajax/filter-users.php",
-                    {input: checkedValues}, 
+                    {input: checkedValues,
+                    userID: $("[id='uid']").val()}, 
                     function(data){
-                        $("#center-content").load("_include/show-users-filtered.php", {req: data, userID: $("[id='uid']").val()}, function() {}).fadeIn();
+                        $("#center-content").load("_include/_async/show-users-filtered.php", {req: data}, function() {}).fadeIn();
                     }
         );
     });
