@@ -416,7 +416,7 @@ color: var(--text-secondary-color)
     text-decoration: none;
     background-color: var(--btn-primary-color);
     /* padding: 12% 5px; */
-    padding: 12px 5px;
+    padding: 12px 10px;
     /* border: solid 2px; */
     /* border-top: none; */
     border:none;

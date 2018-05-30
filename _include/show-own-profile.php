@@ -285,7 +285,7 @@ if ($validProfile)
                     <div class="field-container"><?php echo $lang["my-profile"]["account-info"]["placeholder"]["conf-pwd"]; ?><br><input type="password" name="confirmPassword" class="custom-input1 split-input"></div>
                     </p>
                 </span>
-                <input type="submit" name="updateSettings" value="Update">
+                <input class="custom-button1 split-buttons" type="submit" style="margin-left: 50%; display: block;" name="updateSettings" value = '<?php echo $lang["my-profile"]["account-info"]["update-button"]; ?>'/>
             </form>
             </div>
         </div>
