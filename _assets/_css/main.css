@@ -23,11 +23,6 @@
     --message-ingoing-color: rgba(147, 176, 235, 0.5);
     --message-outgoing-color: rgba(93, 121, 179, 0.8);
 }
-/*@media (max-width:800px) {
-    .profile-col:nth-child(3){
-        margin-left: 6%;
-    }
-}*/
 html {
     overflow: hidden;
     height: 100%;
@@ -94,7 +89,6 @@ body {
     background-color: var(--container-secondary-color);
 }
 #right-bar {
-    float: left;
     display: inline-block;
     width: 15%;
     min-width: 150px;
@@ -112,7 +106,6 @@ body {
 }
 #left-content ul {
     list-style: none;
-    /* text-indent: -30px; */
 }
 .nav-divider{
     padding: 15px 15px;
@@ -169,7 +162,6 @@ body {
 }
 
 .prof-container:hover {
-    /* background-color: var(--container-secondary-color); */
     box-shadow: 0px 7px 8px -5px gray;
 }
 .prof-container .user-pic{
@@ -1084,14 +1076,4 @@ a {
 }
 .mutliSelect li:hover{
     background-color: var(--btn-hover-color);
-}
-button {
-    background-color: #6BBE92;
-    width: 302px;
-    border: 0;
-    padding: 10px 0;
-    margin: 5px 0;
-    text-align: center;
-    color: #fff;
-    font-weight: bold;
 }
