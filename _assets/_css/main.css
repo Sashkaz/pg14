@@ -23,6 +23,11 @@
     --message-ingoing-color: rgba(147, 176, 235, 0.5);
     --message-outgoing-color: rgba(93, 121, 179, 0.8);
 }
+/*@media (max-width:800px) {
+    .profile-col:nth-child(3){
+        margin-left: 6%;
+    }
+}*/
 html {
     overflow: hidden;
     height: 100%;
@@ -244,14 +249,17 @@ body {
     display: -webkit-flex;     /* NEW - Chrome */
     display: flex;
 }
+.lang{
+    margin: 0 !important;
+}
 .profile-col{
     display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */
     display: -moz-box;         /* OLD - Firefox 19- (buggy but mostly works) */
     display: -ms-flexbox;      /* TWEENER - IE 10 */
     display: -webkit-flex;     /* NEW - Chrome */
     display: flex;
-    padding: 0px 0px 0px 0px;
-    max-width: 100px;
+    padding: 0;
+    /* max-width: 150px; */
     margin: 0 0 0 2%;
 }
 .profile-col:first-child{
@@ -266,8 +274,8 @@ body {
     min-width: 40px;
 }
 .form-wrapper {
-    padding: 0px 5px 5px 0px;
-    margin-left: auto;
+    padding: 0 !important;
+    margin: 0 0 0 auto !important;
 }
 .form-wrapper table{
     text-align: right;

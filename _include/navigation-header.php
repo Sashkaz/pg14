@@ -51,21 +51,19 @@
 <div class="profile-col">
     <a href="_process/process-logout.php" class="custom-button1" ><i class="fas fa-sign-out-alt"></i> <?php echo $lang["top-nav-buttons"]["logout-button"]; ?></a>
 </div>
-<div class="profile-col">
+<div class="profile-col lang">
     <select class="custom-input1" name="lang_selector">
         <option value="en" <?php echo (($_COOKIE["lang"] == "en")? "selected":"")?>>EN</option>
         <option value="sv" <?php echo (($_COOKIE["lang"] == "sv")? "selected":"")?>>SV</option>
     </select>
 </div>
 <?php }else{ ?>
-<div class="form-wrapper">
-    <form method="POST" action="_process/process-login.php" target="_self">
-        <input type="submit" name="login" class="custom-button1" value='<?php echo $lang["login-form"]["login-button"]; ?>' />
-        <input type="text" name="email" class="custom-input2" placeholder=<?php echo $lang["login-form"]["placeholder"]["email"]; ?> >
-        <input type="password" name="password" class="custom-input2" placeholder=<?php echo $lang["login-form"]["placeholder"]["pwd"]; ?> >
-    </form>
-</div>
-<div class="profile-col">
+<form method="POST" action="_process/process-login.php" target="_self" class="form-wrapper profile-col">
+    <input type="submit" name="login" class="custom-button1" value='<?php echo $lang["login-form"]["login-button"]; ?>' />
+    <input type="text" name="email" class="custom-input2" placeholder=<?php echo $lang["login-form"]["placeholder"]["email"]; ?> >
+    <input type="password" name="password" class="custom-input2" placeholder=<?php echo $lang["login-form"]["placeholder"]["pwd"]; ?> >
+</form>
+<div class="profile-col lang">
     <select class="custom-input1" name="lang_selector">
         <option value="en" <?php echo (($_COOKIE["lang"] == "en")? "selected":"")?>>EN</option>
         <option value="sv" <?php echo (($_COOKIE["lang"] == "sv")? "selected":"")?>>SV</option>
