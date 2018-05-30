@@ -988,7 +988,7 @@ height: 50px;
 
 /* DROPDOWN */
 .dropdown {
-    margin: 15% 5%;
+    margin: 0 5%;
     width: 90%;
     transform: translateY(-50%);
     position: inherit;
