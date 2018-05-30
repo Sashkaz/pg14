@@ -112,7 +112,7 @@ body {
 }
 #left-content ul {
     list-style: none;
-    text-indent: -30px;
+    /* text-indent: -30px; */
 }
 .nav-divider{
     padding: 0px 15px;
