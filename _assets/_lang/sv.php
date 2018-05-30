@@ -33,7 +33,7 @@
             "register-button" => "Skapa konto nu!"
         ],
         "top-nav-buttons" => [
-            "show-users" => "Visa användarna",
+            "show-users" => "Hitta användare",
             "my-profile" => "Min profil",
             "messages" => "Meddelande",
             "buddy-list" => "Buddy List",
@@ -57,7 +57,7 @@
                     "default" => "Lägg till Hashtag"
                 ],
                 "add-location" => [
-                    "header" => "Plats",
+                    "header" => "Platser",
                     "default" => "Lägg till Plats"
                 ],
                 "gender-preference" =>[

@@ -22,7 +22,7 @@ if(isset($_GET["addFriend"]))
     if($userIDResult->num_rows == 0)
     {
         echo "Could not find user.<br>Returning to previous page.";
-        header("Refresh:2; URL=../index.php?show-profile=true&u='$targetUser'");
+        header("Refresh:2; URL=../index.php?show-profile=true&u=".$targetUser."");
     }
     else
     {        
@@ -40,13 +40,13 @@ if(isset($_GET["addFriend"]))
             ('$targetUserID', '$curUser', '$relationshipID', 1)";
             if($db->q($createrelationshipQuery))
             {
-                header("Location: ../index.php?show-profile=true");
+                header("Location: ../index.php?show-profile=true&u=".$targetUser."");
             }
             else
             {
-                echo $db->lastError();
+                /* echo $db->lastError(); */
                 echo "Unexpected error. Could not create friend relation.<br>Returning to previous page.";
-                header("Refresh:20; URL=../index.php?show-profile=true&u='$targetUser'");
+                header("Refresh:2; URL=../index.php?show-profile=true&u=".$targetUser."");
             }
         }
         else
@@ -54,13 +54,44 @@ if(isset($_GET["addFriend"]))
             $updaterelationshipQuery = "UPDATE userrelationship SET relationshipID = '$relationshipID' WHERE (relatingUser='$curUser' AND relatedUser='$targetUserID') OR (relatingUser='$targetUserID' AND relatedUser='$curUser')";
             if($db->q($updaterelationshipQuery))
             {
-                header("Location: ../index.php?show-profile=true");
+                header("Location: ../index.php?show-profile=true&u=".$targetUser."");
             }
             else
             {
                 echo "Unexpected error. Could not add friend.<br>Returning to previous page.";
-                header("Refresh:2; URL=../index.php?show-profile=true&u='$targetUser'");
+                header("Refresh:2; URL=../index.php?show-profile=true&u=".$targetUser."");
             }
+        }
+    }
+}
+
+
+// Remove Friend
+if(isset($_GET["removeFriend"]))
+{
+    $targetUser = mysqli_real_escape_string($db->db, $_GET["removeFriend"]);
+    $getUserIDQuery = "SELECT userID FROM user WHERE publicID = '$targetUser' limit 1";
+    $userIDResult = $db->q($getUserIDQuery);
+    if($userIDResult->num_rows == 0)
+    {
+        echo "Could not find user.<br>Returning to previous page.";
+        header("Refresh:2; URL=../index.php?show-profile=true&u=".$targetUser."");
+    }
+    else
+    {        
+        $userRow = $userIDResult->fetch_assoc();
+        $targetUserID = $userRow["userID"];
+        $deleteRelationshipQuery = "DELETE FROM userrelationship
+        WHERE (relatingUser = '$curUser' AND relatedUser = '$targetUserID')
+        OR (relatingUser = '$targetUserID' AND relatedUser = '$curUser')";
+        if ($db->q($deleteRelationshipQuery))
+        {
+            header("Location: ../index.php?show-profile=true&u=".$targetUser."");
+        }
+        else
+        {
+            echo "Unexpected error. Could not remove relation.<br>Returning to previous page.";
+            header("Refresh:2; URL=../index.php?show-profile=true&u=".$targetUser."");
         }
     }
 }
