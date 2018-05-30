@@ -28,7 +28,9 @@
                             }
                             else
                             {
-                                include("_include/left-content.php");
+                                if(isset($_SESSION["uid"]) && !empty($_SESSION["uid"])){
+                                    include("_include/left-content.php");
+                                }
                             }?>
                 </div>
             </div>
