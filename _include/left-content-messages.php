@@ -1,12 +1,7 @@
 <?php
-if(!isset($db) && empty($db)){
-    include("_models/db.php");
-    $db = new Database("localhost", "root", "", "projekt");
-}
 if(isset($_SESSION["uid"]) && !empty($_SESSION["uid"]))
 {
     $curUser = $_SESSION["uid"];
-    $db = new Database("localhost", "root", "", "projekt");
     $conversationQuery = "SELECT DISTINCT relatingUser as targetUser FROM messages WHERE relatedUser = ".$curUser."
     UNION
     SELECT DISTINCT relatedUser as targetUser FROM messages WHERE relatingUser = ".$curUser."";

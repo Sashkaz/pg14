@@ -1,14 +1,11 @@
 <div class="messages-wrap">
     <?php
-    //include("_models/db.php");
     if(isset($_SESSION["uid"]) && !empty($_SESSION["uid"]))
     {
         $curUser = $_SESSION["uid"];
         if (isset($_GET['u']) )
         {
             $targetUser = $_GET["u"];
-                    
-            $db = new Database("localhost", "root", "", "projekt");
             $targetUserQuery = "SELECT userID, firstName, lastName, profilePicURL
             FROM User
             WHERE publicID = ".$targetUser." limit 1";
@@ -96,9 +93,9 @@
                 </div>
                 <div id="message-footer">
                     <form name="message" action="_process/process-send-message.php" method="POST" class="message-form">
-                        <textarea name="message" placeholder="Skriv ett meddelande..."></textarea>
+                        <textarea name="message" placeholder='<?php echo $lang["messages"]["chat"]["message-placeholder"]; ?>'></textarea>
                         <input type="hidden" name="targetUser" value=<?php echo "".$targetUser.""; ?> />
-                        <input type="submit" name="sendMsg" value ="Send"/>
+                        <input type="submit" name="sendMsg" value ='<?php echo $lang["messages"]["chat"]["send-button"]; ?>'/>
                     </form>
                 </div>
                 <?php
@@ -106,7 +103,7 @@
         }
         else
         {
-            echo "You need to select a conversation.";
+            echo $lang["messages"]["select-conversation"];
         }
     }
     else

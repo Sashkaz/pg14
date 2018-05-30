@@ -1,8 +1,4 @@
 <?php
-    if(!isset($db) && empty($db)){
-        include("_models/db.php");
-        $db = new Database("localhost", "root", "", "projekt");
-    }
     if (session_status() == PHP_SESSION_NONE) {
         session_start();
     }
@@ -10,7 +6,7 @@
         ?>
         <input type="hidden" id="uid" value="<?php echo $_SESSION["uid"];?>"/>
         <div class="nav-divider" id="main_checkbox">
-            <h3>Stad</h3>
+            <h3><?php echo $lang["left-bar-filter"]["city"]; ?></h3>
             <ul class="nav-city-dropdown">
                 <?php
                     if($req = $db->q("select * from city")){

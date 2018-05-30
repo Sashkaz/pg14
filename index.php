@@ -1,5 +1,12 @@
 
-<?php session_start(); ?>
+
+<?php 
+    session_start(); 
+    $langPref = "en"; 
+    include("_assets/_lang/".$langPref.".php"); 
+    include("_include/_models/db.php");
+    $db = new Database("localhost", "root", "", "projekt");
+?>
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -35,9 +42,9 @@
                             }elseif(isset($_GET["show-buddy-list"]) && !empty($_GET["show-buddy-list"])){
                                 include("_include/show-own-buddy-list.php");
                             }elseif(isset($_GET["show-users"]) && !empty($_GET["show-users"])){
-                                include("_include/show-users.php");
+                                include("_include/show-users-unfiltered.php");
                             }else{
-                               include("_include/show-users.php");
+                               include("_include/show-users-unfiltered.php");
                             }
                             include("_assets/_js/main.js");
                         }else{
