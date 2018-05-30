@@ -109,9 +109,9 @@ if ($validProfile)
                 </form>
             </div>
             <div class="profile-content-divider" id="filter">
-                <h3>Filter Options</h3>
+                <h3><?php echo $lang["my-profile"]["filter-options"]["header"]; ?></h3>
                 <span class="left-side">
-                    <div class="settings-title">Hashtags</div>
+                    <div class="settings-title"><?php echo $lang["my-profile"]["filter-options"]["add-hashtag"]["header"]; ?></div>
                     <?php
                     $hashtagListQuery = "SELECT * FROM userhashtag WHERE userID = ".$curUser."";
                     $hashtagResults = $db->q($hashtagListQuery);
@@ -150,7 +150,7 @@ if ($validProfile)
                         <form method="POST" action="_process/process-edit-profile.php" enctype="multipart/form-data">
                             <div class="profile-added-items">
                                 <select name="addHashtag" style="float: left;">
-                                <option value="none" disabled selected>Select Hashtag</option>
+                                <option value="none" disabled selected><?php echo $lang["my-profile"]["filter-options"]["add-hashtag"]["default"]; ?></option>
                                     <?php
                                     $allHashtagsQuery = "SELECT h.name, h.hashtagListID FROM hashtaglist h
                                     LEFT JOIN (SELECT userID, hasthagListID FROM userhashtag WHERE userID='$userID') uh ON uh.hasthagListID = h.hashtagListID
@@ -175,7 +175,7 @@ if ($validProfile)
                     ?>
                 </span>
                 <span class="right-side">
-                    <div class="settings-title">Locations</div>
+                    <div class="settings-title"><?php echo $lang["my-profile"]["filter-options"]["add-location"]["header"]; ?></div>
                     <?php
                     $locationListQuery = "SELECT * FROM userlocation WHERE userID = ".$curUser."";
                     $locationResults = $db->q($locationListQuery);
@@ -216,7 +216,7 @@ if ($validProfile)
                         <div class="profile-added-items">
                         <button type="submit" style="float: left;"><i class="fa fa-plus-circle"></i></button>
                             <select name="addLocation" style="float: right;">
-                                <option value="none" disabled selected>Add Location</option>
+                                <option value="none" disabled selected><?php echo $lang["my-profile"]["filter-options"]["add-location"]["default"]; ?></option>
                                 <?php
                                 $allLocationsQuery = "SELECT l.name, l.activityID FROM location l
                                 LEFT JOIN (SELECT userID, locationID FROM userlocation WHERE userID='$userID') ul ON ul.locationID = l.activityID
@@ -240,12 +240,12 @@ if ($validProfile)
                     ?>
                 </span>
                 <div class="clear-line"></div>
-                <div class="settings-title">Gender Preference</div>
+                <div class="settings-title"><?php echo $lang["my-profile"]["filter-options"]["gender-preference"]["header"]; ?></div>
                 <span class="left-side">
                 <form method="POST" action="_process/process-edit-profile.php" enctype="multipart/form-data">
                         <div class="profile-added-items">
                         <input type="hidden" name="changeGenderPref" value="0">
-                        <button type="submit" class="profile-gender-btn <?php if($anyGender){echo "current";}?>">Any Gender</button>
+                        <button type="submit" class="profile-gender-btn <?php if($anyGender){echo "current";}?>"><?php echo $lang["my-profile"]["filter-options"]["gender-preference"]["any"]; ?></button>
                         </div>
                     </form>
                 </span>
@@ -253,31 +253,31 @@ if ($validProfile)
                     <form method="POST" action="_process/process-edit-profile.php" enctype="multipart/form-data">
                         <div class="profile-added-items">
                         <input type="hidden" name="changeGenderPref" value="1">
-                        <button type="submit" class="profile-gender-btn <?php if(!$anyGender){echo "current";}?>">Same Gender Only</button>
+                        <button type="submit" class="profile-gender-btn <?php if(!$anyGender){echo "current";}?>"><?php echo $lang["my-profile"]["filter-options"]["gender-preference"]["same"]; ?></button>
                         </div>
                     </form>
                 </span>
                 <div class="clear-line"></div>
             </div>
             <div class="profile-content-divider" id="account">
-            <h3>Account Information</h3>
+            <h3><?php echo $lang["my-profile"]["account-info"]["header"]; ?></h3>
             <form method="POST" action="_process/process-edit-profile.php" enctype="multipart/form-data">
                 <span class="left-side">
-                    <div class="field-container">Firstname:<br><input type="text" name="firstName" value="<?php echo $userFirstName; ?>"></div>
-                    <div class="field-container">Email:<br><input type="email" name="email" value="<?php echo $userEmail; ?>"></div>
-                    <div class="field-container">Age:<br><input type="date" name="birthday" max="2002-01-01" min="1938-01-01"value="<?php echo $userBirthdayFormat; ?>"></div>
+                    <div class="field-container"><?php echo $lang["my-profile"]["account-info"]["placeholder"]["fname"]; ?><br><input type="text" name="firstName" value="<?php echo $userFirstName; ?>"></div>
+                    <div class="field-container"><?php echo $lang["my-profile"]["account-info"]["placeholder"]["email"]; ?><br><input type="email" name="email" value="<?php echo $userEmail; ?>"></div>
+                    <div class="field-container"><?php echo $lang["my-profile"]["account-info"]["placeholder"]["dob"]; ?><br><input type="date" name="birthday" max="2002-01-01" min="1938-01-01"value="<?php echo $userBirthdayFormat; ?>"></div>
                     <p>
-                    <div class="field-container">Old Password:<br><input type="password" name="password" ></div>
+                    <div class="field-container"><?php echo $lang["my-profile"]["account-info"]["placeholder"]["old-pwd"]; ?><br><input type="password" name="password" ></div>
                     </p>
                 </span>
                 <span class="right-side">
-                    <div class="field-container">Lastname:<br><input type="text" name="lastName" value="<?php echo $userLastName; ?>"></div>
-                    <div class="field-container">New Password:<br><input type="password" name="newPassword"></div>
-                    <div class="field-container">Gender:<br><input type="radio" name="gender" value="1" <?php if ($userGender == 1) { echo 'checked="checked"'; }?>> Male
-                    <input type="radio" name="gender" value="2" <?php if ($userGender == 2) { echo 'checked="checked"'; }?>> Female
-                    <input type="radio" name="gender" value="0" <?php if ($userGender == 0) { echo 'checked="checked"'; }?>> Other</div>
+                    <div class="field-container"><?php echo $lang["my-profile"]["account-info"]["placeholder"]["lname"]; ?><br><input type="text" name="lastName" value="<?php echo $userLastName; ?>"></div>
+                    <div class="field-container"><?php echo $lang["my-profile"]["account-info"]["placeholder"]["new-pwd"]; ?><br><input type="password" name="newPassword"></div>
+                    <div class="field-container"><?php echo $lang["my-profile"]["account-info"]["placeholder"]["gender"]["header"]; ?><br><input type="radio" name="gender" value="1" <?php if ($userGender == 1) { echo 'checked="checked"'; }?>><?php echo $lang["my-profile"]["account-info"]["placeholder"]["gender"]["m"]; ?>
+                    <input type="radio" name="gender" value="2" <?php if ($userGender == 2) { echo 'checked="checked"'; }?>><?php echo $lang["my-profile"]["account-info"]["placeholder"]["gender"]["f"]; ?>
+                    <input type="radio" name="gender" value="0" <?php if ($userGender == 0) { echo 'checked="checked"'; }?>><?php echo $lang["my-profile"]["account-info"]["placeholder"]["gender"]["o"]; ?></div>
                     <p>
-                    <div class="field-container">Confirm Old Password:<br><input type="password" name="confirmPassword" ></div>
+                    <div class="field-container"><?php echo $lang["my-profile"]["account-info"]["placeholder"]["conf-pwd"]; ?><br><input type="password" name="confirmPassword" ></div>
                     </p>
                 </span>
                 <input type="submit" name="updateSettings" value="Update">

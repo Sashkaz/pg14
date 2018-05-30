@@ -4,7 +4,7 @@
         "login-form" => [
             "login-button" => "Logga in",
             "placeholder" => [
-                "email" => "E-mejl",
+                "email" => "E-post",
                 "pwd" => "Lösenord"
             ]
         ],
@@ -16,7 +16,7 @@
                 "lname" => "Efternamn",
                 "pwd" => "Lösenord",
                 "repwd" => "Bekräfta Lösenord",
-                "email" => "E-mejl",
+                "email" => "E-post",
                 "gender" => [
                     "default" => "Kön",
                     "m" => "Man",
@@ -46,7 +46,7 @@
             "active" => "Nu Aktiv"
         ],
         "my-profile" => [
-            "upload-pic" => "Ladda upp Profil Bild",
+            "upload-pic" => "Ladda upp Profilbild",
             "filter-options" => [
                 "header" => "Filteralternativ",
                 "add-hashtag" =>[
@@ -59,26 +59,27 @@
                 ],
                 "gender-preference" =>[
                     "header" => "Kön Preferens",
-                    "any" => "Vilken Som Helst",
+                    "any" => "Alla",
                     "same" => "Endast Samma Kön"
                 ]
             ],
             "account-info" => [
-                "header" => "Account Information",
+                "header" => "Kontoinformation",
                 "placeholder" => [
                     "fname" => "Förnamn",
                     "lname" => "Efternamn",
-                    "email" => "E-mejl",
-                    "new-pwd" => "Ny Lösenord",
+                    "email" => "E-post",
+                    "new-pwd" => "Nytt Lösenord",
                     "dob" => "Födelsedatum",
-                    "repwd" => "Skriv om Lösenord",
+                    "repwd" => "Skriv om nytt Lösenord",
                     "gender" => [
+                        "header" => "Kön",
                         "m" => "Man",
                         "f" => "Kvinna",
                         "o" => "Annat"
                     ],
-                    "old-pwd" => "Nuvarande Password",
-                    "conf-pwd" => "Bekräfta Password"
+                    "old-pwd" => "Nuvarande Lösenord",
+                    "conf-pwd" => "Bekräfta Lösenord"
                 ],
                 "update-button" => "Uppdatera"
             ],

@@ -73,6 +73,7 @@
                     "dob" => "Date of birth",
                     "repwd" => "Confirm password",
                     "gender" => [
+                        "header" => "Gender",
                         "m" => "Male",
                         "f" => "Female",
                         "o" => "Other"
