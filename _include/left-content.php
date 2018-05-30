@@ -3,7 +3,7 @@
 <dl class="dropdown city-drop"> 
     <dt>
         <a href="#" class="custom-button1">
-            <span class="hida">Select</span>    
+            <span class="hida"><?php echo $lang["left-bar-filter"]["city"]; ?></span>    
             <p class="multiSel city-multiSel"></p>  
         </a>
     </dt>

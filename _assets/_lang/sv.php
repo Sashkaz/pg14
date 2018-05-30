@@ -40,7 +40,7 @@
             "logout-button" => "Logga ut",
         ],
         "left-bar-filter" => [
-            "city" => "Stad",
+            "city" => "Välj en stad",
             "gym" => "Plats",
             "hashtag" => "Hashtag",
             "activity" => [
