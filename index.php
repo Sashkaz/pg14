@@ -41,7 +41,7 @@
                             }elseif(isset($_GET["show-messages"]) && !empty($_GET["show-messages"])){
                                 include("_include/show-messages.php");
                             }elseif(isset($_GET["show-buddy-list"]) && !empty($_GET["show-buddy-list"])){
-                                include("_include/show-own-buddy-list.php");
+                                include("_include/show-own-buddy-list-unfiltered.php");
                             }elseif(isset($_GET["show-users"]) && !empty($_GET["show-users"])){
                                 include("_include/show-users-unfiltered.php");
                             }else{

@@ -14,7 +14,7 @@ if(isset($_POST["input"]) && !empty($_POST["input"])){
                     on user.userID = userhashtag.userID 
                 left join hashtaglist 
                     on userhashtag.hasthagListID = hashtaglist.hashtagListID 
-                where  user.userID != $_POST[userID] and 
+                where  user.userID != $_POST[uid] and 
     ";
     foreach($_POST["input"] as $key=>$val){
         if($val[0] == "location"){
@@ -28,6 +28,6 @@ if(isset($_POST["input"]) && !empty($_POST["input"])){
     echo "select user.userID, firstName, lastName, publicID, profilePicURL from user 
         left join userrelationship
         on user.userID = userrelationship.relatedUser
-        where userrelationship.relatingUser = 2 and (user.firstName like '%$_POST[buddySearch]%' or user.lastName like '%$_POST[buddySearch]%')";
+        where userrelationship.relatingUser = $_POST[uid] and (user.firstName like '%$_POST[buddySearch]%' or user.lastName like '%$_POST[buddySearch]%')";
 }
 ?>

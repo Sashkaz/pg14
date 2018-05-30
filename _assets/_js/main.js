@@ -23,7 +23,7 @@
         });
         $.post("_ajax/filter-users.php",
                     {input: checkedValues,
-                    userID: $("[id='uid']").val()}, 
+                    uid: $("[id='uid']").val()}, 
                     function(data){
                         $("#center-content").load("_include/_async/show-users-filtered.php", {req: data}, function() {}).fadeIn();
                     }
@@ -32,9 +32,10 @@
     $(document).on("keyup", "[id='search-buddy']", function(){
         var input = $(this).val();
         $.post("_ajax/filter-users.php",
-                    {buddySearch: input}, 
+                    {buddySearch: input, 
+                    uid: $("[id='uid']").val()}, 
                     function(data){
-                        $(".friend-container").load("_include/buddy-list.php", {search: data}, function() {}).fadeIn();
+                        $(".friend-container").load("_include/_async/show-own-buddy-list-filtered.php", {search: data}, function() {}).fadeIn();
                     }
         );
     });

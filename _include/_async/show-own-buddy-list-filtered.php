@@ -1,4 +1,6 @@
 <?php 
+    include("../_models/db.php");
+    $buddyFilter = new Database("localhost", "root", "", "projekt");
     if(!isset($_SESSION["uid"]) && empty($_SESSION["uid"])){
         session_start();
     }
@@ -10,7 +12,7 @@
     if(isset($_POST["search"]) && !empty($_POST["search"])){
         $sql = $_POST["search"];
     }
-    $req = $db->q($sql);
+    $req = $buddyFilter->q($sql);
     if($req->num_rows > 0){
         while ($row = $req->fetch_assoc()) {
             if ($row["profilePicURL"] != "null")
