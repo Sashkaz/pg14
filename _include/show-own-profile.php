@@ -265,65 +265,7 @@ if ($validProfile)
                 <span class="left-side">
                     <div class="field-container"><?php echo $lang["my-profile"]["account-info"]["placeholder"]["fname"]; ?><br><input type="text" name="firstName" class="custom-input1 split-input" placeholder='<?php echo $userFirstName; ?>' ></div>
                     <div class="field-container"><?php echo $lang["my-profile"]["account-info"]["placeholder"]["email"]; ?><br><input type="email" name="email" class="custom-input1 split-input" placeholder='<?php echo $userEmail; ?>' ></div>
-
-
-
-                    <div class="field-container"><?php echo $lang["my-profile"]["account-info"]["placeholder"]["dob"]; ?><br>
-                    
-                    <select name="year" class="custom-input1" >
-                        <option value="none" disabled selected><?php echo $lang["reg-form"]["placeholder"]["dob"]["y"]; ?></option>
-                            <?php   
-                                $x = 2002;
-                                while($x > 1950){
-                                    if ($userBirthdayYear == $x)
-                                    {
-                                        echo "<option value=$x selected>$x</option>";
-                                    }
-                                    else
-                                    {
-                                    echo "<option value=$x>$x</option>";
-                                    }
-                                    $x--;
-                                }
-                            ?>
-                    </select>
-                    <select name="month" class="custom-input1">
-                        <option value="none" disabled selected><?php echo $lang["reg-form"]["placeholder"]["dob"]["m"]; ?></option>
-                            <?php                                
-                                $x = 1;
-                                while($x <= 12){
-                                    $monthName = strftime('%B', mktime(0, 0, 0, $x));
-                                    $monthNames = strftime("%B");
-                                    if ($userBirthdayMonth == $x)
-                                    {
-                                        echo "<option value=$x selected>$monthName</option>";
-                                    }
-                                    else
-                                    {
-                                    echo "<option value=$x>$monthName</option>";
-                                    }
-                                    $x++;
-                                }
-                            ?>
-                    </select> 
-                    <select name="day" class="custom-input1" >
-                        <option value="none" disabled selected><?php echo $lang["reg-form"]["placeholder"]["dob"]["d"]; ?></option>
-                            <?php   
-                                $x = 1;
-                                while($x <= 31){
-                                    if ($userBirthdayDay == $x)
-                                    {
-                                        echo "<option value=$x selected>$x</option>";
-                                    }
-                                    else
-                                    {
-                                    echo "<option value=$x>$x</option>";
-                                    }
-                                    $x++;
-                                }
-                            ?>
-                    </select>
-                    </div>
+                    <div class="field-container"><?php echo $lang["my-profile"]["account-info"]["placeholder"]["dob"]; ?><br><input type="date" name="birthday" max="2002-01-01" min="1938-01-01"value="<?php echo $userBirthdayFormat; ?>"></div>
                     <p>
                     <div class="field-container"><?php echo $lang["my-profile"]["account-info"]["placeholder"]["old-pwd"]; ?><br><input type="password" name="password" class="custom-input1 split-input"></div>
                     </p>
@@ -343,7 +285,7 @@ if ($validProfile)
                     <div class="field-container"><?php echo $lang["my-profile"]["account-info"]["placeholder"]["conf-pwd"]; ?><br><input type="password" name="confirmPassword" class="custom-input1 split-input"></div>
                     </p>
                 </span>
-                <input class="custom-button1 split-buttons" type="submit" style="margin: auto; display: block;" name="updateSettings" value = '<?php echo $lang["my-profile"]["account-info"]["update-button"]; ?>'/>
+                <input type="submit" name="updateSettings" value="Update">
             </form>
             </div>
         </div>
