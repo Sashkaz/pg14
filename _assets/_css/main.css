@@ -220,6 +220,7 @@ body {
     -ms-flex-direction: row;	
     flex-direction: row;
     justify-content: space-evenly;
+    flex-wrap: wrap;
 }
 .user-name {
     font-weight: bold;
