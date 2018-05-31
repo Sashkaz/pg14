@@ -347,7 +347,7 @@ if(isset($_POST["updateSettings"]))
             }
             if (isset($newGender) && $userGender != $newGender)
             {
-                $genderChangeQuery = "UPDATE user SET dob = '$newGender' WHERE userID='$curUser'";
+                $genderChangeQuery = "UPDATE user SET gender = '$newGender' WHERE userID='$curUser'";
                 $genderChangeResult = $db->q($genderChangeQuery);
                 if($db->q($genderChangeResult))
                 {
