@@ -40,7 +40,7 @@
             "logout-button" => "Logout",
         ],
         "left-bar-filter" => [
-            "city" => "City",
+            "city" => "Choose a city",
             "gym" => "Gym",
             "hashtag" => "Hashtag",
             "activity" => [
