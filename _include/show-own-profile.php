@@ -372,9 +372,37 @@ if ($validProfile)
                 </span>
             </div>
             <div class="profile-content-divider" id="contact-buddy">
-        <a href="?show-messages=true&u=<?php echo $targetUser; ?>"><i class="fa fa-envelope"></i></a>
-        <a href="_process/process-userrelation.php?addFriend=<?php echo $targetUser; ?>"><i class="fa fa-user-plus"></i></i></a>
-        <a href="?blockBuddy=true&u=<?php echo $targetUser; ?>"><i class="fa fa-ban"></i></a>
+                <a href="?show-messages=true&u=<?php echo $targetUser; ?>"><i class="fa fa-envelope" title="Send Message"></i></a>
+                <?php
+                    $checkrelationshipQuery = "SELECT *
+                    FROM userrelationship
+                    WHERE (relatingUser = '$curUser' AND relatedUser = '$userID')
+                    OR (relatingUser = '$userID' AND relatedUser = '$curUser') limit 1";
+                    $checkrelationshipResult = $db->q($checkrelationshipQuery);
+                    $relationshipType = 0;
+                    if($checkrelationshipResult->num_rows != 0)
+                    {
+                        $relationshipRow = $checkrelationshipResult->fetch_assoc();
+                        $relationshipType = $relationshipRow["relationshipID"];
+                        // RelationshipType:
+                        // 1 = Buddies
+                        // 2 = Sent Buddy Invite
+                        // 3 = Blocked
+                    }
+                    if ($relationshipType == 0)
+                    {
+                        ?>
+                        <a href="_process/process-userrelation.php?addFriend=<?php echo $targetUser; ?>"><i class="fa fa-user-plus" title="Send Buddy Request"></i></i></a>
+                        <?php
+                    }
+                    else if ($relationshipType == 1)
+                    {
+                        ?>
+                        <a href="_process/process-userrelation.php?removeFriend=<?php echo $targetUser; ?>"><i class="fa fa-user-minus" title="Remove From Buddy List"></i></i></a>
+                        <?php
+                    }
+                ?>
+                <a href="?blockBuddy=true&u=<?php echo $targetUser; ?>"><i class="fa fa-ban" title="Block"></i></a>
             </div>
             <div class="profile-content-divider">
                 <h3>Buddy Info</h3>
