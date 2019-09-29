@@ -38,7 +38,11 @@ body {
 }
 #title {
     text-align: center;
-    margin-bottom: 20px;
+	margin-bottom: 20px;
+	grid-column-start: 1;
+    grid-column-end: 4;
+    grid-row-start: 1;
+    grid-row-end: 1;
 }
 #title a {
     text-align: center;
@@ -56,11 +60,14 @@ body {
     color: var(--subtitle-color);
 }
 #master-container {
-    margin: 0px auto;
+	margin: 0px auto;
     text-align: left;
     margin-top: 25px;
     width: 75%;
     min-width: 870px;
+    display: grid;
+    grid-template-columns: 1fr 8fr 1fr;
+	grid-template-rows: 1fr 1fr;
     max-width: 1920px;
     height: 600px;
     margin-bottom: 20%;
@@ -68,11 +75,11 @@ body {
 #left-bar {
     /* float: left; */
     display: inline-block;
-    width: 15%;
+    width: 100%;
     min-width: 150px;
     height: auto;
     min-height: 600px;
-    box-shadow: 5px 0px 20px 12px grey;
+    /* box-shadow: 5px 0px 20px 12px grey; */
     background-color: var(--container-primary-color);
     border-top-left-radius: 10px;
     border-bottom-left-radius: 10px;
@@ -80,24 +87,24 @@ body {
 #center-bar {
     /* float: left; */
     display: inline-block;
-    width: 60%;
+    width: 100%;
     min-width: 500px;
     height: auto;
-    min-height: 600px;
-    margin: 0px 2%;
-    box-shadow: 0px 0px 20px 10px grey;
+    /* min-height: 600px; */
+    /* margin: 0px 2%; */
+    /* box-shadow: 0px 0px 20px 10px grey; */
     background-color: var(--container-secondary-color);
 }
 #right-bar {
     display: inline-block;
-    width: 15%;
+    width: 100%;
     min-width: 150px;
     height: auto;
     min-height: 600px;
     border-top-right-radius: 10px;
     border-bottom-right-radius: 10px;
     background-color: var(--container-primary-color);
-    box-shadow: -5px 0px 20px 12px grey;
+    /* box-shadow: -5px 0px 20px 12px grey; */
 }
 .bar-header {
     color: var(--text-secondary-color);
@@ -304,18 +311,22 @@ body {
     margin: 0px 20px;
 }
 .register-options{
-    flex: 1;
-    display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */
-    display: -moz-box;         /* OLD - Firefox 19- (buggy but mostly works) */
-    display: -ms-flexbox;      /* TWEENER - IE 10 */
-    display: -webkit-flex;     /* NEW - Chrome */
-    display: flex;
+    /* flex: 1; */
+    /*display: -webkit-box;*/      /* OLD - iOS 6-, Safari 3.1-6 */
+    /*display: -moz-box;       */  /* OLD - Firefox 19- (buggy but mostly works) */
+    /*display: -ms-flexbox;      *//* TWEENER - IE 10 */
+    /*display: -webkit-flex;     *//* NEW - Chrome */
+    /* display: flex;
     align-items: center;
     justify-content: center;
     -webkit-flex-direction: column;
     -moz-flex-direction: column;
     -ms-flex-direction: column;	
-    flex-direction: column;
+	flex-direction: column; */
+	display: grid;
+    width: 100%;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: min-content;
 }
 .register-options h2{
     margin: 10px 0 35px 0;
@@ -332,6 +343,10 @@ body {
     justify-content: center;
     box-shadow: 0px 6px 15px -15px gray;
     margin: 5px auto 25px auto !important;
+}
+form.login-option{
+    grid-column-start: 1;
+    grid-column-end: 3;
 }
 .login-option img{
     vertical-align: middle;

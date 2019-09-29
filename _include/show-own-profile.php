@@ -22,7 +22,7 @@ else if (isset($_SESSION["uid"]) && !empty($_SESSION["uid"]))
     $curUser = $_SESSION["uid"];
     $ownPage = true;
     $userQuery = "SELECT *
-    FROM User
+    FROM user
     WHERE userID = ".$curUser." limit 1";
     $userResult = $db->q($userQuery);
     if($userResult->num_rows == 0)
